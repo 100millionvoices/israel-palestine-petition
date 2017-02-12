@@ -20,4 +20,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  heading_html: <em>100MillionVoices</em> asks for your support in protesting at the lack of progress in resolving the Israeli-Palestinian conflict
+  twitter_share: "Please support us in protesting at the lack of progress in resolving the Israeli-Palestinian conflict"
+

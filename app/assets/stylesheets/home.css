@@ -1,0 +1,45 @@
+$twitter: #00aced;
+$facebook: #3b5998;
+
+.petition-text {
+  margin-bottom: 2.0rem;
+
+  p {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.facebook:link, .facebook:visited {
+  color: $facebook;
+}
+.twitter:link, .twitter:visited {
+  color: $twitter;
+}
+.email:link, .email:visited {
+  color: black;
+}
+
+.share-petition {
+  padding: 30px 0;
+  a {
+    padding: 10px;
+    text-decoration: none;
+  }
+  a:hover {
+    border: 1px dotted #DCDCDC;
+  }
+
+  .col-6 {
+    padding: 15px 0;
+  }
+
+  .fa {
+    font-size: 20px;
+    padding-right: 5px;
+  }
+}
+
+#map {
+  margin-left: auto;
+  margin-right: auto;
+}

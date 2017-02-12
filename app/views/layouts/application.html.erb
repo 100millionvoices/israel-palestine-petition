@@ -1,14 +1,40 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>IsraelPalestinePetition</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>100MillionVoices</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
-    <%= yield %>
+    <header class="navbar navbar-left bg-warning text-white">
+      <div class="navbar-header">
+        <a href="/"><i class="fa fa-bullhorn" aria-hidden="true"></i></a>
+        <h1 class="header-text lead"><%= t('heading_html') %></h1>
+      </div>
+    </header>
+
+    <div class="container-fluid">
+      <%= yield %>
+    </div>
+
   </body>
+
+  <footer class="footer text-muted">
+    <div class="container">
+      <ul class="footer-links">
+        <li><a href="/about">About us</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="mailto:help@100millionvoices.org"><i class="fa fa-envelope-o" aria-hidden="true"></i> Contact</a></li>
+        <li>
+          <a href="https://twitter.com/100MillVoices" rel="external" target="_blank">
+          <i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a>
+        </li>
+      </ul>
+    </div>
+  </footer>
 </html>
