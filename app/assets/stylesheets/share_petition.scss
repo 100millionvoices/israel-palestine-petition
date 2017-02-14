@@ -1,0 +1,57 @@
+.facebook:link, .facebook:visited {
+  color: $facebook;
+}
+.twitter:link, .twitter:visited {
+  color: $twitter;
+}
+.email:link, .email:visited {
+  color: black;
+}
+
+.share-petition {
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+
+  .row {
+    border-top: 1px solid #eceeef;
+    border-bottom: 1px solid #eceeef;
+
+    .share-text, .facebook-share {
+      border-bottom: 1px solid #eceeef;
+    }
+    .share-text, .twitter-share {
+      border-right: 1px solid #eceeef;
+    }
+
+    @media (min-width: 768px) {
+      div:not(:first-child) {
+        border-left: 1px solid #eceeef;
+      }
+      .share-text, .facebook-share {
+        border-bottom: none;
+      }
+      .share-text, .twitter-share {
+        border-right: none;
+      }
+    }
+  }
+
+  padding: 50px 0;
+  a {
+    padding: 10px;
+    text-decoration: none;
+  }
+  a:hover {
+    border: 1px dotted #DCDCDC;
+  }
+
+  .col-6 {
+    padding: 15px 0;
+  }
+
+  .fa {
+    font-size: 20px;
+    padding-right: 5px;
+  }
+}

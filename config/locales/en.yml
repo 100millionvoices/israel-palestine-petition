@@ -20,6 +20,17 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  heading_html: <em>100MillionVoices</em> asks for your support in protesting at the lack of progress in resolving the Israeli-Palestinian conflict
-  twitter_share: "Please support us in protesting at the lack of progress in resolving the Israeli-Palestinian conflict"
+  heading_html: <a href="/">100MillionVoices</a> asks for your support in protesting at the lack of progress in resolving the Israeli-Palestinian conflict
+  twitter_share: Please support us in protesting at the lack of progress in resolving the Israeli-Palestinian conflict
 
+  errors:
+    attributes:
+      email:
+        blank: An email must be given
+        invalid: This email '%{value}' was not recognised
+        plus_address: You can’t use ‘plus addressing’ in your email address
+        taken: This email has already been taken
+      name:
+        blank: A name must be given
+      country_code:
+        blank: A country must be selected

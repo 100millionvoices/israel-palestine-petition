@@ -1,0 +1,37 @@
+.signature-form {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+
+  small {
+    font-style: italic;
+  }
+}
+
+.field_with_errors {
+  input, input:focus, select, select:focus {
+    border-color: red;
+  }
+}
+
+.error-message {
+  font-size: 80%;
+  color: #d9534f;
+}
+
+.message-text {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+
+  a {
+    color: #464a4c;
+    padding-bottom: 1px;
+    text-decoration: none;
+  }
+  a:hover {
+    border-bottom: 0.5px solid currentColor;
+  }
+}

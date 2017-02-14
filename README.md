@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* You will need ruby 2.3
+* You will need PostgreSQL
 
-Things you may want to cover:
+## How to run the test suite
 
-* Ruby version
+We use rspec so to run tests use the command:
 
-* System dependencies
+`bin/rspec`
 
-* Configuration
+## GeoIP location
 
-* Database creation
+We are using geoip data from http://dev.maxmind.com/geoip/geoip2/geolite2/. The data file location is set in `.env.development`.
 
-* Database initialization
+## Thanks
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+We have borrowed shamelessly from https://github.com/alphagov/e-petitions. Thank you to @alphagov, @ubxd and all the gem authors. Your work is much appreciated.

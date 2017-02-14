@@ -1,28 +1,39 @@
 header {
-  .navbar-header {
-    display: flex;
+  a {
+    color: #464a4c;
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: none;
+    padding-bottom: 1px;
+
   }
-  a:link, a:visited {
-    color: white;
+  a:hover {
+    color: #464a4c;
+    text-decoration: none;
+    border-bottom: 0.5px solid currentColor;
   }
-  .fa {
-    font-size: 40px;
-    padding-right: 10px;
+  a:focus {
+    color: #464a4c;
+    text-decoration: none;
   }
   &.navbar {
     padding: 1.5rem 1rem;
   }
 }
 .header-text {
+  color: #464a4c;
   padding-top: 6px;
   font-size: 1rem;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-top: 2.0rem;
-  margin-bottom: 1.0rem;
+  margin-bottom: 2.0rem;
   color: #464a4c;
+  &.lead {
+    font-size: 2.2rem;
+  }
 }
 
 @media (min-width: 576px) {
@@ -55,6 +66,9 @@ h2 {
 }
 
 .footer-links {
+  .fa {
+    padding-right: 3px;
+  }
   li {
     display: inline-block;
     margin-right: 2.0rem;
