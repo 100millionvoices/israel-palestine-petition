@@ -6,9 +6,19 @@ class SignaturesController < ApplicationController
   def create
     @signature = Signature.new(signature_params.merge(ip_address: request.remote_ip))
     if @signature.save
+      UserMailer.confirm_signature(@signature).deliver_now # TODO deliver_later
       redirect_to thank_you_signatures_path
     else
       render :new
+    end
+  end
+
+  def confirm
+    signature = fetch_signature_for_confirmation
+    if signature
+      signature.confirm!
+    else
+      render(:confirm_error) && return
     end
   end
 
@@ -19,6 +29,11 @@ class SignaturesController < ApplicationController
     return unless ip_location
     { place: ip_location.city&.name, country_code: ip_location.country&.iso_code }
   rescue IPAddr::InvalidAddressError
+  end
+
+  def fetch_signature_for_confirmation
+    return if params[:token].blank?
+    Signature.find_by(signing_token: params[:token])
   end
 
   def signature_params

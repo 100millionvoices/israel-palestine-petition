@@ -5,20 +5,14 @@ FactoryGirl.define do
     country_code     'DE'
     state             Signature::PENDING_STATE
   end
-end
 
-# == Schema Information
-#
-# Table name: signatures
-#
-#  id            :integer          not null, primary key
-#  name          :string           not null
-#  email         :string           not null
-#  place         :string
-#  country_code  :string           not null
-#  state         :string           default("pending"), not null
-#  signing_token :string
-#  ip_address    :string
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
-#
+  factory :pending_signature, parent: :signature do
+  end
+
+  factory :confirmed_signature, parent: :signature do
+    state             Signature::CONFIRMED_STATE
+    after(:create) do |sig|
+      sig.update_attributes! signing_token: nil
+    end
+  end
+end

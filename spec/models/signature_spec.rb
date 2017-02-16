@@ -37,20 +37,25 @@ describe Signature do
       expect(signature.signing_token).to_not be_nil
     end
   end
-end
 
-# == Schema Information
-#
-# Table name: signatures
-#
-#  id            :integer          not null, primary key
-#  name          :string           not null
-#  email         :string           not null
-#  place         :string
-#  country_code  :string           not null
-#  state         :string           default("pending"), not null
-#  signing_token :string
-#  ip_address    :string
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
-#
+  context '#confirm!' do
+    it 'sets the state to confirmed' do
+      signature = create(:pending_signature)
+      signature.confirm!
+      expect(signature.state).to eq(Signature::CONFIRMED_STATE)
+      expect(signature.signing_token).to be_nil
+    end
+  end
+
+  context '#confirmed?' do
+    it 'true' do
+      signature = create(:confirmed_signature)
+      expect(signature).to be_confirmed
+    end
+
+    it 'false' do
+      signature = create(:pending_signature)
+      expect(signature).to_not be_confirmed
+    end
+  end
+end

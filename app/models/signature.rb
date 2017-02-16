@@ -14,6 +14,15 @@ class Signature < ApplicationRecord
   ## callbacks ##
   before_create :set_signing_token
 
+  def confirm!
+    return unless state == PENDING_STATE
+    update_attributes!(state: CONFIRMED_STATE, signing_token: nil)
+  end
+
+  def confirmed?
+    state == CONFIRMED_STATE
+  end
+
   private
 
   def set_signing_token
