@@ -4,6 +4,9 @@ class Signature < ApplicationRecord
   CONFIRMED_STATE = 'confirmed'.freeze
   COUNTRY_CODES = ISO3166::Country.all.map(&:alpha2)
 
+  ## scopes ##
+  scope :confirmed, -> { where(state: CONFIRMED_STATE) }
+
   ## validations ##
   validates :name, presence: true, length: { maximum: 100 }
   validates :email, presence: true, email: true, uniqueness: { case_sensitive: false }, on: :create

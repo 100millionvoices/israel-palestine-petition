@@ -38,6 +38,12 @@ describe Signature do
     end
   end
 
+  context 'scopes' do
+    it 'confirmed' do
+      expect(Signature.confirmed.where_values_hash).to eq('state' => 'confirmed')
+    end
+  end
+
   context '#confirm!' do
     it 'sets the state to confirmed' do
       signature = create(:pending_signature)
