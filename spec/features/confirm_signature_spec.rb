@@ -6,7 +6,7 @@ feature 'Confirm signature' do
   scenario 'User confirms signature' do
     visit confirm_signatures_path(token: pending_signature.signing_token)
 
-    expect(page).to have_text 'Thank you for successfully signing the petition'
+    expect(page).to have_text 'Thank you for confirming your signature'
     expect(pending_signature.reload.confirmed?).to be_truthy
   end
 

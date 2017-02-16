@@ -17,22 +17,23 @@
       </div>
     </header>
 
-    <div class="container-fluid">
+    <div class="container-fluid main">
       <%= yield %>
     </div>
 
     <footer class="footer text-muted">
-      <div class="container">
+      <div class="container-fluid">
         <ul class="footer-links">
-          <li><%= link_to(fa_icon('home').html_safe, home_path) %></li>
-          <li><%= link_to(fa_icon('question', text: 'FAQ').html_safe, '/faq') %></li>
-          <li><%= link_to(fa_icon('pencil', text: 'Sign petition').html_safe, new_signature_path) %></li>
-          <li><%= link_to(fa_icon('info', text: 'About us').html_safe, '/about-us') %></li>
-          <li><a href="mailto:help@100millionvoices.org"><i class="fa fa-envelope-o" aria-hidden="true"></i> Contact</a></li>
+          <li><%= link_to('Home', home_path) %></li>
+          <li><%= link_to('Sign petition', new_signature_path) %></li>
+          <li><%= link_to('FAQ', '/faq') %></li>
+          <li><%= link_to('About us', '/about-us') %></li>
+          <li><a href="mailto:help@100millionvoices.org" rel="external"><i class="fa fa-envelope-o" aria-hidden="true"></i> Contact</a></li>
           <li>
-            <a href="https://twitter.com/100MillVoices" rel="external" target="_blank">
+            <a href="https://twitter.com/100MillionVoice" rel="external" target="_blank">
             <i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a>
           </li>
+          <li class="logo"><%= link_to('100MillionVoices', home_path) %></li>
         </ul>
       </div>
     </footer>

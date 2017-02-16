@@ -1,3 +1,7 @@
+$twitter: #00aced;
+$facebook: #3b5998;
+$whatsapp: rgb(69,90,100);
+
 .facebook:link, .facebook:visited {
   color: $facebook;
 }
@@ -7,37 +11,45 @@
 .email:link, .email:visited {
   color: black;
 }
+.whatsapp:link, .whatsapp:visited {
+  color: $whatsapp;
+}
 
 .share-petition {
   max-width: 750px;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 50px;
+
+  .share-text {
+    font-weight: bold;
+    padding-bottom: 5px;
+  }
 
   .row {
     border-top: 1px solid #eceeef;
     border-bottom: 1px solid #eceeef;
+    margin-left: 0;
+    margin-right: 0;
 
-    .share-text, .facebook-share {
-      border-bottom: 1px solid #eceeef;
+    div:nth-child(even) {
+      border-left: 1px solid #eceeef;
     }
-    .share-text, .twitter-share {
-      border-right: 1px solid #eceeef;
+    .whatsapp-share, div:nth-child(3) {
+      border-top: 1px solid #eceeef;
     }
 
     @media (min-width: 768px) {
+      .whatsapp-share {
+        display: none;
+      }
       div:not(:first-child) {
         border-left: 1px solid #eceeef;
-      }
-      .share-text, .facebook-share {
-        border-bottom: none;
-      }
-      .share-text, .twitter-share {
-        border-right: none;
+        border-top: none;
       }
     }
   }
 
-  padding: 50px 0;
   a {
     padding: 10px;
     text-decoration: none;
@@ -52,6 +64,7 @@
 
   .fa {
     font-size: 20px;
-    padding-right: 5px;
+    margin-right: 5px;
+    padding: 2px;
   }
 }

@@ -1,8 +1,9 @@
-<h2 class="text-center lead">Your voice has now been heard!</h2>
+<h2 class="text-center lead">Your voice has been heard!</h2>
 
 <div class="fluid_container text-center message-text">
   <p>
-    Thank you for successfully signing the petition. Your signature now contributes towards the total signature count displayed on the home page although it may take a little while to show.
+    Thank you for confirming your signature and signing the petition. Your signature is now being added to the signatures count on the <%= link_to 'home page', home_path  %>.
   </p>
-  <%= link_to 'Return to the petition', home_path  %>
 </div>
+
+<%= render 'share_petition' %>

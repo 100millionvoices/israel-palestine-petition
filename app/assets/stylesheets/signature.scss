@@ -6,6 +6,22 @@
 
   small {
     font-style: italic;
+    margin-top: 0.2rem;
+    text-align: right;
+  }
+
+  select {
+    width: 100%;
+  }
+
+  .sign-it-button {
+    margin: 20px 0;
+  }
+}
+
+.form-group {
+  ::placeholder {
+    color: silver;
   }
 }
 

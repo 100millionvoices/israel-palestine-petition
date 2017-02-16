@@ -1,3 +1,9 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
 header {
   a {
     color: #464a4c;
@@ -23,7 +29,7 @@ header {
 .header-text {
   color: #464a4c;
   padding-top: 6px;
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 
 h2 {
@@ -36,25 +42,33 @@ h2 {
   }
 }
 
+.main {
+  flex: 1;
+}
+
+.footer-links li {
+  display: block;
+}
+
 @media (min-width: 576px) {
-  .container-fluid {
+  .main {
     padding-right: 25px;
     padding-left: 25px;
+  }
+  .footer-links li {
+    display: inline-block;
   }
 }
 
 @media (min-width: 768px) {
-  .header-text {
-    font-size: 1.25rem;
-  }
-  .container-fluid {
+  .main {
     padding-right: 50px;
     padding-left: 50px;
   }
 }
 
 @media (min-width: 922px) {
-  .container-fluid {
+  .main {
     padding-right: 100px;
     padding-left: 100px;
   }
@@ -70,7 +84,6 @@ h2 {
     padding-right: 3px;
   }
   li {
-    display: inline-block;
     margin-right: 2.0rem;
   }
   a {
@@ -80,5 +93,10 @@ h2 {
   }
   a:hover {
     border-bottom: 0.5px solid currentColor;
+  }
+  .logo {
+    font-style: italic;
+    font-weight: bold;
+    float: right;
   }
 }
