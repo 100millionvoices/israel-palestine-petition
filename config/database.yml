@@ -1,16 +1,18 @@
-default: &default
+development:
   adapter: postgresql
   encoding: utf8
-  pool: 5
-
-development:
-  <<: *default
   database: petition_development
 
 test:
-  <<: *default
+  adapter: postgresql
+  encoding: utf8
   database: petition_test
 
 production:
-  <<: *default
-  database: petition_production
+  adapter: postgresql
+  encoding: utf8
+  database: <%= ENV['RDS_DB_NAME'] %>
+  username: <%= ENV['RDS_USERNAME'] %>
+  password: <%= ENV['RDS_PASSWORD'] %>
+  host: <%= ENV['RDS_HOSTNAME'] %>
+  port: <%= ENV['RDS_PORT'] %>
