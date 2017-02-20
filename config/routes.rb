@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get '/' => 'home#index', as: :home
+  get '/faq' => 'home#faq', as: :faq
+  get '/about-us' => 'home#about_us', as: :about_us
 
   resources :signatures, only: [:new, :create] do
     get 'thank-you', on: :collection
