@@ -23,6 +23,7 @@ gem 'countries'
 gem 'maxminddb'
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'font-awesome-rails', '~> 4.7.0'
+gem 'sentry-raven'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
