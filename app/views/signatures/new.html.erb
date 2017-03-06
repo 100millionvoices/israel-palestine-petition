@@ -2,11 +2,13 @@
 
 <%= form_for(@signature, html: { class: 'signature-form' }) do |f| %>
   <div class="form-group">
+    <%= f.label :name %>
     <%= f.text_field :name, placeholder: 'Name', class: 'form-control', maxlength: '100', autofocus: true %>
      <%= error_messages_for_field @signature, :name %>
   </div>
 
   <div class="form-group">
+    <%= f.label :email %>
     <%= f.email_field :email, placeholder: 'Email', class: 'form-control', maxlength: 255 %>
     <% if request.get? %>
       <small class="form-text text-muted">We will never share your email</small>
@@ -15,12 +17,14 @@
   </div>
 
   <div class="form-group">
+    <%= f.label :place, 'Place or city' %>
     <%= f.text_field :place, placeholder: 'Place or city', class: 'form-control', maxlength: 50 %>
     <small class="form-text text-muted">A place or city of residence is optional</small>
     <%= error_messages_for_field @signature, :place %>
   </div>
 
   <div class="form-group">
+    <%= f.label :country_code, 'Country' %>
     <%= f.select :country_code, country_select_options, { include_blank: 'Country' }, class: 'custom-select' %>
     <%= error_messages_for_field @signature, :country_code %>
   </div>

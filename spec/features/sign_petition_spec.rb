@@ -5,14 +5,14 @@ feature 'Sign petition' do
 
   scenario 'User signs petition and receives an email' do
     visit '/signatures/new'
-    fill_in 'signature_name', with: 'Jo Bloggs'
+    fill_in 'Name', with: 'Jo Bloggs'
 
     click_button 'Sign it'
     expect(page).to have_text 'An email must be given'
 
-    fill_in 'signature_email', with: email
-    fill_in 'signature_place', with: 'Dartmouth'
-    select 'United Kingdom', from: 'signature_country_code'
+    fill_in 'Email', with: email
+    fill_in 'Place or city', with: 'Dartmouth'
+    select 'United Kingdom', from: 'Country'
     click_button 'Sign it'
 
     expect(page).to have_text 'We have sent you an email.'
