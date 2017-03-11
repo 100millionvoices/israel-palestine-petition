@@ -15,4 +15,10 @@ FactoryGirl.define do
       sig.update_attributes! signing_token: nil
     end
   end
+
+  factory :confirmed_signature_de, parent: :confirmed_signature
+
+  factory :confirmed_signature_gh, parent: :confirmed_signature do
+    country_code     'GH'
+  end
 end

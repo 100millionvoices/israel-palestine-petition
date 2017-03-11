@@ -1,4 +1,12 @@
 module SignaturesHelper
+  def signature_count_by_country(count_by_country_code)
+    count_by_country = {}
+    count_by_country_code.each do |k, v|
+      count_by_country[ISO3166::Country.translations[k]] = v
+    end
+    count_by_country.sort
+  end
+
   def error_messages_for_field(object, field_name, options = {})
     if errors = object && object.errors[field_name].presence
       content_tag :span, errors.first, { class: 'error-message' }.merge(options)

@@ -1,0 +1,10 @@
+<div class="container signatures-by-country row-striped">
+  <h2 class="lead text-center">Signatures by country</h2>
+
+  <% signature_count_by_country(@signatures).each do |country_and_count| %>
+    <div class="row">
+      <div class="col-8 col-md-8"><%= country_and_count[0] %></div>
+      <div class="col-4 col-md-4 text-right"><%= number_with_delimiter(country_and_count[1]) %></div>
+    </div>
+  <% end %>
+</div>

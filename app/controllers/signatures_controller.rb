@@ -1,4 +1,8 @@
 class SignaturesController < ApplicationController
+  def index
+    @signatures = Signature.count_by_country_code
+  end
+
   def new
     @signature = Signature.new(signature_params_from_ip_location)
   end
@@ -6,7 +10,7 @@ class SignaturesController < ApplicationController
   def create
     @signature = Signature.new(signature_params.merge(ip_address: request.remote_ip))
     if @signature.save
-      UserMailer.confirm_signature(@signature).deliver_now # TODO deliver_later
+      UserMailer.confirm_signature(@signature).deliver_now # TODO: deliver_later
       redirect_to thank_you_signatures_path
     else
       render :new

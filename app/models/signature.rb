@@ -6,6 +6,7 @@ class Signature < ApplicationRecord
 
   ## scopes ##
   scope :confirmed, -> { where(state: CONFIRMED_STATE) }
+  scope :count_by_country_code, -> { confirmed.group(:country_code).count }
 
   ## validations ##
   validates :name, presence: true, length: { maximum: 100 }
