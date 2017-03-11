@@ -10,7 +10,7 @@ class SignaturesController < ApplicationController
   def create
     @signature = Signature.new(signature_params.merge(ip_address: request.remote_ip))
     if @signature.save
-      UserMailer.confirm_signature(@signature).deliver_now # TODO: deliver_later
+      UserMailer.confirm_signature(@signature, I18n.locale).deliver_now # TODO: deliver_later
       redirect_to thank_you_signatures_path
     else
       render :new
@@ -31,7 +31,18 @@ class SignaturesController < ApplicationController
   def signature_params_from_ip_location
     ip_location = fetch_ip_location
     return unless ip_location
-    { place: ip_location.city&.name, country_code: ip_location.country&.iso_code }
+
+    { place: place_in_user_preferred_language(ip_location),
+      country_code: ip_location.country&.iso_code }
+  end
+
+  def place_in_user_preferred_language(ip_location)
+    place = nil
+    http_accept_language.user_preferred_languages.each do |language|
+      place = ip_location.city&.name(language.downcase.split('-', 2).first)
+      break if place
+    end
+    place || ip_location.city&.name(I18n.locale) || ip_location.city&.name
   end
 
   def fetch_signature_for_confirmation

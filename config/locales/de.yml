@@ -1,4 +1,4 @@
-en:
+de:
   heading_html: "%{home_link} asks for your support in protesting at the lack of progress in resolving the Israeli-Palestinian conflict"
   about_us:
     para_1: We are an independent, non-partisan group of translators and software developers.
@@ -24,7 +24,7 @@ en:
       answer_html: The code for this website is open source and available on <a href="https://github.com/100millionvoices/israel-palestine-petition" target="_blank">GitHub</a>. It can be reviewed by anybody and we welcome any <a href="mailto:feedback@100millionvoices.org" rel="external">suggestions or feedback</a>.
   home:
     petition:
-      para_1_html: "&ldquo; The Israeli-Palestinian conflict is responsible for horrendous misery and suffering on both sides."
+      para_1_html: „ The Israeli-Palestinian conflict is responsible for horrendous misery and suffering on both sides.
       para_2_html: We call on our governments to renew efforts to foster the conditions necessary for a resolution to the conflict.
       para_3_html: We call on the Palestinian leadership to recognise Israel's right to a peaceful existence and to commit to non-violence.
       para_4_html: "And we call on the Israeli government to commit to the creation of a Palestinian state and to end settlement building in the occupied territories. &rdquo;"

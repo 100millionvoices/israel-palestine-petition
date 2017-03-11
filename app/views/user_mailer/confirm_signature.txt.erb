@@ -1,8 +1,7 @@
-Hello <%= @signature.name %>
+<%= t('.greeting', name: @signature.name) %>
 
-Thank you for lending your voice to our campaign. With many voices supporting renewed effort to resolve the Israeli-Palestine conflict, we will make a difference.
+<%= t('.thank_you') %>
 
-To confirm your signature, please click <%= @url %>.
-
+<%= t('.confrim_signature', link: @url) %>
 
 100MillionVoices

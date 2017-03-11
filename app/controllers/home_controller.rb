@@ -1,5 +1,9 @@
 class HomeController < ApplicationController
-  before_action :fetch_current_country_code
+  before_action :fetch_current_country_code, only: :index
+
+  def locale_redirect
+    # the redirect is handled by set_locale
+  end
 
   def index
     @signature_count_for_country = Signature.count_for_country_code(@country_code)

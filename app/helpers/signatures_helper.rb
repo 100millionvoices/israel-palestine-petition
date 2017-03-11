@@ -8,7 +8,7 @@ module SignaturesHelper
   end
 
   def country_from_country_code(country_code)
-    ISO3166::Country.translations[country_code]
+    ISO3166::Country.translations(I18n.locale)[country_code]
   end
 
   def error_messages_for_field(object, field_name, options = {})
@@ -18,6 +18,6 @@ module SignaturesHelper
   end
 
   def country_select_options
-    options_for_select(ISO3166::Country.translations.to_a.map(&:reverse), @signature.country_code)
+    options_for_select(ISO3166::Country.translations(I18n.locale).to_a.map(&:reverse).sort, @signature.country_code)
   end
 end

@@ -1,5 +1,5 @@
 <div class="container share-petition">
-  <div class="share-text">Share petition on:</div>
+  <div class="share-text"><%= t('sharing.share_petition_on') %></div>
   <div class="row text-center">
     <div class="col-6 col-md-4">
       <%= link_to(facebook_sharing_url, rel: 'external', target: '_blank', class: 'facebook') do
@@ -12,7 +12,7 @@
       end %>
     </div>
     <div class="col-6 col-md-4">
-      <%= mail_to('', subject: '100MillionVoices campaign', body: email_share_body,  rel: 'external', class: 'email') do
+      <%= mail_to('', subject: t('sharing.email_subject'), body: email_share_body, rel: 'external', class: 'email') do
         fa_icon('envelope-o', text: 'Email').html_safe
       end %>
     </div>

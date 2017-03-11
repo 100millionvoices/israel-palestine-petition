@@ -1,20 +1,10 @@
 <div class="container faqs">
-  <h2 class="lead text-center">FAQ</h2>
+  <h2 class="lead text-center"><%= t('links.faq') %></h2>
 
-  <p class="question lead">The Israeli-Palestinian conflict has existed for generations. Why launch a petition now?</p>
-  <p class="answer">Moderate voices in the conflict are increasingly drowned out by extremist views and actions and both sides seem far from making compromises. We want this non-partisan petition to counter this. The number of <a href="http://www.internetlivestats.com/internet-users/" target="_blank">internet users world wide</a> is rapidly increasing, and this provides us with the opportunity for an online petition to build momentum for change.</p>
-
-  <p class="question lead">How many signatures do you need?</p>
-  <p class="answer">Enough to create a momentum for change and to provide an incentive for governments to renew their efforts in resolving the conflict. To achieve this will also require the signatures to be widely distributed across countries.</p>
-
-  <p class="question lead">Can I sign the petition more than once?</p>
-  <p class="answer">We ask that you sign the petition only once so the signature count represents unique individuals. We would love for you to share the petition with your friends and family though.</p>
-
-  <p class="question lead">Will you publish any of the signature data?</p>
-  <p class="answer">We will only publish country and place/city data. We will never share email addresses or names.</p>
-
-  <p class="question lead">How do we know the website accurately counts signatures?</p>
-  <p class="answer">The code for the website is open source and published on <a href="https://github.com/100millionvoices/israel-palestine-petition" target="_blank">GitHub</a>. It can be reviewed by anybody and we welcome <a href="mailto:feedback@100millionvoices.org" rel="external">feedback and suggestions</a>.</p>
+  <% I18n.t('faq').values.each do |question_answer| %>
+    <%= content_tag :p, question_answer[:question_html].html_safe, class: 'question lead' %>
+    <%= content_tag :p, question_answer[:answer_html].html_safe, class: 'answer' %>
+  <% end %>
 </div>
 
 <%= render 'share_petition' %>

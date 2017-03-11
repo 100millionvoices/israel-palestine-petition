@@ -1,23 +1,14 @@
 <div class="petition-text">
-  <p class="lead">
-    &ldquo; The Israeli-Palestinian conflict is responsible for horrendous misery and suffering on both sides.
-  </p>
-  <p class="lead">
-    We call on our governments to renew their efforts to foster the conditions necessary for a resolution to the conflict.
-  </p>
-  <p class="lead">
-    We call on the Palestinian leadership to recognise Israel's right to a peaceful existence and to commit to non-violence.
-  </p>
-  <p class="lead">
-    And we call on the Israeli government to commit to the creation of a Palestinian state and to end settlement building in the occupied territories. &rdquo;
-  </p>
+  <% I18n.t('home.petition').values.each do |para| %>
+    <%= content_tag :p, para.html_safe, class: 'lead' %>
+  <% end %>
 </div>
 
 <% if @signature_count_for_country %>
   <div class="text-center country-counter-container">
     <div class="counter">
       <div class="counter-number"><%= number_with_delimiter(@signature_count_for_country) %></div>
-      <small class="text-muted counter-text">signatures from <%= country_from_country_code(@country_code) %></small>
+      <small class="text-muted counter-text"><%= t('home.signatures_from', country: country_from_country_code(@country_code)) %></small>
     </div>
   </div>
 <% end -%>
@@ -25,12 +16,12 @@
 <div class="text-center counter-container">
   <div class="counter">
     <div class="counter-number"><%= number_with_delimiter(@signature_count) %></div>
-    <small class="text-muted counter-text"><%= link_to 'total signatures', signatures_path %></small>
+    <small class="text-muted counter-text"><%= link_to t('home.total_signatures'), signatures_path %></small>
   </div>
 </div>
 
 <div class="container sign-petition text-right">
-  <%= link_to(fa_icon('pencil', text: 'Sign petition').html_safe, new_signature_path, class: 'btn btn-secondary') %>
+  <%= link_to(fa_icon('pencil', text: t('home.sign_petition')).html_safe, new_signature_path, class: 'btn btn-secondary') %>
 </div>
 
 <%= render 'share_petition' %>

@@ -3,7 +3,7 @@ require 'rails_helper'
 describe UserMailer do
   it 'send a signature confirmation email' do
     signature = create(:signature)
-    email = UserMailer.confirm_signature(signature)
+    email = UserMailer.confirm_signature(signature, :en)
 
     email.deliver_now
     expect(email.from).to eq(['no-reply@100millionvoices.org'])

@@ -6,6 +6,7 @@ class Signature < ApplicationRecord
 
   ## scopes ##
   scope :confirmed, -> { where(state: CONFIRMED_STATE) }
+  scope :pending, -> { where(state: PENDING_STATE) }
 
   ## validations ##
   validates :name, presence: true, length: { maximum: 100 }

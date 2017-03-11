@@ -1,9 +1,9 @@
 <div class="container about-us">
-  <h2 class="lead text-center">About us</h2>
+  <h2 class="lead text-center"><%= t('links.about_us') %></h2>
 
-  <p>We are an independent, non-partisan group of translators and software developers. We are not part of or supported by any other organization.</p>
-
-  <p>We share a belief that by harnessing the voices of moderation from citizens around the world frustrated by the lack of progress in resolving the conflict, we can both inspire and pressure governments to do the right thing.</p>
-
-  <p>We hope that having read the <%= link_to('petition text', home_path) %> and the <%= link_to('FAQ', faq_path) %>, you will want to <%= link_to('sign the petition', new_signature_path) %> and make your voice heard. Thank you.</p>
+  <p><%= t('about_us.para_1') %></p>
+  <p><%= t('about_us.para_2') %></p>
+  <p><%= t('about_us.para_3_html', petition_link: link_to(t('about_us.petition'), home_path),
+           faq_link: link_to(t('links.faq'), faq_path),
+           sign_petition_link: link_to(t('about_us.sign_the_petition'), new_signature_path)) %></p>
 </div>

@@ -1,9 +1,9 @@
 FactoryGirl.define do
   factory :signature do
-    sequence(:name)  {|n| "Jo Public #{n}" }
-    sequence(:email) {|n| "jo#{n}@public.com" }
-    country_code     'DE'
-    state             Signature::PENDING_STATE
+    sequence(:name)  { |n| "Jo Public #{n}" }
+    sequence(:email) { |n| "jo#{n}@public.com" }
+    country_code 'DE'
+    state Signature::PENDING_STATE
   end
 
   factory :pending_signature, parent: :signature do
@@ -19,6 +19,6 @@ FactoryGirl.define do
   factory :confirmed_signature_de, parent: :confirmed_signature
 
   factory :confirmed_signature_gh, parent: :confirmed_signature do
-    country_code     'GH'
+    country_code 'GH'
   end
 end

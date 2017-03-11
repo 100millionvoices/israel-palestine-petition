@@ -71,7 +71,7 @@ describe Signature do
       create :confirmed_signature_de
       create_list :confirmed_signature_gh, 2
 
-      expect(Signature.count_by_country_code).to eq({ 'DE' => 1, 'GH' => 2})
+      expect(Signature.count_by_country_code).to eq('DE' => 1, 'GH' => 2)
     end
   end
 
