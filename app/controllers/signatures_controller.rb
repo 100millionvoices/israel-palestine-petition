@@ -29,10 +29,9 @@ class SignaturesController < ApplicationController
   protected
 
   def signature_params_from_ip_location
-    ip_location = GeoIpLookup.fetch_location_from_ip(request.remote_ip)
+    ip_location = fetch_ip_location
     return unless ip_location
     { place: ip_location.city&.name, country_code: ip_location.country&.iso_code }
-  rescue IPAddr::InvalidAddressError
   end
 
   def fetch_signature_for_confirmation

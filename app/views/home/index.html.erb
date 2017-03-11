@@ -13,10 +13,19 @@
   </p>
 </div>
 
+<% if @signature_count_for_country %>
+  <div class="text-center country-counter-container">
+    <div class="counter">
+      <div class="counter-number"><%= number_with_delimiter(@signature_count_for_country) %></div>
+      <small class="text-muted counter-text">signatures from <%= country_from_country_code(@country_code) %></small>
+    </div>
+  </div>
+<% end -%>
+
 <div class="text-center counter-container">
   <div class="counter">
     <div class="counter-number"><%= number_with_delimiter(@signature_count) %></div>
-    <small class="text-muted counter-text">signatures</small>
+    <small class="text-muted counter-text"><%= link_to 'total signatures', signatures_path %></small>
   </div>
 </div>
 

@@ -42,16 +42,6 @@ describe Signature do
     it 'confirmed' do
       expect(Signature.confirmed.where_values_hash).to eq('state' => 'confirmed')
     end
-
-    describe 'count_by_country_code' do
-      it 'returns a count hash keyed by country code' do
-        create :pending_signature
-        create :confirmed_signature_de
-        create_list :confirmed_signature_gh, 2
-
-        expect(Signature.count_by_country_code).to eq({ 'DE' => 1, 'GH' => 2})
-      end
-    end
   end
 
   describe '#confirm!' do
@@ -72,6 +62,30 @@ describe Signature do
     it 'false' do
       signature = create(:pending_signature)
       expect(signature).to_not be_confirmed
+    end
+  end
+
+  describe '.count_by_country_code' do
+    it 'returns a count hash keyed by country code' do
+      create :pending_signature
+      create :confirmed_signature_de
+      create_list :confirmed_signature_gh, 2
+
+      expect(Signature.count_by_country_code).to eq({ 'DE' => 1, 'GH' => 2})
+    end
+  end
+
+  describe '.count_for_country_code' do
+    it 'returns a signature count for a specific country code' do
+      create :pending_signature
+      create :confirmed_signature_de
+      create_list :confirmed_signature_gh, 2
+
+      expect(Signature.count_for_country_code('GH')).to eq(2)
+    end
+
+    it 'returns nil for an empty country code' do
+      expect(Signature.count_for_country_code('')).to be_nil
     end
   end
 end

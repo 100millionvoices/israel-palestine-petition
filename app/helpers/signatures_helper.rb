@@ -2,9 +2,13 @@ module SignaturesHelper
   def signature_count_by_country(count_by_country_code)
     count_by_country = {}
     count_by_country_code.each do |k, v|
-      count_by_country[ISO3166::Country.translations[k]] = v
+      count_by_country[country_from_country_code(k)] = v
     end
     count_by_country.sort
+  end
+
+  def country_from_country_code(country_code)
+    ISO3166::Country.translations[country_code]
   end
 
   def error_messages_for_field(object, field_name, options = {})
