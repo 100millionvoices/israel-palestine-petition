@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170213185542) do
+ActiveRecord::Schema.define(version: 20170312174656) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20170213185542) do
     t.datetime "updated_at",                        null: false
     t.index ["email"], name: "index_signatures_on_email", unique: true, using: :btree
     t.index ["signing_token"], name: "index_signatures_on_signing_token", unique: true, using: :btree
-    t.index ["state"], name: "index_signatures_on_state", using: :btree
+    t.index ["state", "country_code", "place"], name: "index_signatures_on_state_and_country_code_and_place", using: :btree
   end
 
 end

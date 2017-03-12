@@ -9,6 +9,10 @@ FactoryGirl.define do
   factory :pending_signature, parent: :signature do
   end
 
+  factory :pending_signature_gh, parent: :signature do
+    country_code 'GH'
+  end
+
   factory :confirmed_signature, parent: :signature do
     state             Signature::CONFIRMED_STATE
     after(:create) do |sig|

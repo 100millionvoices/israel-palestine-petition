@@ -88,4 +88,16 @@ describe Signature do
       expect(Signature.count_for_country_code('')).to be_nil
     end
   end
+
+  describe '.count_by_place_for_country' do
+    it 'returns a place and count array sorted by count' do
+      create :pending_signature_gh
+      create :confirmed_signature_de
+      create :confirmed_signature_gh
+      create_list :confirmed_signature_gh, 3, place: 'Accra'
+      create_list :confirmed_signature_gh, 2, place: 'Koforidua'
+
+      expect(Signature.count_by_place_for_country('GH')).to eq([[nil, 1], ['Koforidua', 2], ['Accra', 3]])
+    end
+  end
 end

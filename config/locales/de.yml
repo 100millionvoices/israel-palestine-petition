@@ -58,6 +58,8 @@ de:
     not_found: Your signature has not been found
     return_to_the_petition: Return to the petition
     signatures_by_country: Signatures by country
+    signatures_by_place_limit: Only the top 25 places are listed
+    signatures_from: Signatures from %{country}
     thank_you: We have sent you an email. Please read it and click the link to confirm your signature. Thank you.
   sharing:
     email_subject: 100MillionVoices campaign

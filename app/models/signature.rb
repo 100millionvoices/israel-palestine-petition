@@ -2,6 +2,7 @@ class Signature < ApplicationRecord
   PENDING_STATE = 'pending'.freeze
   INVALID_STATE = 'invalid'.freeze
   CONFIRMED_STATE = 'confirmed'.freeze
+  MAX_PLACES_FOR_COUNTRY = 25.freeze
   COUNTRY_CODES = ISO3166::Country.all.map(&:alpha2)
 
   ## scopes ##
@@ -33,6 +34,12 @@ class Signature < ApplicationRecord
 
   def self.count_for_country_code(country_code)
     confirmed.where(country_code: country_code).count if country_code.present?
+  end
+
+  def self.count_by_place_for_country(country_code)
+    top_places = confirmed.where(country_code: country_code).group(:place).order('count(*) DESC')
+    top_places = top_places.limit(MAX_PLACES_FOR_COUNTRY).count
+    top_places.sort { |a, b| a[1] <=> b[1] }
   end
 
   private

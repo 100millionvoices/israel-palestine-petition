@@ -7,14 +7,14 @@ describe SignaturesHelper do
     context 'en locale' do
       it 'converts a count hash keyed by country code to an array with country name' do
         I18n.locale = :en
-        expect(helper.signature_count_by_country(country_code_hash)).to eq([['Germany', 1], ['Ghana', 2]])
+        expect(helper.signature_count_by_country(country_code_hash)).to eq([['Germany', [1, 'de']], ['Ghana', [2, 'gh']]])
       end
     end
 
     context 'de locale' do
       it 'converts a count hash keyed by country code to an array with country name' do
         I18n.locale = :de
-        expect(helper.signature_count_by_country(country_code_hash)).to eq([['Deutschland', 1], ['Ghana', 2]])
+        expect(helper.signature_count_by_country(country_code_hash)).to eq([['Deutschland', [1, 'de']], ['Ghana', [2, 'gh']]])
       end
     end
   end

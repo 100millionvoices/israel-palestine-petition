@@ -1,0 +1,16 @@
+<div class="container signatures-list row-striped">
+  <h2 class="lead text-center">
+    <%= t('signatures.signatures_from', country: country_from_country_code(@country_code)) %>
+  </h2>
+
+  <% @signatures_by_place.each do |place_and_count| %>
+    <div class="row lead">
+      <div class="col-8 col-md-8"><%= place_and_count[0] %></div>
+      <div class="col-4 col-md-4 text-right"><%= number_with_delimiter(place_and_count[1]) %></div>
+    </div>
+  <% end %>
+
+  <% if @signatures_by_place.size == Signature::MAX_PLACES_FOR_COUNTRY %>
+    <small class="form-text text-muted text-right"><%= t('signatures.signatures_by_place_limit') %></small>
+  <% end %>
+</div>

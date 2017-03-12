@@ -2,7 +2,7 @@ module SignaturesHelper
   def signature_count_by_country(count_by_country_code)
     count_by_country = {}
     count_by_country_code.each do |k, v|
-      count_by_country[country_from_country_code(k)] = v
+      count_by_country[country_from_country_code(k)] = [v, k.downcase]
     end
     count_by_country.sort
   end

@@ -18,7 +18,7 @@ module SharingHelper
   private
 
   def sharing_text
-     "#{I18n.t('sharing.share_text')}\n\n#{home_url}"
+    "#{I18n.t('sharing.share_text')}\n\n#{home_url}"
   end
 
   def share_params(hash)

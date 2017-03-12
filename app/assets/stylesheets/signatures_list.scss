@@ -1,8 +1,12 @@
-.signatures-by-country {
+.signatures-list {
   max-width: 450px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 50px;
+
+  small {
+    font-style: italic;
+  }
 }
 
 .row-striped .row:nth-of-type(odd) {

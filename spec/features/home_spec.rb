@@ -9,8 +9,15 @@ feature 'Signature counts' do
     visit '/'
 
     expect(page).to have_link('Sign petition', href: new_signature_path(locale: :en))
-    expect(page).to_not have_css('.country-counter-container')
+    expect(page).to_not have_text 'signatures from Ghana'
     expect(page).to have_text '3 signatures in total'
+  end
+
+  scenario 'User country is unknown but preferred language is German' do
+    allow_any_instance_of(HttpAcceptLanguage::Parser).to receive(:user_preferred_languages).and_return(['de-DE'])
+    visit '/'
+
+    expect(page).to have_link('Sign petition', href: new_signature_path(locale: :de))
   end
 
   scenario 'User country is Ghana' do
@@ -18,6 +25,8 @@ feature 'Signature counts' do
     visit '/'
 
     expect(page).to have_text '2 signatures from Ghana'
+    expect(page).to have_link('signatures from Ghana', href: country_signatures_path(country_code: 'gh', locale: :en))
     expect(page).to have_text '3 signatures in total'
+    expect(page).to have_link('signatures in total', href: signatures_path(locale: :en))
   end
 end

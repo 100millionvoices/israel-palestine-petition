@@ -8,7 +8,9 @@
   <div class="text-center country-counter-container">
     <div class="counter">
       <div class="counter-number"><%= number_with_delimiter(@signature_count_for_country) %></div>
-      <small class="text-muted counter-text"><%= t('home.signatures_from', country: country_from_country_code(@country_code)) %></small>
+      <small class="text-muted counter-text">
+        <%= link_to(t('home.signatures_from', country: country_from_country_code(@country_code)), country_signatures_path(@country_code.downcase)) %>
+      </small>
     </div>
   </div>
 <% end -%>
