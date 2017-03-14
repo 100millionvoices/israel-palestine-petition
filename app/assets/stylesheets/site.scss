@@ -30,6 +30,56 @@ header {
   color: #464a4c;
   padding-top: 6px;
   font-size: 1.25rem;
+  display: inline-block;
+}
+
+/* See https://www.w3schools.com/howto/howto_css_dropdown.asp */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  float: right;
+  min-width: 120px;
+}
+
+.dropbtn {
+  background-color: #f0ad4e;
+  color: white;
+  padding: 6px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border: 1px solid white;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #464a4c;
+  padding: 3px 16px;
+  text-decoration: none;
+  display: block;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  border-bottom: none;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  border: 1px dotted #dcdcdc;
 }
 
 h2 {
