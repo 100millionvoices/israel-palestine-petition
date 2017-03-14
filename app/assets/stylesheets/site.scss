@@ -60,13 +60,20 @@ header {
   z-index: 1;
 }
 
-.dropdown-content a {
-  color: #464a4c;
-  padding: 3px 16px;
-  text-decoration: none;
-  display: block;
-  font-style: normal;
-  font-weight: normal;
+.dropdown-content {
+  a, .selected-language {
+    color: #464a4c;
+    padding: 3px 10px 3px 10px;
+    text-decoration: none;
+    display: block;
+    font-style: normal;
+    font-weight: normal;
+  }
+  .fa {
+    float: right;
+    display: inline-block;
+    margin-top: 5px;
+  }
 }
 
 .dropdown-content a:hover {

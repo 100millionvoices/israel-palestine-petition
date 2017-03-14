@@ -24,7 +24,12 @@
           <button class="dropbtn"><%= current_language %></button>
           <div class="dropdown-content text-left">
             <% locales.each do |locale, language| %>
-              <%= link_to(language, url_for_locale(locale)) %>
+              <% if locale != params[:locale] %>
+                <%= link_to(language, url_for_locale(locale)) %>
+              <% else %>
+                <div class="selected-language"><%= language %><i class="fa fa-check" aria-hidden="true"></i>
+                </div>
+              <% end %>
             <% end -%>
           </div>
         </div>
