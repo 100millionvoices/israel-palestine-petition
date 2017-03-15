@@ -9,7 +9,7 @@ en:
   faq:
     number_01:
       question_html: The Israeli-Palestinian conflict has existed for generations. Why launch a petition now?
-      answer_html: Moderate voices in the conflict are increasingly drowned out by extremist views and actions and both sides seem far from making compromises. We want this non-partisan petition to counter this. The number of <a href="http://www.internetlivestats.com/internet-users/" target="_blank">internet users world wide</a> is rapidly increasing, and this provides us with the opportunity for an online petition to build momentum for change.
+      answer_html: Moderate voices in the conflict are increasingly drowned out by extremist views and actions, and both sides seem far from making compromises. We want this non-partisan petition to counter this. The number of <a href="http://www.internetlivestats.com/internet-users/" target="_blank">internet users world wide</a> is rapidly increasing, and this provides us with the opportunity for an online petition to build momentum for change.
     number_02:
       question_html: Can I sign the petition more than once?
       answer_html: We ask that you sign the petition only once so the signature count represents unique individuals. We would love for you to share the petition with your friends and family though.
@@ -27,7 +27,7 @@ en:
       para_1_html: "&ldquo; The Israeli-Palestinian conflict is responsible for horrendous misery and suffering on both sides."
       para_2_html: We call on our governments to renew efforts to foster the conditions necessary for a resolution to the conflict.
       para_3_html: We call on the Palestinian leadership to recognise Israel's right to a peaceful existence and to commit to non-violence.
-      para_4_html: "And we call on the Israeli government to commit to the creation of a Palestinian state and to end settlement building in the occupied territories. &rdquo;"
+      para_4_html: "And we call on the Israeli government to commit to the creation of a Palestinian state and to end settlement building in the occupied territories.&nbsp;&rdquo;"
     sign_petition: Sign petition
     signatures_from: signatures from %{country}
     total_signatures: signatures in total
@@ -61,6 +61,7 @@ en:
     signatures_by_place_limit: Only the top 25 places are listed
     signatures_from: Signatures from %{country}
     thank_you: We have sent you an email. Please read it and click the link to confirm your signature. Thank you.
+    unspecified: Unspecified
   sharing:
     email_subject: 100MillionVoices campaign
     share_petition_on: "Share petition on:"

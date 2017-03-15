@@ -7,6 +7,9 @@
       <% I18n.available_locales.each do |locale| %>
         <link rel="alternate" href="<%= url_for_locale(locale) %>" hreflang="<%= locale %>" />
       <% end -%>
+      <% if request.path == home_path(params[:locale]) %>
+        <link rel="alternate" href="<%= root_url(locale: nil) %>" hreflang="x-default" />
+      <% end -%>
     <% end -%>
 
     <title>100MillionVoices</title>
@@ -53,7 +56,6 @@
             <a href="https://twitter.com/100MillionVoice" rel="external" target="_blank">
             <i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a>
           </li>
-          <li class="logo"><%= link_to('100MillionVoices', home_path) %></li>
         </ul>
       </div>
     </footer>

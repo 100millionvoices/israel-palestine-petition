@@ -2,27 +2,35 @@
   <% I18n.t('home.petition').values.each do |para| %>
     <%= content_tag :p, para.html_safe, class: 'lead' %>
   <% end %>
+
+  <p class="text-right"><em><%= link_to('100MillionVoices', about_us_path) %></em></p>
 </div>
 
-<% if @signature_count_for_country %>
-  <div class="text-center country-counter-container">
-    <div class="counter">
-      <div class="counter-number"><%= number_with_delimiter(@signature_count_for_country) %></div>
-      <small class="text-muted counter-text">
-        <%= link_to(t('home.signatures_from', country: country_from_country_code(@country_code)), country_signatures_path(@country_code.downcase)) %>
-      </small>
+<div class="row signature-counts">
+  <% if @signature_count_for_country %>
+    <div class="text-center counter-block col-md-6">
+      <%= link_to(country_signatures_path(@country_code.downcase)) do %>
+        <div class="counter">
+          <div class="counter-number"><%= number_with_delimiter(@signature_count_for_country) %></div>
+          <small class="text-muted counter-text">
+            <%= t('home.signatures_from', country: country_from_country_code(@country_code)) %>
+          </small>
+        </div>
+      <% end -%>
     </div>
-  </div>
-<% end -%>
+  <% end -%>
 
-<div class="text-center counter-container">
-  <div class="counter">
-    <div class="counter-number"><%= number_with_delimiter(@signature_count) %></div>
-    <small class="text-muted counter-text"><%= link_to t('home.total_signatures'), signatures_path %></small>
+  <div class="text-center counter-block col-md-<%= @signature_count_for_country ? '6' : '12' %>">
+    <%= link_to(signatures_path) do %>
+      <div class="counter">
+        <div class="counter-number"><%= number_with_delimiter(@signature_count) %></div>
+        <small class="text-muted counter-text"><%= t('home.total_signatures') %></small>
+      </div>
+    <% end -%>
   </div>
 </div>
 
-<div class="container sign-petition text-right">
+<div class="sign-petition text-right">
   <%= link_to(fa_icon('pencil', text: t('home.sign_petition')).html_safe, new_signature_path, class: 'btn btn-secondary') %>
 </div>
 

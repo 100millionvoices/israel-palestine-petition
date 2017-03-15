@@ -1,16 +1,20 @@
-<div class="container signatures-list row-striped">
+<div class="signatures-list">
   <h2 class="lead text-center">
     <%= t('signatures.signatures_from', country: country_from_country_code(@country_code)) %>
   </h2>
 
   <% @signatures_by_place.each do |place_and_count| %>
-    <div class="row lead">
-      <div class="col-8 col-md-8"><%= place_and_count[0] %></div>
-      <div class="col-4 col-md-4 text-right"><%= number_with_delimiter(place_and_count[1]) %></div>
+    <div class="lead signatures-list-count">
+      <%= place_and_count[0].present? ? place_and_count[0] : "<em>#{t('signatures.unspecified')}</em>".html_safe %>
+      <span class="signature-count"><%= number_with_delimiter(place_and_count[1]) %></span>
     </div>
   <% end %>
 
   <% if @signatures_by_place.size == Signature::MAX_PLACES_FOR_COUNTRY %>
     <small class="form-text text-muted text-right"><%= t('signatures.signatures_by_place_limit') %></small>
   <% end %>
+
+  <p class="text-right bottom-links">
+    <%= link_to(t('links.home').downcase, home_path) %> |
+    <%= link_to(t('links.signatures').downcase, signatures_path) %></p>
 </div>

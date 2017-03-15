@@ -5,6 +5,8 @@
     <%= content_tag :p, question_answer[:question_html].html_safe, class: 'question lead' %>
     <%= content_tag :p, question_answer[:answer_html].html_safe, class: 'answer' %>
   <% end %>
+
+  <p class="text-right bottom-links"><%= link_to(t('links.home').downcase, home_path) %></p>
 </div>
 
 <%= render 'share_petition' %>

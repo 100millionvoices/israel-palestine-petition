@@ -1,12 +1,12 @@
-<div class="container signatures-list row-striped">
+<div class="signatures-list">
   <h2 class="lead text-center"><%= t('signatures.signatures_by_country') %></h2>
 
   <% signature_count_by_country(@signatures).each do |country_and_count| %>
-    <div class="row lead">
-      <div class="col-8 col-md-8">
-        <%= link_to(country_and_count[0], country_signatures_path(country_and_count[1][1])) %>
-      </div>
-      <div class="col-4 col-md-4 text-right"><%= number_with_delimiter(country_and_count[1][0]) %></div>
+    <div class="lead signatures-list-count">
+      <%= link_to(country_and_count[0], country_signatures_path(country_and_count[1][1])) %>
+      <span class="signature-count"><%= number_with_delimiter(country_and_count[1][0]) %></span>
     </div>
   <% end %>
+
+  <p class="text-right bottom-links"><%= link_to(t('links.home').downcase, home_path) %></p>
 </div>
