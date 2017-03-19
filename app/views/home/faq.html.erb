@@ -1,5 +1,5 @@
 <div class="container faqs">
-  <h2 class="lead text-center"><%= t('links.faq') %></h2>
+  <h1 class="lead text-center"><%= t('links.faq') %></h1>
 
   <% I18n.t('faq').values.each do |question_answer| %>
     <%= content_tag :p, question_answer[:question_html].html_safe, class: 'question lead' %>
