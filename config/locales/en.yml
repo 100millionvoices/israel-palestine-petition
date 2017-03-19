@@ -79,8 +79,7 @@ en:
     attributes:
       email:
         blank: An email must be given
-        invalid: This email '%{value}' was not recognised
-        plus_address: You can’t use ‘plus addressing’ in your email address
+        invalid: This email is invalid
         taken: This email has already been taken
       name:
         blank: A name must be given
