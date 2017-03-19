@@ -81,9 +81,9 @@ header {
   display: none;
   font-size: 14px;
   position: absolute;
-  left: calc(100% - 140px);
+  left: calc(100% - 280px);
   background-color: #fffafa;
-  min-width: 140px;
+  min-width: 280px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   border-radius: 0.25rem 0 0.25rem 0.25rem;
   z-index: 1;
@@ -91,23 +91,37 @@ header {
 
 .dropdown-content {
   text-align: left;
+  .language {
+    display: inline-block;
+    width: 140px;
+    // https://css-tricks.com/fighting-the-space-between-inline-block-elements/
+    margin-right: -2px;
 
-  a, .selected-language {
     color: #464a4c;
-    padding: 3px 10px 3px 10px;
+    padding: 3px 10px;
     text-decoration: none;
-    display: block;
+    font-style: normal;
+    font-weight: normal;
+  }
+  a {
+    padding: 5px 0;
+    text-decoration: none;
     font-style: normal;
     font-weight: normal;
   }
   .selected-language {
     background-color: #f1f1f1;
+    border-radius: 0.25rem;
+  }
+  .unavailable-language {
+    color: silver;
   }
 }
 
 .dropdown-content a:hover {
   background-color: #f1f1f1;
   border-bottom: none;
+  border-radius: 0.25rem;
 }
 
 .dropdown:hover .dropdown-content {

@@ -39,10 +39,14 @@
           <button class="dropbtn"><%= current_language %></button>
           <div class="dropdown-content">
             <% locales.each do |locale, language| %>
-              <% if locale != params[:locale] %>
-                <%= link_to(language, url_for_locale(locale)) %>
+              <% if I18n.available_locales.exclude?(locale.to_sym) %>
+                <div class="language unavailable-language"><%= language %></div>
+              <% elsif locale != params[:locale] %>
+                <%= link_to(url_for_locale(locale)) do %>
+                  <div class="language"><%= language %></div>
+                <% end %>
               <% else %>
-                <div class="selected-language"><em><%= language %></em></div>
+                <div class="language selected-language"><em><%= language %></em></div>
               <% end %>
             <% end -%>
           </div>
