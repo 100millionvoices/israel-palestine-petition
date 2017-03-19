@@ -3,6 +3,27 @@
     <%= t('signatures.signatures_from', country: country_from_country_code(@country_code)) %>
   </h1>
 
+  <p class="lead">
+    <%= t('signatures.signature_count_html', count: number_with_delimiter(@country.signature_count)) if @country%>
+  </p>
+
+  <% if @country&.target_signature_count %>
+    <p class="lead">
+      <%= t('signatures.target_signature_count_html', target: number_with_delimiter(@country.target_signature_count)) %>
+    </p>
+
+    <p>
+      <% if @country.target_reached? %>
+        <% # worry about this if and when %>
+      <% else -%>
+        <%= t('signatures.what_happens_if_target_is_met') %>
+      <% end -%>
+      <% if @signatures_by_place.any? %>
+        <%= t('signatures.signatures_by_place_limit') %>
+      <% end %>
+    </p>
+  <% end -%>
+
   <% @signatures_by_place.each do |place_and_count| %>
     <div class="lead signatures-list-count">
       <%= place_and_count[0].present? ? place_and_count[0] : "<em>#{t('signatures.unspecified')}</em>".html_safe %>
@@ -10,11 +31,9 @@
     </div>
   <% end %>
 
-  <% if @signatures_by_place.size == Signature::MAX_PLACES_FOR_COUNTRY %>
-    <small class="form-text text-muted text-right"><%= t('signatures.signatures_by_place_limit') %></small>
-  <% end %>
-
   <p class="text-right bottom-links">
     <%= link_to(t('links.home').downcase, home_path) %> |
-    <%= link_to(t('links.signatures').downcase, signatures_path) %></p>
+    <%= link_to(t('links.signatures').downcase, signatures_path) %>&nbsp;
+    <%= link_to(fa_icon('pencil', text: t('home.sign_petition')).html_safe, new_signature_path, class: 'btn btn-secondary') %>
+  </p>
 </div>
