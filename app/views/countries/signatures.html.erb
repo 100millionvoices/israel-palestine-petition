@@ -31,9 +31,11 @@
     </div>
   <% end %>
 
-  <p class="text-right bottom-links">
-    <%= link_to(t('links.home').downcase, home_path) %> |
-    <%= link_to(t('links.signatures').downcase, signatures_path) %>&nbsp;
-    <%= link_to(fa_icon('pencil', text: t('home.sign_petition')).html_safe, new_signature_path, class: 'btn btn-secondary') %>
+  <p class="text-left bottom-links">
+    / <%= link_to(t('links.home').downcase, home_path) %> /
+    <%= link_to(t('links.signatures').downcase, signatures_path) %>
+    <span class="sign-petition-btn">
+      <%= link_to(fa_icon('pencil', text: t('home.sign_petition')).html_safe, new_signature_path, class: 'btn btn-secondary') %>
+    </span>
   </p>
 </div>
