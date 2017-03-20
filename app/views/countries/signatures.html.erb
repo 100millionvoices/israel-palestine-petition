@@ -16,7 +16,7 @@
       <% if @country.target_reached? %>
         <% # worry about this if and when %>
       <% else -%>
-        <%= t('signatures.what_happens_if_target_is_met') %>
+        <%= what_happens_if_target_is_met(@country_code) %>
       <% end -%>
       <% if @signatures_by_place.any? %>
         <%= t('signatures.signatures_by_place_limit') %>

@@ -59,12 +59,12 @@ de:
     return_to_the_petition: Return to the petition
     signature_count_html: The current signature count is <strong>%{count}</strong>.
     signatures_by_country: Signatures by country
-    signatures_by_place_limit: "The top 25 places in the country where signatures originated are:"
+    signatures_by_place_limit: "The top 25 places where signatures originated are:"
     signatures_from: Signatures from %{country}
     target_signature_count_html: The target is <strong>%{target}</strong> which is 1% of the <a href="https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations)" target="_blank">population</a>.
     thank_you: We have sent you an email. Please read it and click the link to confirm your signature. Thank you.
     unspecified: Unspecified
-    what_happens_if_target_is_met: If this ambitious target is reached then 100MillionVoices will present the petition total to the country's foreign ministry on your behalf.
+    what_happens_if_target_is_met: If this ambitious target is reached then 100MillionVoices will present the petition total to the country's Ministry of Foreign Affairs on your behalf.
   sharing:
     email_subject: 100MillionVoices campaign
     share_petition_on: "Share petition on:"
