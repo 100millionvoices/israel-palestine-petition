@@ -20,7 +20,6 @@
   <div class="form-group">
     <%= f.label :place, t('signature.attributes.place') %>
     <%= f.text_field :place, placeholder: t('signature.attributes.place'), class: 'form-control', maxlength: 50 %>
-    <small class="form-text text-muted"><%= t('signature.form.place_hint') %></small>
     <%= error_messages_for_field @signature, :place %>
   </div>
 

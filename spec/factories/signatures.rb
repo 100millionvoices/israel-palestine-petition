@@ -2,6 +2,7 @@ FactoryGirl.define do
   factory :signature do
     sequence(:name)  { |n| "Jo Public #{n}" }
     sequence(:email) { |n| "jo#{n}@public.com" }
+    place 'Köln'
     country_code 'DE'
     state Signature::PENDING_STATE
   end
@@ -10,6 +11,7 @@ FactoryGirl.define do
   end
 
   factory :pending_signature_gh, parent: :signature do
+    place 'Accra'
     country_code 'GH'
   end
 

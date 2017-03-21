@@ -46,7 +46,6 @@ de:
       place: Place or city
     form:
       email_hint: We will never share your email
-      place_hint: A place or city of residence is optional
       submit_hint: To confirm your signature we will send an email and ask you to click the link in it
   signatures:
     almost_there: Almost there...
@@ -63,7 +62,6 @@ de:
     signatures_from: Signatures from %{country}
     target_signature_count_html: The target is <strong>%{target}</strong> which is 1% of the <a href="https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations)" target="_blank">population</a>.
     thank_you: We have sent you an email. Please read it and click the link to confirm your signature. Thank you.
-    unspecified: Unspecified
     what_happens_if_target_is_met: If this ambitious target is reached then 100MillionVoices will present the petition total to the country's Ministry of Foreign Affairs on your behalf.
   sharing:
     email_subject: 100MillionVoices campaign
@@ -80,11 +78,14 @@ de:
 
   errors:
     attributes:
+      country_code:
+        blank: A country must be selected
       email:
         blank: An email must be given
         invalid: This email is invalid
         taken: This email has already been taken
       name:
         blank: A name must be given
-      country_code:
-        blank: A country must be selected
+      place:
+        blank: A place or city must be given
+

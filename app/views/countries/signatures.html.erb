@@ -26,7 +26,7 @@
 
   <% @signatures_by_place.each do |place_and_count| %>
     <div class="lead signatures-list-count">
-      <%= place_and_count[0].present? ? place_and_count[0] : "<em>#{t('signatures.unspecified')}</em>".html_safe %>
+      <%= place_and_count[0] %>
       <span class="signature-count"><%= number_with_delimiter(place_and_count[1]) %></span>
     </div>
   <% end %>

@@ -12,7 +12,7 @@ class Signature < ApplicationRecord
   ## validations ##
   validates :name, presence: true, length: { maximum: 100 }
   validates :email, presence: true, email: true, uniqueness: { case_sensitive: false }, on: :create
-  validates :place, length: { maximum: 50 }
+  validates :place, presence: true, length: { maximum: 50 }
   validates :country_code, presence: true, inclusion: { in: COUNTRY_CODES }
   validates :state, inclusion: { in: [PENDING_STATE, INVALID_STATE, CONFIRMED_STATE] }
 
