@@ -19,6 +19,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'httparty'
 gem 'http_accept_language'
 gem 'countries'
 gem 'maxminddb'
@@ -49,5 +50,10 @@ end
 group :test do
   gem 'shoulda-matchers', '~> 3.1'
   gem 'capybara'
+  gem 'poltergeist'
+  gem 'phantomjs'
+  gem 'selenium-webdriver'
+  gem 'database_cleaner'
+  gem 'webmock'
   gem 'launchy'
 end

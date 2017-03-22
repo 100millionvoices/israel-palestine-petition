@@ -11,7 +11,11 @@ We use rspec so to run tests use the command:
 
 ## GeoIP location
 
-We are using geoip data from http://dev.maxmind.com/geoip/geoip2/geolite2/. The data file location is set in `.env.development`.
+We are using geoip data from http://dev.maxmind.com/geoip/geoip2/geolite2/. The data file location is set in `.env.development`. Create this file by copying `.env.development.example`.
+
+## Google reCAPTCHA
+
+The reCAPTCHA sitekey and secret are held in `.env.development`. You need to create them from https://www.google.com/recaptcha/intro/invisible.html.
 
 ## Email previews
 

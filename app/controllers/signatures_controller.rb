@@ -1,4 +1,6 @@
 class SignaturesController < ApplicationController
+  include Captcha
+
   def index
     @signatures = Signature.count_by_country_code
   end
@@ -9,7 +11,7 @@ class SignaturesController < ApplicationController
 
   def create
     @signature = Signature.new(signature_params.merge(ip_address: request.remote_ip))
-    if @signature.save
+    if verify_captcha && @signature.save
       UserMailer.confirm_signature(@signature, I18n.locale).deliver_now # TODO: deliver_later
       redirect_to thank_you_signatures_path
     else

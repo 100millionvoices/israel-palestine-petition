@@ -46,6 +46,7 @@ de:
       place: Place or city
     form:
       email_hint: We will never share your email
+      sign_the_petition: Sign it
       submit_hint: To confirm your signature we will send an email and ask you to click the link in it
   signatures:
     almost_there: Almost there...
@@ -78,6 +79,8 @@ de:
 
   errors:
     attributes:
+      captcha:
+        invalid: The captcha has failed. Please contact support if the error persists.
       country_code:
         blank: A country must be selected
       email:

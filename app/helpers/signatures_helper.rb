@@ -36,6 +36,10 @@ module SignaturesHelper
     end
   end
 
+  def flash_error_message
+    content_tag(:span, flash[:error], class: 'error-message') if flash[:error]
+  end
+
   def country_select_options
     options_for_select(ISO3166::Country.translations(I18n.locale).to_a.map(&:reverse).sort, @signature.country_code)
   end
