@@ -4,5 +4,6 @@
   <p>
     <%= t('signatures.confirmation_error') %>
   </p>
-  <%= link_to t('signatures.return_to_the_petition'), home_path  %>
+
+  <p class="text-left bottom-links">/ <%= link_to(t('links.home').downcase, home_path) %></p>
 </div>
