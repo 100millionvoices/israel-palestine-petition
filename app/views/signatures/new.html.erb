@@ -1,11 +1,23 @@
-<% content_for :head do %>
-  <script src="https://www.google.com/recaptcha/api.js?hl=<%= I18n.locale %>" async defer></script>
-  <script>
-    function onSubmit(token) {
-      $(".sign-it-button").prop("disabled", true).addClass("active");
-      document.getElementById("new_signature").submit();
-    }
-  </script>
+<% unless captcha_disabled? %>
+  <% content_for :head do %>
+    <script src="https://www.google.com/recaptcha/api.js?hl=<%= I18n.locale %>" async defer></script>
+    <script>
+      function onload() {
+        var element = document.getElementById("signature_btn");
+        element.onclick = onButtonClick;
+      }
+
+      function onButtonClick(event) {
+        event.preventDefault();
+        grecaptcha.execute();
+      }
+
+      function onSubmit(token) {
+        $(".sign-it-button").prop("disabled", true).addClass("active");
+        document.getElementById("new_signature").submit();
+      }
+    </script>
+  <% end %>
 <% end %>
 
 <h1 class="text-center lead"><%= I18n.t('signatures.make_your_voice_heard') %></h1>
@@ -43,13 +55,19 @@
   <%= flash_error_message %>
 
   <div class="text-center">
-    <%= button_tag t('signature.form.sign_the_petition'), type: nil, class: 'g-recaptcha btn btn-primary sign-it-button',
-          data: { sitekey: ENV['CAPTCHA_SITEKEY'], callback: 'onSubmit' } %>
+    <%= button_tag t('signature.form.sign_the_petition'), id: 'signature_btn', class: 'btn btn-primary sign-it-button' %>
     <small class="form-text text-muted text-center">
       <%= t('signature.form.submit_hint') %>
     </small>
   </div>
 
-  <p class="text-left bottom-links">/ <%= link_to(t('links.home').downcase, home_path) %></p>
+  <p class="text-left bottom-links">
+    <span>/ <%= link_to(t('links.home').downcase, home_path) %></span>
+
+    <%= content_tag :span, nil, class: 'g-recaptcha',
+          data: { sitekey: ENV['CAPTCHA_SITEKEY'], callback: 'onSubmit', size: 'invisible', badge: 'inline' } %>
+  </p>
 <% end -%>
+
+<script>onload();</script>
 

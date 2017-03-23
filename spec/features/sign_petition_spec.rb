@@ -37,6 +37,29 @@ feature 'Sign petition' do
     expect(page).to have_text 'The captcha has failed'
   end
 
+  scenario 'Call to captcha times out' do
+    expect(HTTParty).to receive(:post).and_raise(Net::HTTPGatewayTimeOut)
+    visit new_signature_path(locale: :en)
+
+    click_button 'Sign it'
+
+    expect(page).to have_text 'The captcha has failed'
+  end
+
+  context 'disabled captcha' do
+    after { ENV['CAPTCHA_DISABLED'] = 'false' }
+
+    scenario 'No external call is made' do
+      ENV['CAPTCHA_DISABLED'] = 'true'
+      expect(HTTParty).to_not receive(:post)
+      visit new_signature_path(locale: :en)
+
+      click_button 'Sign it'
+
+      expect(page).to have_text 'An email must be given'
+    end
+  end
+
   scenario 'Preselected city is Köln and country is Deutschland when locale is de' do
     allow(GeoIpLookup).to receive(:fetch_location_from_ip).and_return(cologne_ip_location)
     visit new_signature_path(locale: :de)
