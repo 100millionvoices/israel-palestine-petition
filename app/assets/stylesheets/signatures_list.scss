@@ -7,7 +7,6 @@
   }
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 50px;
 
   .signatures-list-count {
     padding: 0 10px;
@@ -17,15 +16,19 @@
     background-color: rgba(0,0,0,.05);
   }
 
+  .signature-locations {
+    margin-bottom: 60px;
+  }
+
   .signature-count {
     float: right;
   }
 
   .sign-petition-btn {
     float: right;
-    margin-top: -8px;
-    .btn {
-      color: #292b2c;
-    }
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-top: -3px;
+    margin-left: 10px;
   }
 }

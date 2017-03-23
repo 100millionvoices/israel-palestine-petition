@@ -4,6 +4,8 @@
   <p>
     <%= t('signatures.confirmation_error') %>
   </p>
-
-  <p class="text-left bottom-links">/ <%= link_to(t('links.home').downcase, home_path) %></p>
 </div>
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><%= link_to(t('links.home').downcase, home_path) %></li>
+</ol>

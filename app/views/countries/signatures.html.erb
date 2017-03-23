@@ -24,18 +24,28 @@
     </p>
   <% end -%>
 
-  <% @signatures_by_place.each do |place_and_count| %>
-    <div class="lead signatures-list-count">
-      <%= place_and_count[0] %>
-      <span class="signature-count"><%= number_with_delimiter(place_and_count[1]) %></span>
-    </div>
-  <% end %>
+  <div class="signature-locations">
+    <% @signatures_by_place.each do |place_and_count| %>
+      <div class="lead signatures-list-count">
+        <%= place_and_count[0] %>
+        <span class="signature-count"><%= number_with_delimiter(place_and_count[1]) %></span>
+      </div>
+    <% end %>
+  </div>
 
-  <p class="text-left bottom-links">
-    / <%= link_to(t('links.home').downcase, home_path) %> /
-    <%= link_to(t('links.signatures').downcase, signatures_path) %>
-    <span class="sign-petition-btn">
+  <div class="breadcrumb-container">
+    <div class="sign-petition-btn">
       <%= link_to(fa_icon('pencil', text: t('home.sign_petition')).html_safe, new_signature_path, class: 'btn btn-secondary') %>
-    </span>
-  </p>
+    </div>
+
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><%= link_to(t('links.home').downcase, home_path) %></li>
+      <li class="breadcrumb-item">
+        <%= link_to(t('links.signatures').downcase, signatures_path) %>
+      </li>
+      <li class="breadcrumb-item active">
+        <%= country_from_country_code(@country_code).downcase %>
+      </li>
+    </ol>
+  </div>
 </div>

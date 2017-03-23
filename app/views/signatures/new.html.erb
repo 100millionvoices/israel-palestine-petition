@@ -54,19 +54,24 @@
 
   <%= flash_error_message %>
 
-  <div class="text-center">
+  <div class="text-center sign-section">
     <%= button_tag t('signature.form.sign_the_petition'), id: 'signature_btn', class: 'btn btn-primary sign-it-button' %>
     <small class="form-text text-muted text-center">
       <%= t('signature.form.submit_hint') %>
     </small>
   </div>
 
-  <p class="text-left bottom-links">
-    <span>/ <%= link_to(t('links.home').downcase, home_path) %></span>
+  <div class="breadcrumb-container">
+    <div class="captcha-container">
+      <%= content_tag :span, nil, class: 'g-recaptcha',
+            data: { sitekey: ENV['CAPTCHA_SITEKEY'], callback: 'onSubmit', size: 'invisible', badge: 'inline' } %>
+    </div>
 
-    <%= content_tag :span, nil, class: 'g-recaptcha',
-          data: { sitekey: ENV['CAPTCHA_SITEKEY'], callback: 'onSubmit', size: 'invisible', badge: 'inline' } %>
-  </p>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><%= link_to(t('links.home').downcase, home_path) %></li>
+      <li class="breadcrumb-item active"><%= t('links.sign_petition').downcase %></li>
+    </ol>
+  </div>
 <% end -%>
 
 <script>onload();</script>

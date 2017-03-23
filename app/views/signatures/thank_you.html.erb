@@ -2,6 +2,8 @@
 
 <div class="fluid_container text-center message-text">
   <p class="lead"><%= t('signatures.thank_you') %></p>
-
-  <p class="text-left bottom-links">/ <%= link_to(t('links.home').downcase, home_path) %></p>
 </div>
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><%= link_to(t('links.home').downcase, home_path) %></li>
+</ol>

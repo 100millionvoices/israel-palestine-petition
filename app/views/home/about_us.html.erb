@@ -1,4 +1,4 @@
-<div class="container about-us">
+<div class="about-us">
   <h1 class="lead text-center"><%= t('links.about_us') %></h1>
 
   <p><%= t('about_us.para_1') %></p>
@@ -6,6 +6,10 @@
   <p><%= t('about_us.para_3_html', petition_link: link_to(t('about_us.petition'), home_path),
            faq_link: link_to(t('links.faq'), faq_path),
            sign_petition_link: link_to(t('about_us.sign_the_petition'), new_signature_path)) %></p>
-
-   <p class="text-left bottom-links">/ <%= link_to(t('links.home').downcase, home_path) %></p>
 </div>
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><%= link_to(t('links.home').downcase, home_path) %></li>
+  <li class="breadcrumb-item active"><%= t('links.about_us').downcase %></li>
+</ol>
+
