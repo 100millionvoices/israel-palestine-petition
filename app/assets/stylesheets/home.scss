@@ -1,11 +1,19 @@
 .petition-text {
-  margin-top: 75px;
+  margin-top: 50px;
   max-width: 750px;
   margin-left: auto;
   margin-right: auto;
 
   p {
     margin-bottom: 0.5rem;
+  }
+
+  .petition-signer {
+     margin-bottom: 0;
+     line-height: 1;
+  }
+  .petition-date {
+    line-height: 1.3;
   }
 }
 

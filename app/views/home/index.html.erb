@@ -3,7 +3,12 @@
     <%= content_tag :p, para.html_safe, class: 'lead' %>
   <% end %>
 
-  <p class="text-right"><em><%= link_to('100MillionVoices', about_us_path) %></em></p>
+  <p class="text-right petition-signer">
+    <em><%= link_to('100MillionVoices', about_us_path) %></em><br>
+  </p>
+  <p class="text-right petition-date">
+    <small class="text-muted"><%= petition_date %></small>
+  </p>
 </div>
 
 <div class="row signature-counts">
@@ -31,12 +36,13 @@
 </div>
 
 <div class="sign-petition text-right">
-  <%= link_to(fa_icon('pencil', text: t('home.sign_petition')).html_safe, new_signature_path, class: 'btn btn-secondary') %>
+  <%= link_to(fa_icon('pencil', text: t('home.sign_petition')).html_safe, new_signature_path, class: 'btn btn-lg btn-secondary') %>
 </div>
 
 <%= render 'share_petition' %>
 
-<ol class="breadcrumb">
-  <li class="breadcrumb-item active"><%= t('links.home').downcase %></li>
-</ol>
-
+<div class="breadcrumb-container">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active"><%= t('links.home').downcase %></li>
+  </ol>
+</div>

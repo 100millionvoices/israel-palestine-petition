@@ -14,7 +14,7 @@ feature 'Signatures by country and place' do
 
     click_link 'Ghana'
     expect(page).to have_text 'Signatures from Ghana'
-    expect(page).to have_text 'The current signature count is 3.'
+    expect(page).to have_text 'The current signature count is 3'
     expect(page).to have_text 'The target is 1,000'
     expect(page).to have_text 'Bolgatanga 1'
     expect(page).to have_text 'Accra 2'

@@ -1,15 +1,11 @@
 .signatures-list {
-  min-width: 300px;
   max-width: 500px;
-  @media (min-width: 576px) {
-    min-width: 500px;
-    max-width: 750px;
-  }
   margin-left: auto;
   margin-right: auto;
 
   .signatures-list-count {
     padding: 0 10px;
+    border-radius: 0.25rem;
   }
 
   .signatures-list-count:nth-of-type(odd) {
@@ -17,18 +13,27 @@
   }
 
   .signature-locations {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 60px;
   }
 
   .signature-count {
     float: right;
   }
+}
 
-  .sign-petition-btn {
-    float: right;
-    display: inline-block;
-    margin-bottom: 20px;
-    margin-top: -3px;
-    margin-left: 10px;
-  }
+.country-count-and-target {
+  padding: 15px 20px 0 20px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.sign-petition-btn {
+  float: right;
+  display: inline-block;
+  margin-bottom: 20px;
+  margin-top: -16px;
+  margin-left: 10px;
 }

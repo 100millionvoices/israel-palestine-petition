@@ -3,15 +3,21 @@
     <%= t('signatures.signatures_from', country: country_from_country_code(@country_code)) %>
   </h1>
 
-  <p class="lead">
-    <%= t('signatures.signature_count_html', count: number_with_delimiter(@country.signature_count)) if @country%>
-  </p>
+  <div class="text-center">
+    <div class="card country-count-and-target text-center">
+      <p class="lead">
+        <%= t('signatures.signature_count_html', count: number_with_delimiter(@country.signature_count)) if @country%>
+      </p>
+
+      <% if @country&.target_signature_count %>
+        <p class="lead">
+          <%= t('signatures.target_signature_count_html', target: number_with_delimiter(@country.target_signature_count)) %>
+        </p>
+      <% end -%>
+    </div>
+  </div>
 
   <% if @country&.target_signature_count %>
-    <p class="lead">
-      <%= t('signatures.target_signature_count_html', target: number_with_delimiter(@country.target_signature_count)) %>
-    </p>
-
     <p>
       <% if @country.target_reached? %>
         <% # worry about this if and when %>
@@ -32,20 +38,20 @@
       </div>
     <% end %>
   </div>
+</div>
 
-  <div class="breadcrumb-container">
-    <div class="sign-petition-btn">
-      <%= link_to(fa_icon('pencil', text: t('home.sign_petition')).html_safe, new_signature_path, class: 'btn btn-secondary') %>
-    </div>
-
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><%= link_to(t('links.home').downcase, home_path) %></li>
-      <li class="breadcrumb-item">
-        <%= link_to(t('links.signatures').downcase, signatures_path) %>
-      </li>
-      <li class="breadcrumb-item active">
-        <%= country_from_country_code(@country_code).downcase %>
-      </li>
-    </ol>
+<div class="breadcrumb-container">
+  <div class="sign-petition-btn">
+    <%= link_to(fa_icon('pencil', text: t('home.sign_petition')).html_safe, new_signature_path, class: 'btn btn-lg btn-secondary') %>
   </div>
+
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><%= link_to(t('links.home').downcase, home_path) %></li>
+    <li class="breadcrumb-item">
+      <%= link_to(t('links.signatures').downcase, signatures_path) %>
+    </li>
+    <li class="breadcrumb-item active">
+      <%= country_from_country_code(@country_code).downcase %>
+    </li>
+  </ol>
 </div>

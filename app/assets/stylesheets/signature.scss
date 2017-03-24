@@ -1,4 +1,10 @@
 .signature-form {
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.signature-inner-form {
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
@@ -48,6 +54,10 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 30px;
+}
+
+.new-signature-breadcrumb {
+  margin-top: 60px;
 }
 
 .captcha-container {

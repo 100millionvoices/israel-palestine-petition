@@ -23,45 +23,47 @@
 <h1 class="text-center lead"><%= I18n.t('signatures.make_your_voice_heard') %></h1>
 
 <%= form_for(@signature, html: { class: 'signature-form' }) do |f| %>
-  <div class="form-group">
-    <%= f.label :name, t('signature.attributes.name') %>
-    <%= f.text_field :name, placeholder: t('signature.attributes.name'), class: 'form-control',
-                      maxlength: '100', autofocus: true %>
-     <%= error_messages_for_field @signature, :name %>
+  <div class="signature-inner-form">
+    <div class="form-group">
+      <%= f.label :name, t('signature.attributes.name') %>
+      <%= f.text_field :name, placeholder: t('signature.attributes.name'), class: 'form-control',
+                        maxlength: '100', autofocus: true %>
+       <%= error_messages_for_field @signature, :name %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :email, t('signature.attributes.email') %>
+      <%= f.email_field :email, placeholder: t('signature.attributes.email'), class: 'form-control', maxlength: 255 %>
+      <% if request.get? %>
+        <small class="form-text text-muted"><%= t('signature.form.email_hint') %></small>
+      <% end %>
+      <%= error_messages_for_field @signature, :email %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :place, t('signature.attributes.place') %>
+      <%= f.text_field :place, placeholder: t('signature.attributes.place'), class: 'form-control', maxlength: 50 %>
+      <%= error_messages_for_field @signature, :place %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :country_code, t('signature.attributes.country') %>
+      <%= f.select :country_code, country_select_options, { include_blank: t('signature.attributes.country') },
+                    class: 'custom-select' %>
+      <%= error_messages_for_field @signature, :country_code %>
+    </div>
+
+    <%= flash_error_message %>
+
+    <div class="text-center sign-section">
+      <%= button_tag t('signature.form.sign_the_petition'), id: 'signature_btn', class: 'btn btn-primary sign-it-button' %>
+      <small class="form-text text-muted text-center">
+        <%= t('signature.form.submit_hint') %>
+      </small>
+    </div>
   </div>
 
-  <div class="form-group">
-    <%= f.label :email, t('signature.attributes.email') %>
-    <%= f.email_field :email, placeholder: t('signature.attributes.email'), class: 'form-control', maxlength: 255 %>
-    <% if request.get? %>
-      <small class="form-text text-muted"><%= t('signature.form.email_hint') %></small>
-    <% end %>
-    <%= error_messages_for_field @signature, :email %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :place, t('signature.attributes.place') %>
-    <%= f.text_field :place, placeholder: t('signature.attributes.place'), class: 'form-control', maxlength: 50 %>
-    <%= error_messages_for_field @signature, :place %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :country_code, t('signature.attributes.country') %>
-    <%= f.select :country_code, country_select_options, { include_blank: t('signature.attributes.country') },
-                  class: 'custom-select' %>
-    <%= error_messages_for_field @signature, :country_code %>
-  </div>
-
-  <%= flash_error_message %>
-
-  <div class="text-center sign-section">
-    <%= button_tag t('signature.form.sign_the_petition'), id: 'signature_btn', class: 'btn btn-primary sign-it-button' %>
-    <small class="form-text text-muted text-center">
-      <%= t('signature.form.submit_hint') %>
-    </small>
-  </div>
-
-  <div class="breadcrumb-container">
+  <div class="breadcrumb-container new-signature-breadcrumb">
     <div class="captcha-container">
       <%= content_tag :span, nil, class: 'g-recaptcha',
             data: { sitekey: ENV['CAPTCHA_SITEKEY'], callback: 'onSubmit', size: 'invisible', badge: 'inline' } %>
@@ -72,7 +74,7 @@
       <li class="breadcrumb-item active"><%= t('links.sign_petition').downcase %></li>
     </ol>
   </div>
+</div>
+
 <% end -%>
-
 <script>onload();</script>
-
