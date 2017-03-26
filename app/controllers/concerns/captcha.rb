@@ -16,7 +16,7 @@ module Captcha
     hash_response = JSON.parse(response.body)
 
     if hash_response['success'] != true
-      handle_error('Captcha error', :info, signature: params[:signature].to_unsafe_h, captcha: hash_response)
+      handle_error('Captcha error', :info, captcha: hash_response)
     end
     hash_response['success'] == true
 
@@ -27,6 +27,7 @@ module Captcha
 
   def handle_error(error, level, options = {})
     flash.now[:error] = I18n.t('errors.attributes.captcha.invalid')
-    Raven.capture_message(error, level: level, extra: options)
+    Raven.capture_message(error, level: level,
+      extra: options.merge(signature: params[:signature]&.to_unsafe_h))
   end
 end

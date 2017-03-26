@@ -1,5 +1,5 @@
 .signatures-list {
-  max-width: 500px;
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
 
@@ -13,7 +13,7 @@
   }
 
   .signature-locations {
-    max-width: 500px;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 60px;
@@ -28,6 +28,10 @@
   padding: 15px 20px 0 20px;
   margin-bottom: 20px;
   display: inline-block;
+}
+
+.target-status {
+  padding: 0 10px;
 }
 
 .sign-petition-btn {

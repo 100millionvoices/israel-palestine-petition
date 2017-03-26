@@ -79,7 +79,7 @@ en:
   errors:
     attributes:
       captcha:
-        invalid: The captcha has failed. Please contact support if the error persists.
+        invalid: The captcha has failed. Please contact us if the error persists.
       country_code:
         blank: A country must be selected
       email:
