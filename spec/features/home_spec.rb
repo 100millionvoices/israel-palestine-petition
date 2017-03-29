@@ -17,7 +17,7 @@ feature 'Signature counts' do
     allow_any_instance_of(HttpAcceptLanguage::Parser).to receive(:user_preferred_languages).and_return(['de-DE'])
     visit '/'
 
-    expect(page).to have_link('Sign petition', href: new_signature_path(locale: :de))
+    expect(page).to have_link('Die Petition unterzeichnen', href: new_signature_path(locale: :de))
   end
 
   scenario 'User country is Ghana' do

@@ -64,8 +64,8 @@ feature 'Sign petition' do
     allow(GeoIpLookup).to receive(:fetch_location_from_ip).and_return(cologne_ip_location)
     visit new_signature_path(locale: :de)
 
-    expect(page).to have_field('Place or city', with: 'Köln')
-    expect(page).to have_select('Country', selected: 'Deutschland')
+    expect(page).to have_field('Ort oder Stadt', with: 'Köln')
+    expect(page).to have_select('Land', selected: 'Deutschland')
   end
 
   scenario 'Preselected city is Cologne and country is Germany when locale is en' do
