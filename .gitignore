@@ -27,3 +27,4 @@ examples.txt
 !.elasticbeanstalk/*.global.yml
 
 .env.development
+dump.rdb

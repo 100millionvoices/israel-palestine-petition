@@ -12,7 +12,7 @@ class SignaturesController < ApplicationController
   def create
     @signature = Signature.new(signature_params.merge(ip_address: request.remote_ip))
     if (captcha_disabled? || verify_captcha) && @signature.save
-      UserMailer.confirm_signature(@signature, I18n.locale).deliver_now # TODO: deliver_later
+      UserMailer.confirm_signature(@signature, I18n.locale.to_s).deliver_later
       redirect_to thank_you_signatures_path
     else
       render :new

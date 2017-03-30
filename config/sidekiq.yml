@@ -1,0 +1,5 @@
+:queues:
+  - mailers
+
+production:
+  :concurrency: 10
