@@ -1,0 +1,92 @@
+es:
+  heading_html: "%{home_link} pedimos tu apoyo en la protesta sobre la falta de progreso en la resolución del conflicto israelí-palestino"
+  about_us:
+    para_1: Somos un grupo independiente, no partidista, de traductores y programadores.
+    para_2: Creemos que uniendo las voces de la moderación de la ciudadanía global, que está frustrada por la falta de progreso en la resolución de conflictos, podemos inspirar y ejercer presión para que los gobiernos hagan lo que es debido.
+    para_3_html: Esperamos que habiendo leído la %{petition_link} y las %{faq_link}, decidas %{sign_petition_link} y hagas oir tu voz. Gracias.
+    petition: petición
+    sign_the_petition: firmar la petición
+  faq:
+    number_01:
+      question_html: El conflicto israelí-palestino existe desde hace generaciones. ¿Por qué crear una petición ahora?
+      answer_html: Las voces de la moderación en el conflicto están siendo ahogadas mas y mas por las opiniones y acciones extremistas, y ambos lados parecen estar lejos de llegar a compromisos. Queremos que esta petición no partidista corrija esto. El numero de <a href="http://www.internetlivestats.com/internet-users/" target="_blank">usuarios de internet mundiales</a> está creciendo rápidamente, y esto crea la oportunidad de una petición en línea que genere momento para el cambio.
+    number_02:
+      question_html: "¿Puedo firmar la petición mas de una vez?"
+      answer_html: Te pedimos que firmes la petición solo una vez para que el total de firmas represente individuos únicos. En cambio,nos gustaría que compartieras la petición con tus amigos y familiares.
+    number_03:
+      question_html: "¿Se publicaran los datos de las firmas?"
+      answer_html: Solo publicaremos datos del pais y lugar/ciudad. No compartiremos nunca tu correo electrónico o nombre.
+    number_04:
+      question_html: "¿Me mandareis correos electrónicos no solicitados?"
+      answer_html: No, categóricamente no. Una vez te mandemos un correo electrónico para confirmar tu firma de la petición, no te mandaremos ningún correo mas.
+    number_05:
+      question_html: "¿Como se que la cuenta de firmas es correcta?"
+      answer_html: El código de este website es open source y se puede encontrar en <a href="https://github.com/100millionvoices/israel-palestine-petition" target="_blank">GitHub</a>. Puede ser revisado por cualquiera y aceptamos <a href="mailto:feedback@100millionvoices.org" rel="external">sugerencias o comentarios</a>.
+  home:
+    petition:
+      para_1_html: "&ldquo; El conflicto israelí-palestino es responsable de horrible miserias y sufrimientos por las dos partes."
+      para_2_html: Pedimos que nuestros gobiernos renueven esfuerzos para encontrar las condiciones necesarias para la resolución del conflicto.
+      para_3_html: Pedimos de los líderes palestinos que reconozcan el derecho de Israel a una existencia pacífica y que garanticen la no-violencia.
+      para_4_html: " Y pedimos del gobierno israelí que garantice la creación de un estado palestino y ponga fin a la construcción de asentamientos en los territorios ocupados.&nbsp;&rdquo;"
+    sign_petition: Firmar petición
+    signatures_from: Firmas de %{country}
+    total_signatures: Total de firmas
+  links:
+    about_us: Acerca de nosotros
+    contact: Contacto
+    faq: Preguntas frecuentes
+    home: Inicio
+    sign_petition: Firma la petición
+    signatures: Firmas
+  signature:
+    attributes:
+      country: País
+      email: Correo electrónico
+      name: Nombre
+      place: Lugar o ciudad
+    form:
+      email_hint: Nunca compartiremos tu correo electrónico
+      sign_the_petition: Firma la petición
+      submit_hint: Para confirmar tu firma te mandaremos un correo electrónico con un enlace que tendrás que seguir
+  signatures:
+    almost_there: Acabando casi...
+    confirmation_error: Sentimos que no hemos podido encontrar tu firma para confirmar.?A lo mejor ya la as confirmado?
+    confirmation_html: Gracias por confirmar tu firma y firmar la petición. Tu firma ha sido añadida al total de firmas en el %{home_link}.
+    confirmation_success: Has hecho oir tu voz!
+    home_page: inicio
+    make_your_voice_heard: Haz oir tu voz
+    not_found: No hemos podido encontrar tu firma
+    signature_count_html: El total de firmas es <strong>%{count}</strong>
+    signatures_by_country: Firmas por país
+    signatures_by_place_limit: "Los 25 lugares en el pais con mas firmas son :"
+    signatures_from: Firmas de %{country}
+    target_signature_count_html: El objetivo es <strong>%{target}</strong> que es un 1% de <a href="https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations)" target="_blank">population</a>
+    thank_you: Te hemos mandado un correo electrónico. Por favor, léelo y sigue el enlace para confirmar tu firma. Gracias.
+    what_happens_if_target_is_met: Si alcanzamos este ambicioso objetivo entonces 100MillionVoices presentara el total de la petición al ministro del exterior de vuestro país por vosotros.
+  sharing:
+    email_subject: Campaña 100MillionVoices
+    share_petition_on: "Comparte la peticion en:"
+    share_text: 100MillionVoices pide tu apoyo en la protesta sobre la falta de progreso en la resolución del conflicto israelí-palestino
+    # twitter text must be less than 110 characters
+    twitter_share: "Apoya #100MillionVoices en la protesta sobre la falta de progreso en la resolución del conflicto israelí-palestino"
+  user_mailer:
+    confirm_signature:
+      confrim_signature: Para confirmar tu firma, por favor sigue este enlace %{link}.
+      greeting: Hola %{name}
+      subject: Confirma tu firma de la petición
+      thank_you: Gracias por apoyar esta campaña. Con tantas voces de apoyo para este nuevo esfuerzo de resolución del conflicto israelí-palestino, podremos cambiar la situación.
+
+  errors:
+    attributes:
+      captcha:
+        invalid: El captcha no ha funcionado. Contáctenos si el error persiste.
+      country_code:
+        blank: Se necesita seleccionar un país
+      email:
+        blank: Se necesita una dirección de correo electrónico
+        invalid: La dirección de correo electrónico no es válida
+        taken: Esta dirección de correo electrónico ha sido usada ya
+      name:
+        blank: Se necesita un nombre
+      place:
+        blank: Se necesita un lugar o ciudad

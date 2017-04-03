@@ -1,5 +1,5 @@
 module ApplicationHelper
-  LOCALES = { 'de' => 'deutsch', 'en' => 'english' }
+  LOCALES = { 'de' => 'deutsch', 'en' => 'english', 'es' => 'español' }
 
   def locales
     LOCALES

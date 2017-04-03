@@ -28,7 +28,7 @@ de:
       para_2_html: "Wir appellieren an unsere Regierungen, sich wieder stärker um eine Verbesserung der Umstände zu bemühen, die eine Lösung des Konflikts erleichtern würden."
       para_3_html: "Wir appellieren an die Führung Palästinas, das Recht Israels auf eine friedliche Existenz anzuerkennen und sich der Gewaltlosigkeit zu verschreiben."
       para_4_html: "Und wir appellieren an die israelische Regierung, für die Bildung eines palästinensischen Staats einzustehen und die Siedlungsaktivitäten in den besetzten Gebieten zu beenden.&nbsp;&rdquo;"
-    sign_petition: Die Petition unterzeichnen
+    sign_petition: Petition unterzeichnen
     signatures_from: Unterschriftren aus %{country}
     total_signatures: Gesamtzahl der Unterschriften
   links:
@@ -58,7 +58,7 @@ de:
     not_found: Ihre Unterschrift wurde nicht gefunden
     signature_count_html: "Bisheriger Stand der Unterschriften: <strong>%{count}</strong>"
     signatures_by_country: Unterschriften nach Ländern
-    signatures_by_place_limit: "Die 25 Orte mit den meisten Unterschriften, in Ländern, in denen Unterschriften getätigt wurden, sind:"
+    signatures_by_place_limit: "Die 25 Orte mit den meisten Unterschriften, in Ländern, in denen Unterschriften getätigt wurden, sind :"
     signatures_from: Unterschriften aus %{country}
     target_signature_count_html: Das Ziel ist <strong>%{target}</strong>, was 1% der <a href="https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations)" target="_blank">Bevölkerung</a> entspricht
     thank_you: Vielen Dank. Wir haben Ihnen eine E-mail geschickt. Nach dem Lesen klicken Sie bitte auf den Link, um Ihre Unterschrift zu bestätigen.
