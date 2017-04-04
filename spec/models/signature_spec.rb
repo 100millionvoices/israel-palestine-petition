@@ -46,11 +46,18 @@ describe Signature do
   end
 
   describe '#confirm!' do
+    let(:signature) { create(:pending_signature, country_code: 'GH') }
+
     it 'sets the state to confirmed' do
-      signature = create(:pending_signature)
       signature.confirm!
       expect(signature.state).to eq(Signature::CONFIRMED_STATE)
       expect(signature.signing_token).to be_nil
+    end
+
+    it 'sets the associated country to confirmed_signatures true' do
+      country = Country.create!(name_en: 'Ghana', country_code: 'GH')
+      signature.confirm!
+      expect(country.reload).to have_confirmed_signatures
     end
   end
 

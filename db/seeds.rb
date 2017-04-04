@@ -50,12 +50,19 @@ end
 
 ISO3166::Country.translations.each do |country_code, name|
   country = Country.find_or_initialize_by(country_code: country_code)
-  country.name = name
+  country.name_en = name
+  ['ar', 'ms', 'bn', 'bg', 'cs', 'sr', 'zh', 'de', 'es', 'el', 'fa', 'fr', 'he', 'hi',
+   'hr', 'is', 'it', 'ja', 'ko', 'lv', 'hu', 'nl', 'pl', 'pt', 'ro', 'ru', 'fi', 'sv',
+   'th', 'vi', 'tr'].each do |locale|
+    country.send(:"name_#{locale}=", ISO3166::Country.translations(locale)[country_code])
+  end
+
   country_population = find_country_population(name)
   if country_population
     country.population = country_population[1].gsub(',', '').to_i
   else
     puts "#{name} - country not found"
   end
+  country.has_confirmed_signatures = Signature.confirmed.where(country_code: country_code).any?
   country.save!
 end

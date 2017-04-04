@@ -2,8 +2,18 @@ require 'rails_helper'
 
 describe Country do
   describe 'validations' do
-    it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:name_en) }
     it { should validate_presence_of(:country_code) }
+  end
+
+  describe 'scopes' do
+    describe 'with_confirmed_signatures' do
+      it 'returns countries with has_confirmed_signatures set to true' do
+        germany = create :germany, has_confirmed_signatures: false
+        ghana = create :ghana, has_confirmed_signatures: true
+        expect(Country.with_confirmed_signatures).to eq([ghana])
+      end
+    end
   end
 
   describe '#signature_count' do

@@ -1,0 +1,22 @@
+.pagination {
+  .page-item:first-child {
+    border-bottom-left-radius: 0.25rem;
+    border-top-left-radius: 0.25rem;
+  }
+
+  .page-item:last-child {
+    border-bottom-right-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+  }
+
+  .inactive {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: silver;
+    background-color: #fff;
+    border: 1px solid #ddd;
+  }
+}

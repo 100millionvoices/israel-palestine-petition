@@ -2,6 +2,7 @@
 
 * You will need ruby 2.3
 * You will need PostgreSQL
+* To view signatures by country you will need to run `rake db:seed`
 
 ## How to run the test suite
 

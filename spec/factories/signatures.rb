@@ -7,8 +7,7 @@ FactoryGirl.define do
     state Signature::PENDING_STATE
   end
 
-  factory :pending_signature, parent: :signature do
-  end
+  factory :pending_signature, parent: :signature
 
   factory :pending_signature_gh, parent: :signature do
     place 'Accra'

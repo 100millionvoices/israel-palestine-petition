@@ -2,7 +2,7 @@ class SignaturesController < ApplicationController
   include Captcha
 
   def index
-    @signatures = Signature.count_by_country_code
+    @countries = Country.with_confirmed_signatures.order("name_#{I18n.locale}").page(params[:page]).per(20)
   end
 
   def new

@@ -21,6 +21,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'sidekiq'
 gem 'sinatra', github: 'sinatra'
+gem 'kaminari'
 gem 'httparty'
 gem 'http_accept_language'
 gem 'countries'

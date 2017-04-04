@@ -8,12 +8,12 @@ module SignaturesHelper
     'US' => 'Department of State'
   }.freeze
 
-  def signature_count_by_country(count_by_country_code)
-    count_by_country = {}
-    count_by_country_code.each do |k, v|
-      count_by_country[country_from_country_code(k)] = [v, k.downcase]
-    end
-    count_by_country.sort
+  def localized_country_name(country)
+    country.send(:"name_#{I18n.locale}")
+  end
+
+  def signature_count_for_country(country)
+    Signature.confirmed.where(country_code: country.country_code).count # TODO: caching
   end
 
   # change name of ministry if language is english and country is an exception

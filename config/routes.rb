@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     get '/about-us' => 'home#about_us', as: :about_us
 
     resources :signatures, only: [:index, :new, :create] do
+      get 'page/:page', action: :index, on: :collection
       get 'thank-you', on: :collection
       get ':token/confirm', on: :collection,  action: :confirm, as: :confirm
       get 'countries/:country_code' => 'countries#signatures', on: :collection, as: :country
