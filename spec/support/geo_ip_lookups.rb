@@ -108,3 +108,75 @@ def ghana_ip_location
        "zh-CN"=>"加纳"}}}
   MaxMindDB::Result.new(raw)
 end
+
+def milan_ip_location
+  raw = {"city"=>
+    {"geoname_id"=>3173435,
+     "names"=>
+      {"de"=>"Mailand",
+       "en"=>"Milan",
+       "es"=>"Milán",
+       "fr"=>"Milan",
+       "ja"=>"ミラノ",
+       "pt-BR"=>"Milão",
+       "ru"=>"Милан"}},
+   "continent"=>
+    {"code"=>"EU",
+     "geoname_id"=>6255148,
+     "names"=>
+      {"de"=>"Europa",
+       "en"=>"Europe",
+       "es"=>"Europa",
+       "fr"=>"Europe",
+       "ja"=>"ヨーロッパ",
+       "pt-BR"=>"Europa",
+       "ru"=>"Европа",
+       "zh-CN"=>"欧洲"}},
+   "country"=>
+    {"geoname_id"=>3175395,
+     "iso_code"=>"IT",
+     "names"=>
+      {"de"=>"Italien",
+       "en"=>"Italy",
+       "es"=>"Italia",
+       "fr"=>"Italie",
+       "ja"=>"イタリア共和国",
+       "pt-BR"=>"Itália",
+       "ru"=>"Италия",
+       "zh-CN"=>"意大利"}},
+   "location"=>
+    {"accuracy_radius"=>10,
+     "latitude"=>45.4667,
+     "longitude"=>9.2,
+     "time_zone"=>"Europe/Rome"},
+   "postal"=>{"code"=>"20121"},
+   "registered_country"=>
+    {"geoname_id"=>3175395,
+     "iso_code"=>"IT",
+     "names"=>
+      {"de"=>"Italien",
+       "en"=>"Italy",
+       "es"=>"Italia",
+       "fr"=>"Italie",
+       "ja"=>"イタリア共和国",
+       "pt-BR"=>"Itália",
+       "ru"=>"Италия",
+       "zh-CN"=>"意大利"}},
+   "subdivisions"=>
+    [{"geoname_id"=>3174618,
+      "iso_code"=>"25",
+      "names"=>
+       {"de"=>"Lombardei",
+        "en"=>"Lombardy",
+        "es"=>"Lombardía",
+        "fr"=>"Lombardie"}},
+     {"geoname_id"=>3173434,
+      "iso_code"=>"MI",
+      "names"=>
+       {"de"=>"Mailand",
+        "en"=>"Milan",
+        "es"=>"Milán",
+        "fr"=>"Milan",
+        "pt-BR"=>"Milão"}}]}
+  MaxMindDB::Result.new(raw)
+end

@@ -62,6 +62,7 @@ feature 'Sign petition' do
 
   scenario 'Preselected city is Köln and country is Deutschland when locale is de' do
     allow(GeoIpLookup).to receive(:fetch_location_from_ip).and_return(cologne_ip_location)
+    allow_any_instance_of(HttpAcceptLanguage::Parser).to receive(:user_preferred_languages).and_return(['de-DE'])
     visit new_signature_path(locale: :de)
 
     expect(page).to have_field('Ort oder Stadt', with: 'Köln')
@@ -70,10 +71,22 @@ feature 'Sign petition' do
 
   scenario 'Preselected city is Cologne and country is Germany when locale is en' do
     allow(GeoIpLookup).to receive(:fetch_location_from_ip).and_return(cologne_ip_location)
+    allow_any_instance_of(HttpAcceptLanguage::Parser).to receive(:user_preferred_languages).and_return(['en-GB'])
     visit new_signature_path(locale: :en)
 
     expect(page).to have_field('Place or city', with: 'Cologne')
     expect(page).to have_select('Country', selected: 'Germany')
+  end
+
+  scenario 'Preselected city is Milano (note the o) and country is Italy when preferred language is Italian' do
+    url = ReverseGeocoder::GEOCODE_URL + '?key=&language=it&latlng=45.4667,9.2&result_type=locality'
+    stub_request(:get, url).to_return(status: 200, body: fixture_file('milano_geo_code.json'))
+    allow_any_instance_of(HttpAcceptLanguage::Parser).to receive(:user_preferred_languages).and_return(['it-IT'])
+    allow(GeoIpLookup).to receive(:fetch_location_from_ip).and_return(milan_ip_location)
+    visit new_signature_path(locale: :en)
+
+    expect(page).to have_field('Place or city', with: 'Milano')
+    expect(page).to have_select('Country', selected: 'Italy')
   end
 
   scenario 'Preselected city is Köln and country is Germany when locale is en and the preferred languages are Italian and German' do

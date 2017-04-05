@@ -44,7 +44,7 @@ class SignaturesController < ApplicationController
       place = ip_location.city&.name(language.downcase.split('-', 2).first)
       break if place
     end
-    place || ip_location.city&.name(I18n.locale) || ip_location.city&.name
+    place || place_from_reverse_geocode(ip_location)
   end
 
   def fetch_signature_for_confirmation
@@ -58,5 +58,14 @@ class SignaturesController < ApplicationController
       sanitized[:place]&.strip!
       sanitized[:email]&.strip!
     end
+  end
+
+  def place_from_reverse_geocode(ip_location)
+    return unless http_accept_language.user_preferred_languages.any? && ip_location.city&.name
+
+    lat = ip_location.location&.latitude
+    lng = ip_location.location&.longitude
+    language = http_accept_language.user_preferred_languages.first.downcase.split('-', 2).first
+    ReverseGeocoder.fetch_location_name_from_lat_lng(lat, lng, language)
   end
 end
