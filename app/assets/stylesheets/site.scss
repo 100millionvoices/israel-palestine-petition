@@ -1,3 +1,5 @@
+/* position footer at bottom of browser window */
+/* https://github.com/philipwalton/solved-by-flexbox/blob/master/assets/css/components/site.css */
 body {
   display: flex;
   min-height: 100vh;
@@ -5,6 +7,7 @@ body {
 }
 
 header {
+  flex: none;
   a {
     color: #464a4c;
     font-style: italic;
@@ -102,7 +105,7 @@ h1 {
 }
 
 .main {
-  flex: 1;
+  flex: 1 0 auto;
   width: 100%;
 }
 
@@ -147,6 +150,7 @@ h1 {
 }
 
 .footer {
+  flex: none;
   padding: 3rem 0;
   background-color: #f0ad4e;
 }
