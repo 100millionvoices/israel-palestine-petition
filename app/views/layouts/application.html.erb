@@ -25,7 +25,13 @@
   <body>
     <header class="navbar navbar-left bg-warning text-white">
       <div class="navbar-header">
-        <h2 class="header-text lead"><%= t('heading_html', home_link: link_to('100MillionVoices', home_path)) %></h2>
+        <%= link_to(home_path, class: 'logo-link') do %>
+          <div class="logo"></div>
+        <% end -%>
+        <div class="no-logo">
+        <h2 class="header-text">
+          <%= t('heading_html') %>
+        </h2>
         <div class="dropdown text-right">
           <button class="dropbtn"><%= current_language %></button>
           <div class="dropdown-content text-left">
@@ -38,6 +44,7 @@
               <% end %>
             <% end -%>
           </div>
+        </div>
         </div>
       </div>
     </header>

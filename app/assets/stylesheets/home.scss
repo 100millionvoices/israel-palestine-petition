@@ -38,6 +38,12 @@
 
 .counter {
   display: inline-block;
+  border: 1px dotted white;
+}
+
+.counter:hover {
+  border: 1px dotted #dcdcdc;
+  text-decoration: underline;
 }
 
 .counter-number {

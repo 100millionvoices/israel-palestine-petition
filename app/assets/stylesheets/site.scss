@@ -8,34 +8,52 @@ body {
 
 header {
   flex: none;
-  a {
-    color: #464a4c;
-    font-style: italic;
-    font-weight: bold;
-    text-decoration: none;
-    padding-bottom: 1px;
+  .navbar-header {
+    position: relative;
+  }
 
+  .logo {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    background-image: image-url('logo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: -10px;
   }
-  a:hover {
-    color: #464a4c;
-    text-decoration: none;
-    border-bottom: 0.5px solid currentColor;
+  .logo:hover {
+    background-image: image-url('logo2.png');
   }
-  a:focus {
-    color: #464a4c;
+  .logo-link {
+    vertical-align: top;
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .logo-link:focus, .logo-link:hover {
     text-decoration: none;
+  }
+  .no-logo {
+    vertical-align: middle;
+    display: inline-block;
+    width: calc(100% - 65px);
   }
   &.navbar {
-    padding: 1.5rem 1rem;
+    padding: 2.0rem 1rem 1.4rem 1rem;
   }
 }
 .header-text {
+  vertical-align: top;
   color: #464a4c;
   padding-top: 6px;
   padding-right: 6px;
   font-size: 1.25rem;
   display: inline;
   line-height: 1.5em;
+  font-weight: normal;
+}
+
+.header-text em {
+  vertical-align: top;
 }
 
 /* See https://www.w3schools.com/howto/howto_css_dropdown.asp */
