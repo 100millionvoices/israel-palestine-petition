@@ -13,6 +13,6 @@ feature 'Confirm signature' do
   scenario 'User fails to confirm a non-existent signature' do
     visit confirm_signatures_path(token: 'no-token', locale: :en)
 
-    expect(page).to have_text 'Sorry but we could not find your signature to confirm it'
+    expect(page).to have_text 'Your signture has already been confirmed'
   end
 end

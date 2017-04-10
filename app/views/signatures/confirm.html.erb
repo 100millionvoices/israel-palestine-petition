@@ -1,7 +1,9 @@
-<h1 class="text-center lead"><%= t('signatures.confirmation_success') %></h1>
+<div class="confirmation">
+  <h1 class="text-center lead alert alert-success"><%= t('signatures.confirmation_success') %></h1>
+</div>
 
 <div class="fluid_container text-center message-text">
-  <p class="lead"><%= t('signatures.confirmation_html', home_link: link_to(t('signatures.home_page'), home_path)) %></p>
+  <p><%= t('signatures.confirmation_html', home_link: link_to(t('signatures.home_page'), home_path)) %></p>
 </div>
 
 <%= render 'share_petition' %>

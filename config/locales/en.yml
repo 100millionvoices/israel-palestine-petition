@@ -22,6 +22,9 @@ en:
     number_05:
       question_html: How do I know the signature counts are accurate?
       answer_html: The code for this website is open source and available on <a href="https://github.com/100millionvoices/israel-palestine-petition" target="_blank">GitHub</a>. It can be reviewed by anybody and we welcome any <a href="mailto:feedback@100millionvoices.org" rel="external">suggestions or feedback</a>.
+    number_06:
+      question_html: Why does a popup appear on the signing page asking me to select particular photos?
+      answer_html: This is a security feature called reCAPTCHA from Google. It is designed to keep the site safe from bots.
   home:
     petition:
       para_1_html: "&ldquo; The Israeli-Palestinian conflict is responsible for horrendous misery and suffering on both sides."
@@ -38,6 +41,8 @@ en:
     home: Home
     sign_petition: Sign petition
     signatures: Signatures
+  maintenance:
+    message: The site is currently down for maintenance but we should be back soon. Sorry.
   signature:
     attributes:
       country: Country
@@ -50,12 +55,11 @@ en:
       submit_hint: To confirm your signature we will send an email and ask you to click the link in it
   signatures:
     almost_there: Almost there...
-    confirmation_error: Sorry but we could not find your signature to confirm it. Perhaps you have already confirmed it?
+    confirmation_error: Your signture has already been confirmed, thank you
     confirmation_html: Thank you for confirming your signature and signing the petition. Your signature is now being added to the signatures count on the %{home_link}.
     confirmation_success: Your voice has been heard!
     home_page: home page
     make_your_voice_heard: Make your voice heard
-    not_found: Your signature has not been found
     signature_count_html: The current signature count is <strong>%{count}</strong>
     signatures_by_country: Signatures by country
     signatures_by_place_limit: "The top 25 places where signatures originated are :"

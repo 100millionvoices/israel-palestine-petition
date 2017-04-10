@@ -22,6 +22,9 @@ es:
     number_05:
       question_html: "¿Como se que la cuenta de firmas es correcta?"
       answer_html: El código de este website es open source y se puede encontrar en <a href="https://github.com/100millionvoices/israel-palestine-petition" target="_blank">GitHub</a>. Puede ser revisado por cualquiera y aceptamos <a href="mailto:feedback@100millionvoices.org" rel="external">sugerencias o comentarios</a>.
+    number_06:
+      question_html: Why does a popup appear on the signing page asking me to select particular photos?
+      answer_html: This is a security feature called reCAPTCHA from Google. It is designed to keep the site safe from bots.
   home:
     petition:
       para_1_html: "&ldquo; El conflicto israelí-palestino es responsable de horrible miserias y sufrimientos por las dos partes."
@@ -38,6 +41,8 @@ es:
     home: Inicio
     sign_petition: Firma la petición
     signatures: Firmas
+  maintenance:
+    message: The site is currently down for maintenance but we should be back soon. Sorry.
   signature:
     attributes:
       country: País
@@ -55,7 +60,6 @@ es:
     confirmation_success: Has hecho oir tu voz!
     home_page: inicio
     make_your_voice_heard: Haz oir tu voz
-    not_found: No hemos podido encontrar tu firma
     signature_count_html: El total de firmas es <strong>%{count}</strong>
     signatures_by_country: Firmas por país
     signatures_by_place_limit: "Los 25 lugares en el pais con mas firmas son :"

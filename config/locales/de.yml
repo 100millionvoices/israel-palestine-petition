@@ -22,6 +22,9 @@ de:
     number_05:
       question_html: "Wie weiss ich, dass die Unterschriften korrekt gezählt werden?"
       answer_html: 'Der Code für diese Website ist frei zugänglich (‘open source‘) über <a href="https://github.com/100millionvoices/israel-palestine-petition" target="_blank">GitHub</a>. Er kann von jedem eingesehen werden und wir sind offen für jede Art von <a href="mailto:feedback@100millionvoices.org" rel="external">Vorschlägen oder Rückmeldungen</a>.'
+    number_06:
+      question_html: Why does a popup appear on the signing page asking me to select particular photos?
+      answer_html: This is a security feature called reCAPTCHA from Google. It is designed to keep the site safe from bots.
   home:
     petition:
       para_1_html: "„ Der Konflikt zwischen Israel und Palästina ist die Ursache für schreckliches Elend und Leid auf beiden Seiten."
@@ -38,6 +41,8 @@ de:
     home: Homepage
     sign_petition: Petition unterzeichen
     signatures: Unterschriften
+  maintenance:
+    message: The site is currently down for maintenance but we should be back soon. Sorry.
   signature:
     attributes:
       country: Land
@@ -55,7 +60,6 @@ de:
     confirmation_success: Ihre Stimme wird nun gehört!
     home_page: Homepage
     make_your_voice_heard: Verschaffen Sie Ihrer Stimme Gehör!
-    not_found: Ihre Unterschrift wurde nicht gefunden
     signature_count_html: "Bisheriger Stand der Unterschriften: <strong>%{count}</strong>"
     signatures_by_country: Unterschriften nach Ländern
     signatures_by_place_limit: "Die 25 Orte mit den meisten Unterschriften, in Ländern, in denen Unterschriften getätigt wurden, sind :"
@@ -90,4 +94,3 @@ de:
         blank: Ein Name ist erforderlich
       place:
         blank: Ein Ort order Stadt ist erforderlich
-
