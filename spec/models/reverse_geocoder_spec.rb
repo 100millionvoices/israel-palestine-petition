@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe ReverseGeocoder do
   describe '.fetch_location_name_from_lat_lng' do
-    let(:url) { ReverseGeocoder::GEOCODE_URL + "?key=&language=it&latlng=45.466084,9.186313&result_type=locality" }
+    let(:url) { ReverseGeocoder::GEOCODE_URL + '?key=&language=it&latlng=45.466084,9.186313&result_type=locality' }
 
     it 'returns a place name from lat lng' do
       stub_request(:get, url).to_return(status: 200, body: fixture_file('milano_geo_code.json'))

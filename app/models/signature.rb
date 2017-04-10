@@ -25,7 +25,7 @@ class Signature < ApplicationRecord
 
     # TODO: use a cache
     country = Country.find_by(country_code: country_code)
-    if country and !country.has_confirmed_signatures?
+    if country && !country.has_confirmed_signatures?
       country.update_attributes!(has_confirmed_signatures: true)
     end
   end
