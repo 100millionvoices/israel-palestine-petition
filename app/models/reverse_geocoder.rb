@@ -3,6 +3,7 @@ class ReverseGeocoder
   GEOCODE_URL = 'https://maps.googleapis.com/maps/api/geocode/json'.freeze
 
   def self.fetch_location_name_from_lat_lng(lat, lng, language)
+    return if geocoding_disabled?
     return unless lat.present? && lng.present? && language.present?
 
     query = { latlng: "#{lat},#{lng}", result_type: 'locality', language: language, key: ENV['GOOGLE_API_KEY'] }
@@ -20,6 +21,10 @@ class ReverseGeocoder
     place_name
   rescue StandardError => e
     handle_error(e, :error, query)
+  end
+
+  def self.geocoding_disabled?
+    ENV['REVERSE_GEOCODING_DISABLED'] == 'true'
   end
 
   def self.handle_error(error, level, options = {})
