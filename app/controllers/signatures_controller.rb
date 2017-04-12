@@ -41,7 +41,7 @@ class SignaturesController < ApplicationController
   def place_in_user_preferred_language(ip_location)
     place = nil
     http_accept_language.user_preferred_languages.each do |language|
-      place = ip_location.city&.name(language.downcase.split('-', 2).first)
+      place = GeoIpLookup.fetch_place_in_preferred_language(ip_location, language)
       break if place
     end
     place || place_from_reverse_geocode(ip_location)
