@@ -1,7 +1,9 @@
 class SignaturesController < ApplicationController
   include Captcha
+  caches_action :index, expires_in: 10.seconds, race_condition_ttl: 2.seconds
 
   def index
+    raise ActiveRecord::RecordNotFound if params[:page].present? && !(params[:page] =~ /\A\d+\z/)
     @countries = Country.with_confirmed_signatures.order("name_#{I18n.locale}").page(params[:page]).per(20)
   end
 
