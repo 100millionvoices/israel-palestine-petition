@@ -57,6 +57,7 @@ group :test do
   gem 'capybara'
   gem 'poltergeist'
   gem 'phantomjs'
+  gem 'webdrivers'
   gem 'selenium-webdriver'
   gem 'database_cleaner'
   gem 'webmock'

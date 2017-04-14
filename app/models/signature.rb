@@ -46,9 +46,17 @@ class Signature < ApplicationRecord
   end
 
   def self.cached_count_for_country_code(country_code)
-    Rails.cache.fetch("signature_count_#{country_code}") do
-      count_for_country_code(country_code)
+    if country_code == 'ALL'
+      cached_count_total
+    elsif COUNTRY_CODES.include?(country_code)
+      Rails.cache.fetch("signature_count_#{country_code}") do
+        count_for_country_code(country_code)
+      end
     end
+  end
+
+  def self.cached_count_total
+    Rails.cache.fetch('signature_count_all') { Signature.confirmed.count }
   end
 
   def self.count_by_place_for_country(country_code)

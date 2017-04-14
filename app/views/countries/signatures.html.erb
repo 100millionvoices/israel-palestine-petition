@@ -6,18 +6,19 @@
   <div class="text-center">
     <div class="card country-count-and-target text-center">
       <p class="lead">
-        <%= t('signatures.signature_count_html', count: number_with_delimiter(@country.signature_count)) if @country%>
+        <%= t('signatures.signature_count_html',
+            count: content_tag(:span, number_with_delimiter(@country.signature_count), data: { country: @country.country_code, count: @country.signature_count }, class: 'signature-target-count')) %>
       </p>
 
-      <% if @country&.target_signature_count %>
+      <% if @country.target_signature_count %>
         <p class="lead">
-          <%= t('signatures.target_signature_count_html', target: number_with_delimiter(@country.target_signature_count)) %>
+          <%= t('signatures.target_signature_count_html', target: content_tag(:span, number_with_delimiter(@country.target_signature_count), class: 'signature-target-count')) %>
         </p>
       <% end -%>
     </div>
   </div>
 
-  <% if @country&.target_signature_count %>
+  <% if @country.target_signature_count %>
     <p class="target-status">
       <% if @country.target_reached? %>
         <% # worry about this if and when %>

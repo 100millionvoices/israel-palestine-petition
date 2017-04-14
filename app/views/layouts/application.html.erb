@@ -23,7 +23,7 @@
   </head>
 
   <body>
-    <header class="navbar navbar-left bg-warning text-white">
+    <header class="navbar navbar-left bg-warning text-white" data-delimiter="<%= t('number.format.delimiter') %>">
       <div class="navbar-header">
         <%= link_to(home_path, class: 'logo-link') do %>
           <div class="logo"></div>
@@ -69,5 +69,8 @@
         </ul>
       </div>
     </footer>
+    <% if signature_counts_update_page? %>
+      <%= javascript_include_tag 'auto-updater' %>
+    <% end %>
   </body>
 </html>

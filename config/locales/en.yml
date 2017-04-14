@@ -60,7 +60,7 @@ en:
     confirmation_success: Your voice has been heard!
     home_page: home page
     make_your_voice_heard: Make your voice heard
-    signature_count_html: The current signature count is <strong>%{count}</strong>
+    signature_count_html: The current signature count is %{count}
     signatures_by_country: Signatures by country
     signatures_by_place_limit: "The top 25 places where signatures originated are :"
     signatures_from: Signatures from %{country}

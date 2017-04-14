@@ -1,5 +1,5 @@
 class CountriesController < ApplicationController
-  caches_action :signatures
+  caches_action :signatures, expires_in: 5.minutes
 
   def signatures
     @country_code = params[:country_code]&.upcase

@@ -60,7 +60,7 @@ es:
     confirmation_success: Has hecho oir tu voz!
     home_page: inicio
     make_your_voice_heard: Haz oir tu voz
-    signature_count_html: El total de firmas es <strong>%{count}</strong>
+    signature_count_html: El total de firmas es %{count}
     signatures_by_country: Firmas por país
     signatures_by_place_limit: "Los 25 lugares en el pais con mas firmas son :"
     signatures_from: Firmas de %{country}

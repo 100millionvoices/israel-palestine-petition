@@ -1,7 +1,8 @@
 class SignaturesController < ApplicationController
   include Captcha
-  caches_action :index, expires_in: 5.minutes
+  caches_action :index, expires_in: 1.minute
   caches_action :thank_you, expires_in: 10.minutes
+  caches_action :counts, cache_path: -> { { countries: params[:countries] } }, expires_in: 11.seconds
 
   def index
     raise ActiveRecord::RecordNotFound if params[:page].present? && !(params[:page] =~ /\A\d+\z/)
@@ -29,6 +30,14 @@ class SignaturesController < ApplicationController
     else
       render(:confirm_error) && return
     end
+  end
+
+  def counts
+    country_codes = params[:countries]&.split(',') || []
+    country_counts = country_codes.each_with_object({}) do |country_code, memo|
+                       memo[country_code] = Signature.cached_count_for_country_code(country_code)
+                     end
+    render json: country_counts
   end
 
   protected

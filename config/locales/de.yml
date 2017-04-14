@@ -60,7 +60,7 @@ de:
     confirmation_success: Ihre Stimme wird nun gehört!
     home_page: Homepage
     make_your_voice_heard: Verschaffen Sie Ihrer Stimme Gehör!
-    signature_count_html: "Bisheriger Stand der Unterschriften: <strong>%{count}</strong>"
+    signature_count_html: "Bisheriger Stand der Unterschriften: %{count}"
     signatures_by_country: Unterschriften nach Ländern
     signatures_by_place_limit: "Die 25 Orte mit den meisten Unterschriften, in Ländern, in denen Unterschriften getätigt wurden, sind :"
     signatures_from: Unterschriften aus %{country}
