@@ -8,7 +8,7 @@ class Country < ApplicationRecord
   validates :name_en, :country_code, presence: true
 
   def signature_count
-    @signature_count ||= Signature.count_for_country_code(country_code)
+    @signature_count ||= Signature.cached_count_for_country_code(country_code)
   end
 
   def target_reached?

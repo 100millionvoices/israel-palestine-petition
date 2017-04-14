@@ -19,7 +19,7 @@ describe Country do
   describe '#signature_count' do
     it 'returns the count from Signature' do
       country = Country.new(country_code: 'GH')
-      expect(Signature).to receive(:count_for_country_code).with('GH')
+      expect(Signature).to receive(:cached_count_for_country_code).with('GH')
       country.signature_count
     end
   end

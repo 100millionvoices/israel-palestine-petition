@@ -1,6 +1,7 @@
 class SignaturesController < ApplicationController
   include Captcha
-  caches_action :index, expires_in: 10.seconds, race_condition_ttl: 2.seconds
+  caches_action :index, expires_in: 5.minutes
+  caches_action :thank_you, expires_in: 10.minutes
 
   def index
     raise ActiveRecord::RecordNotFound if params[:page].present? && !(params[:page] =~ /\A\d+\z/)
@@ -68,6 +69,8 @@ class SignaturesController < ApplicationController
     lat = ip_location.location&.latitude
     lng = ip_location.location&.longitude
     language = http_accept_language.user_preferred_languages.first.downcase.split('-', 2).first
-    ReverseGeocoder.fetch_location_name_from_lat_lng(lat, lng, language)
+    Rails.cache.fetch("location_name_in_#{language}_from_lat_#{lat}_lng_#{lng}", expires_in: 10.minutes) do
+      ReverseGeocoder.fetch_location_name_from_lat_lng(lat, lng, language)
+    end
   end
 end

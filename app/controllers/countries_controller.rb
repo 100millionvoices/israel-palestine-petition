@@ -1,5 +1,5 @@
 class CountriesController < ApplicationController
-  caches_action :signatures, expires_in: 10.seconds, race_condition_ttl: 2.seconds
+  caches_action :signatures
 
   def signatures
     @country_code = params[:country_code]&.upcase
@@ -8,6 +8,8 @@ class CountriesController < ApplicationController
     end
 
     @country = Country.find_by(country_code: @country_code)
-    @signatures_by_place = Signature.count_by_place_for_country(@country_code)
+    @signatures_by_place = Rails.cache.fetch("signature_count_by_place_#{@country_code}") do
+      Signature.count_by_place_for_country(@country_code)
+    end
   end
 end

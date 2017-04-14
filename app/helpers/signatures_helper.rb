@@ -12,10 +12,6 @@ module SignaturesHelper
     country.send(:"name_#{I18n.locale}")
   end
 
-  def signature_count_for_country(country)
-    Signature.confirmed.where(country_code: country.country_code).count # TODO: caching
-  end
-
   # change name of ministry if language is english and country is an exception
   def what_happens_if_target_is_met(country_code)
     if_target_is_met_text = t('signatures.what_happens_if_target_is_met')
@@ -41,6 +37,12 @@ module SignaturesHelper
   end
 
   def country_select_options
-    options_for_select(ISO3166::Country.translations(I18n.locale).to_a.map(&:reverse).sort, @signature.country_code)
+    options_for_select(country_list(I18n.locale), @signature.country_code)
+  end
+
+  def country_list(locale)
+    Rails.cache.fetch("country_list_in_#{locale}", expires_in: 1.hour) do
+      ISO3166::Country.translations(locale).to_a.map(&:reverse).sort
+    end
   end
 end

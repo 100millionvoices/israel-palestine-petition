@@ -23,10 +23,13 @@ class Signature < ApplicationRecord
     return unless state == PENDING_STATE
     update_attributes!(state: CONFIRMED_STATE, signing_token: nil)
 
-    # TODO: use a cache
-    country = Country.find_by(country_code: country_code)
-    if country && !country.has_confirmed_signatures?
-      country.update_attributes!(has_confirmed_signatures: true)
+    cache_key = "confirmed_signatures_for_#{country_code}"
+    unless Rails.cache.read(cache_key)
+      country = Country.find_by(country_code: country_code)
+      if country && !country.has_confirmed_signatures?
+        country.update_attributes!(has_confirmed_signatures: true)
+        Rails.cache.write(cache_key, 'true', expires_in: 1.hour)
+      end
     end
   end
 
@@ -40,6 +43,12 @@ class Signature < ApplicationRecord
 
   def self.count_for_country_code(country_code)
     confirmed.where(country_code: country_code).count if country_code.present?
+  end
+
+  def self.cached_count_for_country_code(country_code)
+    Rails.cache.fetch("signature_count_#{country_code}") do
+      count_for_country_code(country_code)
+    end
   end
 
   def self.count_by_place_for_country(country_code)
