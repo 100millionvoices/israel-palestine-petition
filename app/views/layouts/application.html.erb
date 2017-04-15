@@ -71,6 +71,9 @@
     </footer>
     <% if signature_counts_update_page? %>
       <%= javascript_include_tag 'auto-updater' %>
+    <% elsif sign_petition_page? && !captcha_disabled? %>
+      <%= javascript_include_tag 'recaptcha' %>
+      <script src="https://www.google.com/recaptcha/api.js?hl=<%= I18n.locale %>" async defer></script>
     <% end %>
   </body>
 </html>

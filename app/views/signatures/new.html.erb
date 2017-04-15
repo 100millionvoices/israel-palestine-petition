@@ -1,25 +1,3 @@
-<% unless captcha_disabled? %>
-  <% content_for :head do %>
-    <script src="https://www.google.com/recaptcha/api.js?hl=<%= I18n.locale %>" async defer></script>
-    <script>
-      function onload() {
-        var element = document.getElementById("signature_btn");
-        element.onclick = onButtonClick;
-      }
-
-      function onButtonClick(event) {
-        event.preventDefault();
-        grecaptcha.execute();
-      }
-
-      function onSubmit(token) {
-        $(".sign-it-button").prop("disabled", true).addClass("active");
-        document.getElementById("new_signature").submit();
-      }
-    </script>
-  <% end %>
-<% end %>
-
 <h1 class="text-center lead"><%= I18n.t('signatures.make_your_voice_heard') %></h1>
 
 <%= form_for(@signature, html: { class: 'signature-form' }) do |f| %>
@@ -77,4 +55,3 @@
 </div>
 
 <% end -%>
-<script>onload();</script>
