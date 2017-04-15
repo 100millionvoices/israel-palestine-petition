@@ -1,0 +1,96 @@
+cs:
+  heading_html: "100MillionVoices žádá o podporu v protestu proti nedostatečnému řešení izraelsko-palestinského konfliktu."
+  about_us:
+    para_1: Jsme nezávislá, politicky nestranná skupina překladatelů a softwarových vývojářů.
+    para_2: Věříme, že pokud využijeme hlas obyvatel z celého světa, kteří jsou zklamaní nedostatečným řešením tohoto konfliktu, můžeme inspirovat a zároveň vyvinout tlak na vlády, aby podnikly správné kroky.
+    para_3_html: Doufáme, že se po přečtení %{petition_link} a %{faq_link} rozhodnete připojit i váš hlas. Děkujeme.
+    petition: petice
+    sign_the_petition: podepsat
+  faq:
+    number_01:
+      question_html: Izraelsko-palestinský konflikt existuje po generace. Proč začít s peticí teď?
+      answer_html: Rozum je v konfliktu přehlušen extremistickými názory a akcemi. Obě strany se zdají být daleko od možné dohody. Chceme, aby tomu tato nestranná petice čelila. Počet <a href="http://www.internetlivestats.com/internet-users/" target="_blank">internetových uživatelů na světě</a> se zvyšuje, a to nám umožňuje vytvořit online petici jako hybnou sílu ke změně.
+    number_02:
+      question_html: Mohu podepsat petici více než jednou?
+      answer_html: Podepište prosím petici pouze jednou, tak aby součet podpisů reprezentoval počet jednotlivců. Udělá nám nicméně obrovskou radost, pokud budete sdílet petici se svými přáteli.
+    number_03:
+      question_html: Zveřejníte podpisové informace?
+      answer_html: Zveřejníme pouze informace o zemi a místě/městě. Nebudeme sdílet emailové adresy ani jména.
+    number_04:
+      question_html: Budete posílat nevyžádané emaily?
+      answer_html: Ne. Dostanete od nás email k potvrzení podpisu. Žádné další emaily už nebudou zaslány.
+    number_05:
+      question_html: Jak mohu vědět, že počet podpisů je přesný?
+      answer_html: Kód této stránky je k dispozici na <a href="https://github.com/100millionvoices/israel-palestine-petition" target="_blank">GitHub</a>. Kdokoliv může kód překontrolovat. Uvitáme jakékoliv <a href="mailto:feedback@100millionvoices.org" rel="external">podněty a zpětnou vazbu</a>.
+    number_06:
+      question_html: Proč se na podpisové straně objevuje vyskakovací okno, které žádá o zvolení konkrétního obrázku?
+      answer_html: Jedná se o bezpečnostní prvek reCAPTCHA od společnosti Google, který udržuje stránku v bezpečí před roboty.
+  home:
+    petition:
+      para_1_html: "&ldquo; Izraelsko-palestinský konflikt je odpovědný za bídu a utrpení na obou stranách."
+      para_2_html: Vyzýváme naše vlády, aby obnovily snahu o vytvoření podmínek pro vyřešení konfliktu.
+      para_3_html: Vyzýváme palestinské vedení, aby uznalo izraelské právo na existenci a zavázalo se k míru.
+      para_4_html: "A vyzýváme izraelskou vládu, aby se zavázala k vytvoření státu Palestina a aby přestala osidlovat okupovaná území.&nbsp;&rdquo;"
+    sign_petition: Podepsat petici
+    signatures_from: "podpisy: %{country}"
+    total_signatures: Počet podpisů
+  links:
+    about_us: O nás
+    contact: Kontakt
+    faq: FAQ
+    home: Hlavní strana
+    sign_petition: Podepsat petici
+    signatures: Podpisy
+  maintenance:
+    message: Stránka je momentálně nedostupná z důvodu údržby. Brzy budeme zpátky. Omlouváme se.
+  signature:
+    attributes:
+      country: Země
+      email: Email
+      name: Jméno
+      place: Místo nebo město
+    form:
+      email_hint: Nebudeme s nikým sdílet váš email
+      sign_the_petition: Podepsat
+      submit_hint: Zašleme vám email s žadostí o potvrzení podpisu petice
+  signatures:
+    almost_there: Téměř hotovo
+    confirmation_error: Tvůj podpis byl již potvrzen, děkujeme
+    confirmation_html: Děkujeme za potvrzení podpisu a podepsání petice. Váš podpis byl přidán k celkovému počtu podpisů na %{home_link}.
+    confirmation_success: Váš hlas je teď slyšet!
+    home_page: hlavní strana
+    make_your_voice_heard: Připojte váš hlas
+    signature_count_html: Aktuální počet podpisů je <strong>%{count}</strong>
+    signatures_by_country: Podpisy dle země
+    signatures_by_place_limit: "Top 25 míst vzniku podpisů:"
+    signatures_from: Podpisy z %{country}
+    target_signature_count_html: Cíl je <strong>%{target}</strong>, což je 1% z <a href="https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations)" target="_blank">populace</a>
+    thank_you: Zaslali jsme vám email. Přečtěte si ho a klikněte na odkaz pro potvrzení podpisu. Děkujeme.
+    what_happens_if_target_is_met: Pokud dosáhneme tohoto ambiciózního cíle, bude 100MillionVoices vaším jménem prezentovat celkový počet podpisů přímo Ministerstvu zahraničních věcí.
+  sharing:
+    email_subject: Kampaň 100MillionVoices
+    share_petition_on: "Sdílet petici přes:"
+    share_text: 100MillionVoices žádá o podporu v protestu proti nedostatečnému řešení izraelsko-palestinského konfliktu
+    # twitter text must be less than 110 characters
+    twitter_share: "Podpořte #100MillionVoices v protestu proti nedostatečnému řešení izraelsko-palestinského konfliktu"
+  user_mailer:
+    confirm_signature:
+      confrim_signature: Pro potvrzení podpisu klikněte na %{link}.
+      greeting: Ahoj %{name}
+      subject: Potvrďte podpis petice
+      thank_you: Děkujeme za podporu v kampani. S tolika hlasy, které podporují snahu o vyřešení izraelsko-palestinského konfliktu, můžeme věci konečně změnit.
+
+  errors:
+    attributes:
+      captcha:
+        invalid: Captcha selhala. Kontaktujte nás prosím, pokud problém bude přetrvávat.
+      country_code:
+        blank: Zvolte prosím zemi
+      email:
+        blank: Doplňte email
+        invalid: Tento email je neplatný
+        taken: Tento email byl již použit
+      name:
+        blank: Doplňte jméno
+      place:
+        blank: Doplňte místo nebo město
