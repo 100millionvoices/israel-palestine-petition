@@ -25,7 +25,7 @@ feature 'Signature counts' do
     visit '/'
 
     expect(page).to have_text '2 signatures from Ghana'
-    expect(page).to have_link('signatures from Ghana', href: country_signatures_path(country_code: 'gh', locale: :en))
+    expect(page).to have_link('signatures from Ghana', href: country_path(country_code: 'gh', locale: :en))
     expect(page).to have_text '3 signatures in total'
     expect(page).to have_link('signatures in total', href: signatures_path(locale: :en))
   end

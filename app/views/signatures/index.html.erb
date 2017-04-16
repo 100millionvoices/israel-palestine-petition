@@ -4,7 +4,7 @@
   <div class="signature-locations">
     <% @countries.each do |country| %>
       <div class="lead signatures-list-count">
-        <%= link_to(localized_country_name(country), country_signatures_path(country.country_code.downcase)) %>
+        <%= link_to(localized_country_name(country), country_path(country.country_code.downcase)) %>
         <span class="signature-count" data-country="<%= country.country_code %>" data-count="<%= country.signature_count %>">
           <%= number_with_delimiter(country.signature_count) %>
         </span>

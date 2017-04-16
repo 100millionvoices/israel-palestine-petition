@@ -23,7 +23,8 @@ Rails.application.routes.draw do
       get 'thank-you', on: :collection
       get ':token/confirm', on: :collection,  action: :confirm, as: :confirm
       get 'counts', on: :collection,  action: :counts, format: :json
-      get 'countries/:country_code' => 'countries#signatures', on: :collection, as: :country
     end
+
+    resources :countries, only: [:show], param: :country_code
   end
 end

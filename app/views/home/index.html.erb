@@ -25,7 +25,7 @@
 
   <% if @signature_count_for_country %>
     <div class="text-center counter-block col-md-6">
-      <%= link_to(country_signatures_path(@country_code.downcase)) do %>
+      <%= link_to(country_path(@country_code.downcase)) do %>
         <div class="counter">
           <div class="counter-number" data-country="<%= @country_code %>" data-count="<%= @signature_count_for_country %>">
             <%= number_with_delimiter(@signature_count_for_country) %>

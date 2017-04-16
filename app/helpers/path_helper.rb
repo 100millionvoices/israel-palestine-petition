@@ -10,6 +10,6 @@ module PathHelper
   def signature_counts_update_page?
     controller_name == 'home' && action_name == 'index' ||
       controller_name == 'signatures' && action_name == 'index' ||
-      controller_name == 'countries' && action_name == 'signatures'
+      controller_name == 'countries' && action_name == 'show'
   end
 end

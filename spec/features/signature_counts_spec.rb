@@ -42,7 +42,7 @@ feature 'Signature counts API' do
 
   scenario 'Ajax update of signature count on country page', :js do
     create :ghana, has_confirmed_signatures: true
-    visit country_signatures_path(locale: :en, country_code: 'gh')
+    visit country_path(locale: :en, country_code: 'gh')
 
     expect(page).to have_text 'The current signature count is 2'
 

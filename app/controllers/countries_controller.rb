@@ -1,7 +1,7 @@
 class CountriesController < ApplicationController
-  caches_action :signatures, expires_in: 5.minutes
+  caches_action :show, expires_in: 5.minutes
 
-  def signatures
+  def show
     @country_code = params[:country_code]&.upcase
     if Signature::COUNTRY_CODES.exclude?(@country_code) || !(params[:country_code] =~ /^[a-z]*$/)
       raise ActiveRecord::RecordNotFound
