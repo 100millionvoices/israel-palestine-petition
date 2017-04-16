@@ -25,6 +25,8 @@ Rails.application.routes.draw do
       get 'counts', on: :collection,  action: :counts, format: :json
     end
 
-    resources :countries, only: [:show], param: :country_code
+    resources :countries, only: [:show], param: :country_code do
+      get 'signature_counts', on: :member, format: :json
+    end
   end
 end

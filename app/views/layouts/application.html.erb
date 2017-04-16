@@ -69,7 +69,9 @@
         </ul>
       </div>
     </footer>
-    <% if signature_counts_update_page? %>
+    <% if country_page? %>
+      <%= javascript_include_tag 'country-updater' %>
+    <% elsif signature_counts_update_page? %>
       <%= javascript_include_tag 'auto-updater' %>
     <% elsif sign_petition_page? && !captcha_disabled? %>
       <%= javascript_include_tag 'recaptcha' %>

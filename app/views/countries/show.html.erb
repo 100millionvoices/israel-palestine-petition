@@ -32,12 +32,19 @@
   <% end -%>
 
   <div class="signature-locations signature-places">
-    <% @signatures_by_place.each do |place_and_count| %>
+    <% @signatures_by_place.each do |place, count| %>
       <div class="lead signatures-list-count">
-        <%= place_and_count[0] %>
-        <span class="signature-count"><%= number_with_delimiter(place_and_count[1]) %></span>
+        <span><%= place %></span>
+        <span class="signature-count" data-place="<%= place %>" data-count="<%= count %>">
+          <%= number_with_delimiter(count) %>
+        </span>
       </div>
     <% end %>
+
+    <div class="lead signatures-list-count hidden new-row">
+      <span>Blank</span>
+      <span class="signature-count" data-place="" data-count="0">0</span>
+    </div>
   </div>
 </div>
 

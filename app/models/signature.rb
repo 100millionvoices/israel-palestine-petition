@@ -37,8 +37,8 @@ class Signature < ApplicationRecord
     state == CONFIRMED_STATE
   end
 
-  def self.count_by_country_code
-    confirmed.group(:country_code).count
+  def invalidate!
+    update_columns(state: INVALID_STATE)
   end
 
   def self.count_for_country_code(country_code)
@@ -60,9 +60,15 @@ class Signature < ApplicationRecord
   end
 
   def self.count_by_place_for_country(country_code)
-    top_places = confirmed.where(country_code: country_code).group(:place).order('count(*) DESC')
+    top_places = confirmed.where(country_code: country_code).group(:place).order('count(*) DESC, UPPER(place) DESC')
     top_places = top_places.limit(MAX_PLACES_FOR_COUNTRY).count
-    top_places.sort { |a, b| a[1] <=> b[1] }
+    top_places.to_a.reverse.to_h
+  end
+
+  def self.cached_count_by_place_for_country(country_code)
+    Rails.cache.fetch("signature_count_by_place_#{country_code}") do
+      count_by_place_for_country(country_code)
+    end
   end
 
   private

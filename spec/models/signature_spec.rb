@@ -73,13 +73,12 @@ describe Signature do
     end
   end
 
-  describe '.count_by_country_code' do
-    it 'returns a count hash keyed by country code' do
-      create :pending_signature
-      create :confirmed_signature_de
-      create_list :confirmed_signature_gh, 2
+  describe '#invalidate!' do
+    let(:signature) { create(:pending_signature, country_code: 'GH') }
 
-      expect(Signature.count_by_country_code).to eq('DE' => 1, 'GH' => 2)
+    it 'sets the state to invalid' do
+      signature.invalidate!
+      expect(signature.state).to eq(Signature::INVALID_STATE)
     end
   end
 
@@ -102,9 +101,12 @@ describe Signature do
       create :pending_signature_gh
       create :confirmed_signature_de
       create_list :confirmed_signature_gh, 3, place: 'Accra'
-      create_list :confirmed_signature_gh, 2, place: 'Koforidua'
+      create_list :confirmed_signature_gh, 1, place: 'Kokrobite'
+      create_list :confirmed_signature_gh, 1, place: 'Koforidua'
+      create_list :confirmed_signature_gh, 1, place: 'koforidua'
 
-      expect(Signature.count_by_place_for_country('GH')).to eq([['Koforidua', 2], ['Accra', 3]])
+      counts_by_place = Signature.count_by_place_for_country('GH').to_a
+      expect(counts_by_place).to eq([['koforidua', 1], ['Koforidua', 1], ['Kokrobite', 1], ['Accra', 3]])
     end
   end
 end
