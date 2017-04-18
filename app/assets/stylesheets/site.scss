@@ -10,6 +10,10 @@ header {
   flex: none;
   .navbar-header {
     position: relative;
+    max-width: 1500px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .logo {
@@ -152,15 +156,15 @@ h1 {
     padding-right: 25px;
     padding-left: 25px;
   }
-  .footer-links li {
-    display: inline-block;
-  }
 }
 
 @media (min-width: 768px) {
   .main {
     padding-right: 50px;
     padding-left: 50px;
+  }
+  .footer-links li {
+    display: inline-block;
   }
 }
 
@@ -170,6 +174,13 @@ h1 {
     padding-left: 100px;
   }
 }
+
+@media (min-width: 1200px) {
+  .container-fluid {
+    max-width: 1500px;
+  }
+}
+
 
 .footer {
   flex: none;
