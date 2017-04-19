@@ -4,6 +4,7 @@
   margin-right: auto;
 
   .signature-target-count {
+    color: black;
     font-weight: bold;
   }
 
@@ -14,7 +15,8 @@
   }
 
   .signatures-list-count:nth-of-type(odd) {
-    background-color: rgba(0,0,0,.05);
+    background-color: #fcf8e3;
+    border-color: #faf2cc;
   }
 
   .signature-locations {

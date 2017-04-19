@@ -4,7 +4,7 @@
   </h1>
 
   <div class="text-center">
-    <div class="card country-count-and-target text-center">
+    <div class="card country-count-and-target text-center text-muted">
       <p class="lead">
         <%= t('signatures.signature_count_html',
             count: content_tag(:span, number_with_delimiter(@country.signature_count), data: { country: @country.country_code, count: @country.signature_count }, class: 'signature-target-count')) %>
@@ -33,7 +33,7 @@
 
   <div class="signature-locations signature-places">
     <% @signatures_by_place.each do |place, count| %>
-      <div class="lead signatures-list-count">
+      <div class="lead signatures-list-count text-muted">
         <span><%= place %></span>
         <span class="signature-count" data-place="<%= place %>" data-count="<%= count %>">
           <%= number_with_delimiter(count) %>
@@ -41,7 +41,7 @@
       </div>
     <% end %>
 
-    <div class="lead signatures-list-count hidden new-row">
+    <div class="lead signatures-list-count text-muted hidden new-row">
       <span>Blank</span>
       <span class="signature-count" data-place="" data-count="0">0</span>
     </div>
