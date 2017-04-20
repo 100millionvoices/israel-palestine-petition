@@ -1,0 +1,96 @@
+he:
+  heading_html: "MillionVoices100 מבקש את תמיכתכם במחאה כנגד חוסר התקדמות בפתרון הסכסוך הישראלי-פלסטיני."
+  about_us:
+    para_1: אנו קבוצה בלתי תלויה, לא מפלגתית, של מתרגמים ומפתחים.
+    para_2: אנו חולקים מאמינים כי באמצעות רתימת קולות מתונים של אזרחים ברחבי העולם, שמתוסכלים מחוסר התקדמות בפתרון הסכסוך, נוכל להוות מקור להשראה ולהפעיל לחץ על ממשלות לעשות את הדבר הנכון.
+    para_3_html: אנו מקווים שעל ידי קריאה של %{petition_link} ושל %{faq_link}, תרצו %{sign_petition_link}, וכך להשמיע את קולכם. תודה!
+    petition: עצומה
+    sign_the_petition: תחתמו
+  faq:
+    number_01:
+      question_html: הסכסוך הישראלי-פלסטיני קיים הרבה דורות. למה להשיק את העצומה עכשיו?
+      answer_html: הקולות המתונים בקונפליקט נבלעים יותר ויותר על ידי השקפות ומעשים קיצוניים, ונראה ששני הצדדים רחוקים מלהציע פשרות. אנו רוצים שהעצומה הלא-מפלגתית הזו תהווה משקל נגד לכך. מספר  <a href="http://www.internetlivestats.com/internet-users/" target="_blank">משתמשי האינטרנט ברחבי העולם</a> גדל במהירות, וזה פותח הזדמנות לכך שעצומה און-ליין תוביל מהלך של שינוי.
+    number_02:
+      question_html: האם אפשר לחתום על העצומה יותר מפעם אחת?
+      answer_html: אנו מבקשים לחתום על העצומה רק פעם אחת כדי שכמות החתימות תייצג את מספר הקולות האינדיבידואליים. אנו נשמח אם תשתף/י את העצומה עם חבריך ובני משפחתך.
+    number_03:
+      question_html: האם תפרסמו את נתוני החתימה?
+      answer_html: אנו נפרסם רק נתוני ארץ ומיקום / עיר. לעולם לא נשתף כתובות דוא"ל או שמות.
+    number_04:
+      question_html: האם תשלחו לי אימיילים לא רצויים?
+      answer_html: לא, בהחלט לא. לאחר שנשלח לך דוא"ל כדי לאשר את החתימך, לא יישלחו הודעות דוא"ל נוספות.
+    number_05:
+      question_html: כיצד אוכל לדעת שספירת החתימות מדויקת?
+      answer_html: הקוד עבור אתר זה הוא קוד פתוח וזמין בכתובת <a href="https://github.com/100millionvoices/israel-palestine-petition" target="_blank">GitHub</a>. כל אחד יכול לבדוק אותו ואנו מקדמים בברכה כל <a href="mailto:feedback@100millionvoices.org" rel="external">הצעות או משוב</a>.
+    number_06:
+      question_html: מדוע נפתח חלון קופץ בדף החתימה המבקש ממני לבחור תמונות מסוימות?
+      answer_html: זהו מאפיין אבטחה הנקרא reCAPTCHA מ- Google. הוא נועד לשמור על האתר מפני הבוטים.
+  home:
+    petition:
+      para_1_html: "&ldquo; הסכסוך הישראלי-פלסטיני אחראי לסבל נורא וליסורים משני הצדדים."
+      para_2_html: אנו קוראים לממשלותינו לחדש את המאמצים כדי לעודד את התנאים הנחוצים לפתרון הסכסוך.
+      para_3_html: אנו קוראים להנהגה הפלסטינית להכיר בזכותה של ישראל לקיום של שלום ולהתחייב לאי-אלימות.
+      para_4_html: "ואנו קוראים לממשלת ישראל להתחייב להקמת מדינה פלסטינית ולהפסיק את הבנייה בהתנחלויות בשטחים הכבושים.&nbsp;&rdquo;"
+    sign_petition: לחתימה על העצומה
+    signatures_from: חתימות מ %{country}
+    total_signatures: סך הכל חתימות
+  links:
+    about_us: אודותינו
+    contact: צור קשר
+    faq: שאלות נפוצות
+    home: עמוד הבית
+    sign_petition: לחתימה על העצומה
+    signatures: חתימות
+  maintenance:
+    message: האתר נמצא כעת בתחזוקה, נחזור בקרוב. עמכם הסליחה.
+  signature:
+    attributes:
+      country: מדינה
+      email: דוא"ל
+      name: שם
+      place: מקום או עיר
+    form:
+      email_hint: לעולם לא נשתף את הדוא"ל שלך
+      sign_the_petition: חתימה
+      submit_hint: כדי לאשר את החתימה שלך נשלח אליך הודעת דוא"ל ונבקש ממך ללחוץ על הקישור שבתוכה
+  signatures:
+    almost_there: כמעט סיימנו
+    confirmation_error: חתימתך כבר אושרה, תודה
+    confirmation_html: תודה על אישור חתימתך וחתימה על העצומה. חתימתך מתווספת כעת לספירת החתימות ב-%{home_link}.
+    confirmation_success: קולך נשמע!
+    home_page: עמוד הבית
+    make_your_voice_heard: תן לקולך להישמע
+    signature_count_html: ספירת החתימות הנוכחית היא %{count}
+    signatures_by_country: חתימות לפי מדינה
+    signatures_by_place_limit: "25 המקומות הראשונים בהם נחתמו חתימות הם:"
+    signatures_from: חתימות מ-%{country}
+    target_signature_count_html: היעד הוא <strong>%{target}</strong> המהווה 1% מ <a href="https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations)" target="_blank">האוכלוסייה</a>
+    thank_you: שלחנו לך דוא"ל. אנא קרא אותו ולחץ על הקישור כדי לאשר את חתימתך. תודה.
+    what_happens_if_target_is_met: במידה והיעד השאפתני הזה יושג, MillionVoices100 יציג את העצומה בפני משרד החוץ של המדינה בשמך.
+  sharing:
+    email_subject: הקמפיין של MillionVoices100
+    share_petition_on: "שתפו את העצומה ב:"
+    share_text: MillionVoices100 מבקש את תמיכתכם במחאה כנגד חוסר ההתקדמות בפתרון הסכסוך הישראלי-פלסטיני.
+    # twitter text must be less than 110 characters
+    twitter_share: תמכו ב- MillionVoices100 במחאה כנגד חוסר ההתקדמות בפתרון הסכסוך הישראלי-פלסטיני.
+  user_mailer:
+    confirm_signature:
+      confrim_signature: כדי לאשר את החתימה שלך, לחץ על %{link}.
+      greeting: שלום %{name}
+      subject: אשר את החתימה על העצומה
+      thank_you: תודה על תמיכתך בקמפיין. עם כל כך הרבה קולות שתומכים במאמץ המחודש לפתרון הסכסוך הישראלי-פלסטיני, אנו נביא את השינוי.
+
+  errors:
+    attributes:
+      captcha:
+        invalid: ה- captcha נכשל. צור איתנו קשר אם השגיאה נמשכת.
+      country_code:
+        blank: יש לבחור ארץ
+      email:
+        blank: יש לתת דוא"ל
+        invalid: הדוא"ל שגוי
+        taken: דוא"ל זה כבר בשימוש
+      name:
+        blank: יש לתת שם
+      place:
+        blank: יש לתת מקום או עיר
