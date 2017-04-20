@@ -55,7 +55,7 @@ en:
       submit_hint: To confirm your signature we will send an email and ask you to click the link in it
   signatures:
     almost_there: Almost there...
-    confirmation_error: Your signture has already been confirmed, thank you
+    confirmation_error: Your signature has already been confirmed, thank you
     confirmation_html: Thank you for confirming your signature and signing the petition. Your signature is now being added to the signatures count on the %{home_link}.
     confirmation_success: Your voice has been heard!
     home_page: home page

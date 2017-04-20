@@ -1,16 +1,20 @@
 # Translation help
 
-## Location and format of translation files
+## Translation file
 
-The translation files are located in [config/locales](../config/locales/). There is one per language and the format used is [yaml](https://en.wikipedia.org/wiki/YAML). The yaml format consists of indented keys on the left and values on the right. Keys are separated from values by colons.
+The format of the translation file is [yaml](https://en.wikipedia.org/wiki/YAML). The yaml format consists of keys on the left and values to the right. Keys are separated from values by colons.
 
-## What we do and don't want to translate
+The file we would like translated is [en.yml](../config/locales/en.yml).
 
-We do want to translate the values in [en.yml](../config/locales/en.yml).
+We don't want to translate keys since they provide the mechanism to lookup the correct text to be displayed on the website. We do want to translate values which is the text immediately on the right of the keys. So for the following line:
 
-We don't want to translate keys since they provide the mechanism to lookup the correct text to be displayed on the website.
+```yaml
+  question_html: Can I sign the petition more than once?
+```
 
-Substitution values are used when there is a dynamic element to the text. For example in the email sent to a user to confirm their signature, the first line says something like _Hello Beyonce_. The yaml entry for this is
+we only want to translate the text `Can I sign the petition more than once?`.
+
+Substitution values are used when there is a dynamic element to the text. For example in the email sent to a user to confirm their signature, the first line could be _Hello Beyonce_. The yaml entry for this is
 
 ```yaml
 greeting: Hello %{name}
