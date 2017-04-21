@@ -1,3 +1,5 @@
+include ApplicationHelper
+
 class UserMailer < ApplicationMailer
   default from: '100MillionVoices<no-reply@100millionvoices.org>'
 

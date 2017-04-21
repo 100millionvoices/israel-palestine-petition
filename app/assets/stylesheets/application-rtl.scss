@@ -1,0 +1,117 @@
+header {
+  .logo-link {
+    margin-right: 0;
+    margin-left: 10px;
+  }
+}
+
+.header-text {
+  padding-right: 0;
+  padding-left: 6px;
+}
+
+.dropdown {
+  float: left;
+}
+
+.dropdown-content {
+  left: 0;
+  text-align: right;
+  border-radius: 0 0.25rem 0.25rem 0.25rem;
+
+  .language {
+    margin-right: 0;
+    margin-left: -2px;
+  }
+}
+
+.breadcrumb-item {
+  float: right;
+}
+
+.footer-links {
+  .fa {
+    padding-right: 0;
+    padding-left: 3px;
+  }
+  li {
+    margin-right: 0;
+    margin-left: 2.0rem;
+  }
+}
+
+.share-petition {
+  .row {
+    div:nth-child(even) {
+      border-right: 1px solid #eceeef;
+      border-left: none;
+    }
+    @media (min-width: 768px) {
+      div:not(:first-child) {
+        border-right: 1px solid #eceeef;
+        border-left: none;
+      }
+    }
+  }
+}
+
+/* home page */
+.petition-text {
+  .petition-signer {
+    text-align: left;
+  }
+  .petition-date {
+    text-align: left;
+  }
+}
+.counter-text {
+  float: left;
+}
+.sign-petition {
+  text-align: left;
+  .fa {
+    transform: scale(-1, 1);
+  }
+}
+/* end */
+
+.signatures-list {
+  .signature-count {
+    float: left;
+  }
+}
+
+.pagination {
+  .page-item:first-child {
+    border-radius: 0 0.25rem 0.25rem 0;
+    .page-link {
+      margin-left: -1px;
+      border-radius: 0 0.25rem 0.25rem 0;
+    }
+  }
+
+  .page-item:last-child {
+    border-radius: 0.25rem 0 0 0.25rem;
+    .page-link {
+      border-radius: 0.25rem 0 0 0.25rem;
+    }
+  }
+
+  .inactive {
+    margin-right: -1px;
+    margin-left: 0;
+  }
+}
+
+.sign-petition-btn {
+  float: left;
+  .fa {
+    transform: scale(-1, 1);
+  }
+}
+
+/* signature page */
+.captcha-container {
+  float: left;
+}
+/* end */

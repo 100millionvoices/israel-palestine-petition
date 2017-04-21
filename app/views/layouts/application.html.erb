@@ -15,7 +15,10 @@
     <title>100MillionVoices</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <% if rtl? %>
+      <%= stylesheet_link_tag 'application-rtl', media: 'all' %>
+    <% end %>
     <%= javascript_include_tag 'application' %>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -34,7 +37,7 @@
         </h2>
         <div class="dropdown text-right">
           <button class="dropbtn"><%= current_language %></button>
-          <div class="dropdown-content text-left">
+          <div class="dropdown-content">
             <% locales.each do |locale, language| %>
               <% if locale != params[:locale] %>
                 <%= link_to(language, url_for_locale(locale)) %>

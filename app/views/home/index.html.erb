@@ -3,10 +3,10 @@
     <%= content_tag :p, para.html_safe, class: 'lead' %>
   <% end %>
 
-  <p class="text-right petition-signer">
+  <p class="petition-signer">
     <em><%= link_to('100MillionVoices', about_us_path) %></em><br>
   </p>
-  <p class="text-right petition-date">
+  <p class="petition-date">
     <small class="text-muted"><%= petition_date %></small>
   </p>
 </div>
@@ -39,7 +39,7 @@
   <% end -%>
 </div>
 
-<div class="sign-petition text-right">
+<div class="sign-petition">
   <%= link_to(fa_icon('pencil', text: t('home.sign_petition')).html_safe, new_signature_path, class: 'btn btn-lg btn-secondary') %>
 </div>
 
