@@ -2,6 +2,9 @@ require 'rails_helper'
 
 feature 'Sign petition' do
   let(:email) { 'jo@bloggs.com' }
+  before :each do
+    countries_setup
+  end
 
   scenario 'User signs petition and receives an email' do
     stub_google_captcha_response(body: '{"success": true}')

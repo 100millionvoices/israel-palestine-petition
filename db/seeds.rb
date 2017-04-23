@@ -57,6 +57,11 @@ ISO3166::Country.translations.each do |country_code, name|
     country.send(:"name_#{locale}=", ISO3166::Country.translations(locale)[country_code])
   end
 
+  # why is this necessary?
+  # see https://github.com/hexorx/countries/blob/master/lib/countries/cache/locales/he.json
+  country.name_he = 'פלסטין, מדינת' if country_code == 'PS'
+  country.name_he = 'איי הבתולה (ארה)' if country_code == 'VI'
+
   country_population = find_country_population(name)
   if country_population
     country.population = country_population[1].gsub(',', '').to_i

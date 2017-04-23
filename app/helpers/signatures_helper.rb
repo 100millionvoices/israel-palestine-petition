@@ -42,7 +42,7 @@ module SignaturesHelper
 
   def country_list(locale)
     Rails.cache.fetch("country_list_in_#{locale}", expires_in: 1.hour) do
-      ISO3166::Country.translations(locale).to_a.map(&:reverse).sort
+      Country.order("name_#{locale}").pluck(:"name_#{locale}", :country_code)
     end
   end
 end
