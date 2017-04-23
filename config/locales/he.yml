@@ -1,4 +1,5 @@
 he:
+  site_name: MillionVoices100
   heading_html: "MillionVoices100 מבקש את תמיכתכם במחאה כנגד חוסר התקדמות בפתרון הסכסוך הישראלי-פלסטיני."
   about_us:
     para_1: אנו קבוצה בלתי תלויה, לא מפלגתית, של מתרגמים ומפתחים.
@@ -68,9 +69,12 @@ he:
     thank_you: שלחנו לך דוא"ל. אנא קרא אותו ולחץ על הקישור כדי לאשר את חתימתך. תודה.
     what_happens_if_target_is_met: במידה והיעד השאפתני הזה יושג, MillionVoices100 יציג את העצומה בפני משרד החוץ של המדינה בשמך.
   sharing:
+    email: דוא"ל
     email_subject: הקמפיין של MillionVoices100
+    facebook: פייסבוק
     share_petition_on: "שתפו את העצומה ב:"
     share_text: MillionVoices100 מבקש את תמיכתכם במחאה כנגד חוסר ההתקדמות בפתרון הסכסוך הישראלי-פלסטיני.
+    twitter: טוויטר
     # twitter text must be less than 110 characters
     twitter_share: תמכו ב- MillionVoices100 במחאה כנגד חוסר ההתקדמות בפתרון הסכסוך הישראלי-פלסטיני.
   user_mailer:

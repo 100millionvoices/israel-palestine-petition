@@ -3,17 +3,17 @@
   <div class="row text-center">
     <div class="col-6 col-md-4">
       <%= link_to(facebook_sharing_url, rel: 'external', target: '_blank', class: 'facebook') do
-        fa_icon('facebook', text: 'Facebook').html_safe
+        fa_icon('facebook', text: t('sharing.facebook', default: 'Facebook')).html_safe
       end %>
     </div>
     <div class="col-6 col-md-4">
       <%= link_to(twitter_sharing_url, rel: 'external', target: '_blank', class: 'twitter') do
-        fa_icon('twitter', text: 'Twitter').html_safe
+        fa_icon('twitter', text: t('sharing.twitter', default: 'Twitter')).html_safe
       end %>
     </div>
     <div class="col-6 col-md-4">
       <%= mail_to('', subject: t('sharing.email_subject'), body: email_share_body, rel: 'external', class: 'email') do
-        fa_icon('envelope-o', text: 'Email').html_safe
+        fa_icon('envelope-o', text: t('sharing.email', default: 'Email')).html_safe
       end %>
     </div>
     <div class="col-6 whatsapp-share">
