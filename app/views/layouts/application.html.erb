@@ -39,8 +39,7 @@
               <% if locale != params[:locale] %>
                 <%= link_to(language, url_for_locale(locale)) %>
               <% else %>
-                <div class="selected-language"><%= language %><i class="fa fa-check" aria-hidden="true"></i>
-                </div>
+                <div class="selected-language"><em><%= language %></em></div>
               <% end %>
             <% end -%>
           </div>
