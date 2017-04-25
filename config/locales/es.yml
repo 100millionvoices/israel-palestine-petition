@@ -55,7 +55,7 @@ es:
       submit_hint: Para confirmar tu firma te mandaremos un correo electrónico con un enlace que tendrás que seguir
   signatures:
     almost_there: Acabando casi...
-    confirmation_error: Sentimos que no hemos podido encontrar tu firma para confirmar.?A lo mejor ya la as confirmado?
+    confirmation_error: Tu firma ya ha sido confirmada, gracias
     confirmation_html: Gracias por confirmar tu firma y firmar la petición. Tu firma ha sido añadida al total de firmas en el %{home_link}.
     confirmation_success: Has hecho oir tu voz!
     home_page: inicio

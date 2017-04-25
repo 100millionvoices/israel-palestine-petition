@@ -23,8 +23,8 @@ de:
       question_html: "Wie weiss ich, dass die Unterschriften korrekt gezählt werden?"
       answer_html: 'Der Code für diese Website ist frei zugänglich (‘open source‘) über <a href="https://github.com/100millionvoices/israel-palestine-petition" target="_blank">GitHub</a>. Er kann von jedem eingesehen werden und wir sind offen für jede Art von <a href="mailto:feedback@100millionvoices.org" rel="external">Vorschlägen oder Rückmeldungen</a>.'
     number_06:
-      question_html: Why does a popup appear on the signing page asking me to select particular photos?
-      answer_html: This is a security feature called reCAPTCHA from Google. It is designed to keep the site safe from bots.
+      question_html: Warum erscheint ein Pop-Up Fenster auf der Unterschriften-Seite, welches mich auffordert, bestimmte Bilder auszuwählen?
+      answer_html: Hierbei handelt es sich um eine Sicherheitseinstellung von Google namens reCAPTCHA. Sie soll dazu dienen, die Website vor Bots zu schützen.
   home:
     petition:
       para_1_html: "„ Der Konflikt zwischen Israel und Palästina ist die Ursache für schreckliches Elend und Leid auf beiden Seiten."
@@ -42,7 +42,7 @@ de:
     sign_petition: Petition unterzeichen
     signatures: Unterschriften
   maintenance:
-    message: The site is currently down for maintenance but we should be back soon. Sorry.
+    message: Diese Seite ist momentan wegen Reparaturarbeiten nicht verfügbar - aber nicht für lange. Entschuldigung!
   signature:
     attributes:
       country: Land
@@ -55,7 +55,7 @@ de:
       submit_hint: Um Ihre Unterschrift zu bestätigen, werden Sie eine E-mail erhalten. Wir bitten Sie, auf den darin enthaltenen Link zu klicken.
   signatures:
     almost_there: Fast geschafft!
-    confirmation_error: Leider konnten wir Ihre Unterschrift nicht finden, um sie zu bestätigen. Haben Sie sie vielleicht bereits bestätigt?
+    confirmation_error: Ihre Unterschrift ist bereits bestätigt worden, vielen Dank.
     confirmation_html: "Vielen Dank, dass Sie Ihre Unterschrift bestätigt und die Petition unterzeichnet haben. Ihre Unterschrift wird nun hier mitgezählt: %{home_link}."
     confirmation_success: Ihre Stimme wird nun gehört!
     home_page: Homepage
