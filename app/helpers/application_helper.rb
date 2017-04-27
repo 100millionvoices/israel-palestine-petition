@@ -1,5 +1,6 @@
 module ApplicationHelper
-  LOCALES = { 'de' => 'deutsch',
+  LOCALES = { 'ar' => 'العربية',
+              'de' => 'deutsch',
               'cs' => 'čeština',
               'en' => 'english',
               'es' => 'español',
@@ -19,7 +20,7 @@ module ApplicationHelper
   end
 
   def rtl?
-    [:he].include?(I18n.locale)
+    [:he, :ar].include?(I18n.locale)
   end
 
   def text_direction

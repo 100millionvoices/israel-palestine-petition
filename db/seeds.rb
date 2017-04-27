@@ -59,6 +59,9 @@ ISO3166::Country.translations.each do |country_code, name|
 
   # why is this necessary?
   # see https://github.com/hexorx/countries/blob/master/lib/countries/cache/locales/he.json
+  country.name_ar = 'بونير، سينت أوستاتيوس، وسابا' if country_code == 'BQ'
+  country.name_ar = 'كوراساو' if country_code == 'CW'
+  country.name_ar = 'دولة فلسطين ' if country_code == 'PS'
   country.name_he = 'פלסטין, מדינת' if country_code == 'PS'
   country.name_he = 'איי הבתולה (ארה)' if country_code == 'VI'
 
