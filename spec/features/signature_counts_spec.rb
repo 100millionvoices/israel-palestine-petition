@@ -12,6 +12,7 @@ feature 'Signature counts API' do
   end
 
   scenario 'Ajax update of signature counts on home page', :js do
+    create :ghana
     allow(GeoIpLookup).to receive(:fetch_location_from_ip).and_return(ghana_ip_location)
     visit home_path(locale: :en)
 

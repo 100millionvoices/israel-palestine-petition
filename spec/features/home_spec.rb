@@ -21,6 +21,7 @@ feature 'Signature counts' do
   end
 
   scenario 'User country is Ghana' do
+    create :ghana
     allow(GeoIpLookup).to receive(:fetch_location_from_ip).and_return(ghana_ip_location)
     visit '/'
 

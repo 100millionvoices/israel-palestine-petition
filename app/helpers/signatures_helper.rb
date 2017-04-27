@@ -23,7 +23,8 @@ module SignaturesHelper
   end
 
   def country_from_country_code(country_code)
-    ISO3166::Country.translations(I18n.locale)[country_code]
+    country = Country.find_by(country_code: country_code)
+    country.send(:"name_#{I18n.locale}")
   end
 
   def error_messages_for_field(object, field_name, options = {})
