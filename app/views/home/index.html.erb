@@ -12,7 +12,7 @@
 </div>
 
 <div class="row signature-counts">
-  <div class="text-center counter-block col-md-<%= @signature_count_for_country ? '6' : '12' %>">
+  <div class="text-center counter-block col-md-12 col-lg-<%= @signature_count_for_country ? '6' : '12' %>">
     <%= link_to(signatures_path) do %>
       <div class="counter">
         <div class="counter-number" data-country="ALL" data-count="<%= @signature_count %>">
@@ -24,7 +24,7 @@
   </div>
 
   <% if @signature_count_for_country %>
-    <div class="text-center counter-block col-md-6">
+    <div class="text-center counter-block col-md-12 col-lg-6">
       <%= link_to(country_path(@country_code.downcase)) do %>
         <div class="counter">
           <div class="counter-number" data-country="<%= @country_code %>" data-count="<%= @signature_count_for_country %>">
