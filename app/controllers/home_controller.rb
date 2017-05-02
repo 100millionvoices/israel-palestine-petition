@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  skip_before_action :display_maintenance_page, only: :maintenance
   before_action :fetch_current_country_code, only: :index
   caches_action :index, cache_path: -> { { country_code: @country_code } }, expires_in: 5.minutes
   caches_action :about_us, :faq, expires_in: 10.minutes
@@ -10,6 +11,10 @@ class HomeController < ApplicationController
   def index
     @signature_count_for_country = Signature.cached_count_for_country_code(@country_code)
     @signature_count = Signature.cached_count_total
+  end
+
+  def maintenance
+    redirect_to home_path unless maintenance_page_enabled?
   end
 
   protected

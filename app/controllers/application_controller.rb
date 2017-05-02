@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   force_ssl if: :ssl_configured?
   before_action :set_locale
+  before_action :display_maintenance_page, if: :maintenance_page_enabled?
 
   private
 
@@ -28,8 +29,16 @@ class ApplicationController < ActionController::Base
     { locale: I18n.locale }
   end
 
+  def display_maintenance_page
+    redirect_to :maintenance
+  end
+
   def ssl_configured?
     Rails.env.production?
+  end
+
+  def maintenance_page_enabled?
+    ENV['MAINTENANCE_PAGE_ENABLED'] == 'true'
   end
 
   def fetch_ip_location

@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     get '/' => 'home#index', as: :home
     get '/faq' => 'home#faq', as: :faq
     get '/about-us' => 'home#about_us', as: :about_us
+    get '/maintenance'=> 'home#maintenance'
 
     resources :signatures, only: [:index, :new, :create] do
       get 'page/:page', action: :index, on: :collection

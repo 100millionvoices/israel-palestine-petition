@@ -1,0 +1,16 @@
+<div class="confirmation text-center maintenance alert alert-info">
+  <h4><%= t('maintenance.message') %></h4>
+</div>
+
+<div class="petition-text">
+  <% I18n.t('home.petition').values.each do |para| %>
+    <%= content_tag :p, para.html_safe, class: 'lead' %>
+  <% end %>
+
+  <p class="petition-signer">
+    <em><%= link_to(t('site_name', default: '100MillionVoices'), about_us_path) %></em><br>
+  </p>
+  <p class="petition-date">
+    <small class="text-muted"><%= petition_date %></small>
+  </p>
+</div>
