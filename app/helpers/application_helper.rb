@@ -41,7 +41,10 @@ module ApplicationHelper
   end
 
   def petition_date
-    "#{t('date.month_names')[5]} 2017"
+    year = 2017
+    # See https://en.wikipedia.org/wiki/Date_and_time_notation_in_Thailand
+    year += 543 if I18n.locale == :th
+    "#{t('date.month_names')[5]} #{year}"
   end
 
   def rtl?
