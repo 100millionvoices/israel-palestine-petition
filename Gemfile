@@ -21,8 +21,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-gem 'sidekiq'
-gem 'sinatra', github: 'sinatra'
+gem 'sidekiq', '~> 4.2.10'
 gem 'kaminari'
 gem 'httparty'
 gem 'http_accept_language'
