@@ -12,31 +12,31 @@
 </div>
 
 <div class="row signature-counts">
-  <div class="text-center counter-block col-md-12 col-lg-<%= @signature_count_for_country ? '6' : '12' %>">
-    <%= link_to(signatures_path) do %>
-      <div class="counter">
-        <div class="counter-number" data-country="ALL" data-count="<%= @signature_count %>">
-          <%= number_with_delimiter(@signature_count) %>
-        </div>
-        <small class="text-muted counter-text"><%= t('home.total_signatures') %></small>
-      </div>
-    <% end -%>
-  </div>
-
   <% if @signature_count_for_country %>
     <div class="text-center counter-block col-md-12 col-lg-6">
       <%= link_to(country_path(@country_code.downcase)) do %>
         <div class="counter">
-          <div class="counter-number" data-country="<%= @country_code %>" data-count="<%= @signature_count_for_country %>">
-            <%= number_with_delimiter(@signature_count_for_country) %>
-          </div>
           <small class="text-muted counter-text">
             <%= t('home.signatures_from', country: country_from_country_code(@country_code)) %>
           </small>
+          <div class="counter-number" data-country="<%= @country_code %>" data-count="<%= @signature_count_for_country %>">
+            <%= number_with_delimiter(@signature_count_for_country) %>
+          </div>
         </div>
       <% end -%>
     </div>
   <% end -%>
+
+  <div class="text-center counter-block col-md-12 col-lg-<%= @signature_count_for_country ? '6' : '12' %>">
+    <%= link_to(signatures_path) do %>
+      <div class="counter">
+        <small class="text-muted counter-text"><%= t('home.total_signatures') %></small>
+        <div class="counter-number" data-country="ALL" data-count="<%= @signature_count %>">
+          <%= number_with_delimiter(@signature_count) %>
+        </div>
+      </div>
+    <% end -%>
+  </div>
 </div>
 
 <div class="sign-petition">

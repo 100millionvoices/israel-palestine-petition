@@ -42,7 +42,7 @@
 .counter {
   display: inline-block;
   border: 1px dotted white;
-  padding: 7px 20px;
+  padding: 7px 15px 12px 15px;
 }
 
 .counter:hover {
@@ -52,9 +52,8 @@
 
 .counter-number {
   font-size: 3.5rem;
+  line-height: 1.0em;
 }
 
 .counter-text {
-  margin-top: -15px;
-  float: right;
 }
