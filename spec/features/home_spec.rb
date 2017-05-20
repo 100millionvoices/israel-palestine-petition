@@ -10,7 +10,7 @@ feature 'Signature counts' do
 
     expect(page).to have_link('Sign petition', href: new_signature_path(locale: :en))
     expect(page).to_not have_text 'signatures from Ghana'
-    expect(page).to have_text '3 signatures in total'
+    expect(page).to have_text 'signatures in total 3'
   end
 
   scenario 'User country is unknown but preferred language is German' do
@@ -25,9 +25,9 @@ feature 'Signature counts' do
     allow(GeoIpLookup).to receive(:fetch_location_from_ip).and_return(ghana_ip_location)
     visit '/'
 
-    expect(page).to have_text '2 signatures from Ghana'
+    expect(page).to have_text 'signatures from Ghana 2'
     expect(page).to have_link('signatures from Ghana', href: country_path(country_code: 'gh', locale: :en))
-    expect(page).to have_text '3 signatures in total'
+    expect(page).to have_text 'signatures in total 3'
     expect(page).to have_link('signatures in total', href: signatures_path(locale: :en))
   end
 end

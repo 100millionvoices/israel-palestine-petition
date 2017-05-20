@@ -16,14 +16,14 @@ feature 'Signature counts API' do
     allow(GeoIpLookup).to receive(:fetch_location_from_ip).and_return(ghana_ip_location)
     visit home_path(locale: :en)
 
-    expect(page).to have_text '2 signatures from Ghana'
-    expect(page).to have_text '3 signatures in total'
+    expect(page).to have_text 'signatures from Ghana 2'
+    expect(page).to have_text 'signatures in total 3'
 
     create(:confirmed_signature_gh)
     Rails.cache.clear
 
-    expect(page).to have_text '3 signatures from Ghana'
-    expect(page).to have_text '4 signatures in total'
+    expect(page).to have_text 'signatures from Ghana 3'
+    expect(page).to have_text 'signatures in total 4'
   end
 
   scenario 'Ajax update of signature counts on signatures by country page', :js do
