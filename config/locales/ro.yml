@@ -29,8 +29,8 @@ ro:
     petition:
       para_1_html: "&ldquo; Conflictul israeliano-palestinian este responsabil pentru nenorociri cumplite si suferinta de ambele parti."
       para_2_html: Facem apel la guvernele noastre sa reinnoiasca eforturile care faciliteaza conditiile necesare pentru o rezolvare a conflictului.
-      para_3_html: Facem apel la conducerea Palestinei sa recunoasca dreptul Israelului la o existenta pasnica si sa faca pace.
-      para_4_html: "Si facem apel la guvernul Israelian sa colaboreze la crearea unui stat Palestinian si sa sfarseasca construirea de asezari in teritoriile palestiniene.&nbsp;&rdquo;"
+      para_3_html: Facem apel la conducerea Palestinei sa recunoasca dreptul Israelului la o existenta pasnica si sa-si ia un angajament pentru non-violenta.
+      para_4_html: "Si facem apel la guvernul Israelian sa se angajeze in crearea unui stat Palestinian si sa sfarseasca construirea de asezari in teritoriile palestiniene.&nbsp;&rdquo;"
     sign_petition: Semneaza petitia
     signatures_from: semnaturi in %{country}
     total_signatures: semnaturi in total
