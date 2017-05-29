@@ -10,6 +10,7 @@ class HomeController < ApplicationController
 
   def index
     @signature_count_for_country = Signature.cached_count_for_country_code(@country_code)
+    @top_places_for_country = fetch_top_places_for_country(@country_code, @signature_count_for_country)
     @signature_count = Signature.cached_count_total
   end
 
@@ -23,5 +24,11 @@ class HomeController < ApplicationController
     ip_location = fetch_ip_location
     return unless ip_location
     @country_code = ip_location.country&.iso_code
+  end
+
+  def fetch_top_places_for_country(country_code, signature_count_for_country)
+    if country_code && signature_count_for_country.positive?
+      Signature.cached_count_by_place_for_country(country_code, 4)
+    end
   end
 end

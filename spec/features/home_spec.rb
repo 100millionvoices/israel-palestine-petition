@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Signature counts' do
   let!(:pending_signature)   { create(:pending_signature) }
   let!(:confirmed_signature_de) { create(:confirmed_signature_de) }
-  let!(:confirmed_signature_gh) { create_list(:confirmed_signature_gh, 2) }
+  let!(:confirmed_signature_gh) { create_list(:confirmed_signature_gh, 2, place: 'Accra') }
 
   scenario 'User country is unknown' do
     visit '/'
@@ -26,8 +26,9 @@ feature 'Signature counts' do
     visit '/'
 
     expect(page).to have_text 'signatures from Ghana 2'
-    expect(page).to have_link('signatures from Ghana', href: country_path(country_code: 'gh', locale: :en))
+    expect(page).to have_link('2', href: country_path(country_code: 'gh', locale: :en))
+    expect(page).to have_link('Accra', href: country_path(country_code: 'gh', locale: :en))
     expect(page).to have_text 'signatures in total 3'
-    expect(page).to have_link('signatures in total', href: signatures_path(locale: :en))
+    expect(page).to have_link('3', href: signatures_path(locale: :en))
   end
 end

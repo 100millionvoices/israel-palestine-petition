@@ -64,7 +64,12 @@ header {
     text-align: left;
   }
 }
-.counter-text {
+.top-places-list-count {
+  text-align: right;
+
+  .signature-count {
+    float: left;
+  }
 }
 .sign-petition {
   text-align: left;

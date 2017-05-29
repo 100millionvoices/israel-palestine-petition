@@ -13,12 +13,21 @@
 
 <div class="row signature-counts">
   <% if @signature_count_for_country %>
+    <% if @top_places_for_country %>
+      <div class="text-center col-md-12">
+        <small class="text-muted counter-text">
+          <%= t('home.signatures_from', country: country_from_country_code(@country_code)) %>
+        </small>
+      </div>
+    <% end -%>
     <div class="text-center counter-block col-md-12 col-lg-6">
       <%= link_to(country_path(@country_code.downcase)) do %>
-        <div class="counter">
-          <small class="text-muted counter-text">
-            <%= t('home.signatures_from', country: country_from_country_code(@country_code)) %>
-          </small>
+        <div class="counter country-counter">
+          <% if @top_places_for_country.nil? %>
+            <small class="text-muted counter-text">
+              <%= t('home.signatures_from', country: country_from_country_code(@country_code)) %>
+            </small>
+          <% end -%>
           <div class="counter-number" data-country="<%= @country_code %>" data-count="<%= @signature_count_for_country %>">
             <%= number_with_delimiter(@signature_count_for_country) %>
           </div>
@@ -27,7 +36,22 @@
     </div>
   <% end -%>
 
-  <div class="text-center counter-block col-md-12 col-lg-<%= @signature_count_for_country ? '6' : '12' %>">
+  <% if @top_places_for_country %>
+    <div class="text-center top-places col-md-12 col-lg-6">
+      <%= link_to(country_path(@country_code.downcase)) do %>
+        <% @top_places_for_country.each do |place, count| %>
+          <div class="top-places-list-count">
+            <span><%= place %></span>
+            <span class="signature-count" data-place="<%= place %>" data-count="<%= count %>">
+              <%= number_with_delimiter(count) %>
+            </span>
+          </div>
+        <% end -%>
+      <% end -%>
+    </div>
+  <% end -%>
+
+  <div class="text-center counter-block col-md-12 col-lg-<%= !@signature_count_for_country || @top_places_for_country ? '12' : '6' %>">
     <%= link_to(signatures_path) do %>
       <div class="counter">
         <small class="text-muted counter-text"><%= t('home.total_signatures') %></small>

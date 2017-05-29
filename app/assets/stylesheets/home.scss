@@ -39,6 +39,13 @@
   padding: 30px 0;
 }
 
+.country-counter.counter {
+  padding-top: 0px;
+  @media (min-width: 992px) {
+    padding-top: 7px;
+  }
+}
+
 .counter {
   display: inline-block;
   border: 1px dotted white;
@@ -55,5 +62,24 @@
   line-height: 1.0em;
 }
 
-.counter-text {
+.top-places {
+  max-width: 275px;
+  margin-top: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  clear: both;
+  @media (min-width: 992px) {
+    margin-top: 5px;
+  }
+}
+
+.top-places-list-count {
+  font-size: 16px;
+  text-align: left;
+  line-height: 20px;
+
+  .signature-count {
+    float: right;
+  }
 }

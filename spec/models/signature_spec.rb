@@ -105,7 +105,7 @@ describe Signature do
       create_list :confirmed_signature_gh, 1, place: 'Koforidua'
       create_list :confirmed_signature_gh, 1, place: 'koforidua'
 
-      counts_by_place = Signature.count_by_place_for_country('GH').to_a
+      counts_by_place = Signature.count_by_place_for_country('GH', 4).to_a
       expect(counts_by_place).to eq([['koforidua', 1], ['Koforidua', 1], ['Kokrobite', 1], ['Accra', 3]])
     end
   end
