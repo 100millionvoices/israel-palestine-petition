@@ -13,21 +13,12 @@
 
 <div class="row signature-counts">
   <% if @signature_count_for_country %>
-    <% if @top_places_for_country %>
-      <div class="text-center col-md-12">
-        <small class="text-muted counter-text">
-          <%= t('home.signatures_from', country: country_from_country_code(@country_code)) %>
-        </small>
-      </div>
-    <% end -%>
     <div class="text-center counter-block col-md-12 col-lg-6">
       <%= link_to(country_path(@country_code.downcase)) do %>
         <div class="counter country-counter">
-          <% if @top_places_for_country.nil? %>
-            <small class="text-muted counter-text">
-              <%= t('home.signatures_from', country: country_from_country_code(@country_code)) %>
-            </small>
-          <% end -%>
+          <small class="text-muted counter-text">
+            <%= t('home.signatures_from', country: country_from_country_code(@country_code)) %>
+          </small>
           <div class="counter-number" data-country="<%= @country_code %>" data-count="<%= @signature_count_for_country %>">
             <%= number_with_delimiter(@signature_count_for_country) %>
           </div>
@@ -35,6 +26,17 @@
       <% end -%>
     </div>
   <% end -%>
+
+  <div class="text-center counter-block col-md-12 col-lg-6">
+    <%= link_to(signatures_path) do %>
+      <div class="counter">
+        <small class="text-muted counter-text"><%= t('home.total_signatures') %></small>
+        <div class="counter-number" data-country="ALL" data-count="<%= @signature_count %>">
+          <%= number_with_delimiter(@signature_count) %>
+        </div>
+      </div>
+    <% end -%>
+  </div>
 
   <% if @top_places_for_country %>
     <div class="text-center top-places col-md-12 col-lg-6">
@@ -51,20 +53,9 @@
     </div>
   <% end -%>
 
-  <div class="text-center counter-block col-md-12 col-lg-<%= !@signature_count_for_country || @top_places_for_country ? '12' : '6' %>">
-    <%= link_to(signatures_path) do %>
-      <div class="counter">
-        <small class="text-muted counter-text"><%= t('home.total_signatures') %></small>
-        <div class="counter-number" data-country="ALL" data-count="<%= @signature_count %>">
-          <%= number_with_delimiter(@signature_count) %>
-        </div>
-      </div>
-    <% end -%>
+  <div class="text-center counter-block sign-petition-block col-md-12 col-lg-<%= @signature_count_for_country && !@top_places_for_country ? '12' : '6' %>">
+    <%= link_to(fa_icon('pencil', text: t('home.sign_petition')).html_safe, new_signature_path, class: 'btn btn-lg btn-secondary') %>
   </div>
-</div>
-
-<div class="sign-petition">
-  <%= link_to(fa_icon('pencil', text: t('home.sign_petition')).html_safe, new_signature_path, class: 'btn btn-lg btn-secondary') %>
 </div>
 
 <%= render 'share_petition' %>

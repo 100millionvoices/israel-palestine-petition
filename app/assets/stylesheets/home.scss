@@ -19,11 +19,11 @@
   }
 }
 
-.sign-petition {
-  text-align: right;
-  max-width: 750px;
-  margin: 15px auto 10px auto;
-  padding-right: 0;
+.sign-petition-block {
+  padding-top: 20px;
+  @media (min-width: 992px) {
+    padding-top: 30px;
+  }
 }
 
 .signature-counts {
@@ -70,7 +70,7 @@
   margin-bottom: 20px;
   clear: both;
   @media (min-width: 992px) {
-    margin-top: 5px;
+    margin-top: 15px;
   }
 }
 
