@@ -17,13 +17,13 @@ feature 'Signature counts API' do
     visit home_path(locale: :en)
 
     expect(page).to have_text 'signatures from Ghana 2'
-    expect(page).to have_text 'signatures in total 3'
+    expect(page).to have_text 'signatures worldwide 3'
 
     create(:confirmed_signature_gh)
     Rails.cache.clear
 
     expect(page).to have_text 'signatures from Ghana 3'
-    expect(page).to have_text 'signatures in total 4'
+    expect(page).to have_text 'signatures worldwide 4'
   end
 
   scenario 'Ajax update of signature counts on signatures by country page', :js do
