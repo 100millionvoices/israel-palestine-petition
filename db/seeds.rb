@@ -37,14 +37,14 @@ def fetch_country_populations
 end
 
 def find_country_population(name)
-  country_population = country_populations.find { |country_population| name ==  country_population[0] }
+  country_population = country_populations.find { |country_population| name == country_population[0] }
   return country_population if country_population
 
   if COUNTRY_EQUIVALENTS.has_key?(name)
-   country_populations.find { |country_population| COUNTRY_EQUIVALENTS[name] ==  country_population[0] }
+    country_populations.find { |country_population| COUNTRY_EQUIVALENTS[name] == country_population[0] }
   elsif name.index(',')
     abbreviated_name = name.match(/^[^,]*/)[0]
-    country_populations.find { |country_population| abbreviated_name ==  country_population[0] }
+    country_populations.find { |country_population| abbreviated_name == country_population[0] }
   end
 end
 
