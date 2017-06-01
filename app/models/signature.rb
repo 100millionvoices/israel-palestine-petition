@@ -60,7 +60,8 @@ class Signature < ApplicationRecord
   end
 
   def self.count_by_place_for_country(country_code, limit)
-    top_places = confirmed.where(country_code: country_code).group(:place).order('count(*) DESC, UPPER(place) DESC')
+    top_places = confirmed.where(country_code: country_code).group(:place)
+                          .order('count(*) DESC, UPPER(place) DESC')
     top_places = top_places.limit(limit).count
     top_places.to_a.reverse.to_h
   end

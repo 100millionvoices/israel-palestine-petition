@@ -1,0 +1,11 @@
+dist: trusty
+sudo: false
+cache: bundler
+language: ruby
+rvm:
+  - 2.3.4
+bundler_args: --without development
+addons:
+  postgresql: '9.5'
+before_script:
+  - psql -c 'create database petition_test;' -U postgres

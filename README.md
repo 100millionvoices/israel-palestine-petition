@@ -1,5 +1,7 @@
 # README
 
+[![Build Status](https://travis-ci.org/100millionvoices/israel-palestine-petition.svg?branch=master)](https://travis-ci.org/100millionvoices/israel-palestine-petition)
+
 * You will need ruby 2.3
 * You will need PostgreSQL
 * To view signatures by country you will need to run `rake db:seed`

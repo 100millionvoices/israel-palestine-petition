@@ -102,11 +102,13 @@ describe Signature do
       create :confirmed_signature_de
       create_list :confirmed_signature_gh, 3, place: 'Accra'
       create_list :confirmed_signature_gh, 1, place: 'Kokrobite'
-      create_list :confirmed_signature_gh, 1, place: 'Koforidua'
       create_list :confirmed_signature_gh, 1, place: 'koforidua'
+      create_list :confirmed_signature_gh, 1, place: 'Koforidua'
 
       counts_by_place = Signature.count_by_place_for_country('GH', 4).to_a
-      expect(counts_by_place).to eq([['koforidua', 1], ['Koforidua', 1], ['Kokrobite', 1], ['Accra', 3]])
+      expect(counts_by_place).to match_array([['koforidua', 1], ['Koforidua', 1], ['Kokrobite', 1], ['Accra', 3]])
+      # order of upper and lower case varies on ci so we only test order of last 2 elements
+      expect(counts_by_place[2..3]).to eq([['Kokrobite', 1], ['Accra', 3]])
     end
   end
 end
