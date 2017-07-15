@@ -1,0 +1,97 @@
+pl:
+  heading_html: "100MillionVoices prosi o Twoje wsparcie dla protestu przeciwko braku postępów w rozwiązaniu konfliktu izraelsko-palestyńskiego"
+  about_us:
+    para_1: Jesteśmy niezależną, apolityczną grupą tłumaczy i programistów.
+    para_2: Wierzymy, że dzięki wykorzystaniu głosów umiarkowania obywateli sfrustrowanych brakiem postępów w rozwiązaniu konfliktu, możemy zarówno inspirować jak i nakłonić rządy państw do podjęcia właściwej decyzji.
+    para_3_html: Wierzymy, że po przeczytaniu %{petition_link} i %{faq_link}, zdecydujesz się %{sign_petition_link} i wyrazić swoją opinię. Dziękujemy.
+    petition: petycji
+    sign_the_petition: podpisać ją
+  faq:
+    number_01:
+      question_html: Konflikt izraelsko-palestyński trwa od lat. Jaki sens ma organizowanie petycji dzisiaj?
+      answer_html: Umiarkowane głosy w tym konflikcie są coraz częściej zagłuszane przez ekstremistyczne poglądy i działania. Obydwie strony nie wydają się być skore do kompromisów. Chcemy aby ta apolityczna petycja była przeciwwagą. Liczba <a href="http://www.internetlivestats.com/internet-users/" target="_blank">użytkowników internetu na całym świecie</a> wzrasta radykalnie, a to oznacza że petycja online ma szansę uzyskać rozmach, który coś zmieni.
+    number_02:
+      question_html: Czy mogę podpisać petycję więcej niż jeden raz?
+      answer_html: Prosimy abyś podpisał(a) petycję tylko raz, ponieważ chcemy aby każdy podpis reprezentował pojedynczą osobę. Zamiast tego zachęcamy abyś udostępnił(a) petycję swoim znajomym.
+    number_03:
+      question_html: Czy moje dane będą publicznie dostępne?
+      answer_html: Opublikujemy jedynie dane o kraju i miejscu zamieszkania. Twój email, imię czy nazwisko nie będą nigdy publicznie dostępne.
+    number_04:
+      question_html: Czy będziecie wysyłać mi materiały marketingowe / spam?
+      answer_html: Nie, zdecydowanie nie. Po potwierdzeniu Twojego podpisu nie wyślemy już żadnego maila.
+    number_05:
+      question_html: Jak mogę sprawdzić czy liczba podpisów jest prawdziwa?
+      answer_html: Kod tej strony jest opublikowany na licencji open source i dostępny na <a href="https://github.com/100millionvoices/israel-palestine-petition" target="_blank">GitHubie</a>. Kod może zostać sprawdzony przez każdego i chętnie wysłuchamy wszystkich <a href="mailto:feedback@100millionvoices.org" rel="external">sugestii</a>.
+    number_06:
+      question_html: Dlaczego podczas podpisywania petycji muszę wybierać jakieś obrazki?
+      answer_html: To dodatkowe zabezpieczenie o nazwie reCAPTCHA stworzone przez Google. Służy do odfiltrowania botów, które chcą automatycznie wypełnić formularz.
+  home:
+    petition:
+      para_1_html: "&bdquo;Konflikt izraelsko-palestyński jest odpowiedzialny za straszliwe nieszczęście i cierpienie po obu stronach barykady."
+      para_2_html: Wzywamy rządy naszych państw aby wznowiły działania prowadzące do stworzenia warunków które umożliwią zakończenie konfliktu.
+      para_3_html: Wzywamy przywódców palestyńskich aby zaakceptowali prawo Izraela do pokojowej egzystencji oraz zobowiązali się do zaprzestania przemocy.
+      para_4_html: "Oraz wzywamy rząd izraelski aby zobowiązał się do stworzenia państwa palestyńskiego i zaprzestania wspierania osadnictwa na terytorium palestyńskim.&rdquo;"
+    sign_petition: Podpisz
+    signatures_from: "podpisy: %{country}"
+    total_signatures: podpisy łącznie
+  links:
+    about_us: O inicjatywie
+    blog: Blog
+    contact: Kontakt
+    faq: FAQ
+    home: Strona główna
+    sign_petition: Podpisz petycję
+    signatures: Podpisy
+  maintenance:
+    message: Strona jest w tym momencie niedostępna z powodu prac konserwacyjnych, ale powinna być dostępna wkrótce. Przepraszamy.
+  signature:
+    attributes:
+      country: Kraj
+      email: Adres email
+      name: Imię i nazwisko
+      place: Miasto lub lokalizacja
+    form:
+      email_hint: Nigdy nie udostępnimy Twojego maila osobom trzecim
+      sign_the_petition: Podpisz
+      submit_hint: Aby potwierdzić Twój podpis wyślemy do Ciebie email i poprosimy o kliknięcie w link w nim zawarty
+  signatures:
+    almost_there: Już prawie koniec...
+    confirmation_error: Twój podpis został już wcześniej potwierdzony, dziękujemy
+    confirmation_html: Dziękujemy za potwierdzenie Twojego podpisu i wsparcie inicjatywy. Twój podpis został dodany do listy podpisów dostępnej tutaj - %{home_link}.
+    confirmation_success: Twoje wsparcie się liczy!
+    home_page: strona główna
+    make_your_voice_heard: Wyraź swoje poparcie
+    signature_count_html: Liczba podpisów to %{count}
+    signatures_by_country: Podpisy z podziałem na kraje
+    signatures_by_place_limit: "25 miejsc z największą liczbą podpisów:"
+    signatures_from: Podpisy %{country}
+    target_signature_count_html: Nasz cel to <strong>%{target}</strong> co stanowi 1% <a href="https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations)" target="_blank">populacji</a>
+    thank_you: Wysłaliśmy do Ciebie email. Przeczytaj go proszę i kliknij na link aby potwierdzić swój podpis. Dziękujemy!
+    what_happens_if_target_is_met: Jeżeli uda nam się osiągnąć ten ambitny cel, 100MillionVoices przekaże petycję do ministerstwa spraw zagranicznych danego kraju.
+  sharing:
+    email_subject: Inicjatywa 100MillionVoices
+    share_petition_on: Udostępnij
+    share_text: 100MillionVoices prosi o Twoje wsparcie w proteście przeciwko braku postępów w zakończeniu konfliktu izraelsko-palestyńskiego
+    # twitter text must be less than 110 characters
+    twitter_share: "Wesprzyj #100MillionVoices w proteście mającym na celu zakończenie konfliktu izraelsko-palestyńskiego"
+  user_mailer:
+    confirm_signature:
+      confrim_signature: Aby potwierdzić swój podpis proszę kliknij %{link}.
+      greeting: Hej %{name}
+      subject: Potwierdź podpisanie petycji
+      thank_you: Dziękujemy za wsparcie inicjatywy. Dzięki tak wielu głosom popierającym starania dążące do zakończenia konfliktu uda nam się osiągnąć cel!
+
+  errors:
+    attributes:
+      captcha:
+        invalid: Test captcha nie powiódł się. Skontaktuj się z nami jeżeli problem będzie się powtarzał.
+      country_code:
+        blank: Kraj jest wymagany
+      email:
+        blank: Adres email jest wymagany
+        invalid: Ten adres email nie jest poprawny
+        taken: Ten adres email został już wcześniej użyty
+      name:
+        blank: Imię i nazwisko jest wymagane
+      place:
+        blank: Miasto lub miejsce zamieszkania jest wymagane
