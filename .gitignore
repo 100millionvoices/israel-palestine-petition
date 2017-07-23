@@ -28,3 +28,4 @@ examples.txt
 
 .env.development
 dump.rdb
+.ruby-version
