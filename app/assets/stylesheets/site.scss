@@ -68,7 +68,7 @@ header {
 }
 
 .dropbtn {
-  background-color: #f0ad4e;
+  background-color: #ffc107;
   color: white;
   padding: 5px;
   font-size: 14px;
@@ -163,6 +163,10 @@ h1 {
   font-size: 14px;
 }
 
+.breadcrumb-item {
+  display: inline;
+}
+
 .footer-links li {
   display: block;
 }
@@ -200,7 +204,7 @@ h1 {
 .footer {
   flex: none;
   padding: 3rem 0;
-  background-color: #f0ad4e;
+  background-color: #ffc107;
 }
 
 .footer-links {

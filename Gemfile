@@ -27,7 +27,7 @@ gem 'httparty'
 gem 'http_accept_language'
 gem 'countries'
 gem 'maxminddb'
-gem 'bootstrap', '4.0.0.alpha6'
+gem 'bootstrap'
 gem 'font-awesome-rails', '~> 4.7.0'
 gem 'sentry-raven'
 

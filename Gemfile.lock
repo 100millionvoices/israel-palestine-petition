@@ -49,9 +49,10 @@ GEM
     autoprefixer-rails (7.1.6)
       execjs
     bindex (0.5.0)
-    bootstrap (4.0.0.alpha6)
+    bootstrap (4.0.0.beta2.1)
       autoprefixer-rails (>= 6.0.3)
-      sass (>= 3.4.19)
+      popper_js (>= 1.12.3, < 2)
+      sass (>= 3.5.2)
     builder (3.2.3)
     byebug (9.1.0)
     capybara (2.16.0)
@@ -156,6 +157,7 @@ GEM
       capybara (~> 2.1)
       cliver (~> 0.3.1)
       websocket-driver (>= 0.2.0)
+    popper_js (1.12.5)
     public_suffix (3.0.1)
     puma (3.10.0)
     rack (2.0.3)
@@ -291,7 +293,7 @@ PLATFORMS
 DEPENDENCIES
   actionpack-action_caching
   annotate
-  bootstrap (= 4.0.0.alpha6)
+  bootstrap
   byebug
   capybara
   coffee-rails (~> 4.2)
