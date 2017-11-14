@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :signature do
     sequence(:name)  { |n| "Jo Public #{n}" }
     sequence(:email) { |n| "jo#{n}@public.com" }
